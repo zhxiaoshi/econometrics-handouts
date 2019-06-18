@@ -1,0 +1,97 @@
+--- 
+title: "计量经济学与 Stata 的应用讲义"
+author:
+- affiliation: 暨南大学·经济学院·金融学
+  name: 程振兴
+documentclass: ctexbook
+bibliography: [book.bib]
+biblio-style: apalike
+link-citations: yes
+colorlinks: yes
+lot: no
+lof: no
+geometry: [a4paper, tmargin=2cm, bmargin=2cm, lmargin=2cm, rmargin=2cm]
+site: bookdown::bookdown_site
+description: "计量经济学与 Stata 的应用讲义"
+github-repo: czxa/econometrics-handouts
+output:
+  bookdown::gitbook:
+    includes:
+      after_body: valine.html
+---
+
+```{r setup, include=FALSE}
+options(
+  htmltools.dir.version = FALSE, formatR.indent = 2, width = 55, digits = 4
+)
+
+# 填上你需要用到的包，如 c('ggplot2', 'dplyr')
+lapply(c('ggplot2', 'dplyr', 'tidyverse', 'magrittr', 'knitr'), function(pkg) {
+  if (system.file(package = pkg) == '') install.packages(pkg)
+})
+library(tidyverse)
+library(ggplot2)
+```
+
+# 前言
+
+这是 2018 年下半年我在担任张宁老师的计量经济学助教的时候写的讲义，由于我主要负责 Stata 部分的教学，所以本讲义的主要内容集中于 Stata 的应用。
+
+## 本书内容
+
+本书主要有六个部分：
+
+第一部分，Stata 的安装与代码编辑器的配置。
+
+第二部分，Stata 的基本操作。
+
+第三部分，Stata 的应用 —— 弹性和半弹性的计算。
+
+第四部分，Stata 的应用 —— 爬取[东方财富网 CPI 数据](http://data.eastmoney.com/cjsj/cpi.html)。
+
+第五部分，Stata 修图与操作记录。
+
+第六部分，Stata 与 docx 文档的协同。
+
+## 阅读本书之前的准备工作
+
+首先你需要在你的 Windows 上或者 Mac 上安装 Stata15，由于作者的电脑是 Mac 系统，所以本书的内容尚未在 Windows 上测试。如果你运行出错，请联系作者。
+
+## 目标读者
+
+本书的目标读者是经济和金融专业的本科同学（毕竟作者也只是个渣渣本科）。读者并不需要有 Stata 的基础，但是建议读者对 Stata 的使用有一定的了解（例如知道在哪写代码，怎么运行）。
+
+## 排版约定
+
+在本书中，你会发现一些不同的文本样式，用以区别不同种类的信息，这里举例说明一些样式，以及它们的含义：
+
+代码的输入和输出格式如下：
+
+```stata 
+* 导入系统数据集
+clear all
+sysuse auto, clear
+*> (1978 Automobile Data)
+```
+
+`*` 开头的行为注释。`*>`开头的行为运行结果。
+
+**新术语**和**重要的词**用黑体表示。
+
+## 下载示例代码
+
+本书的代码开源在 GitHub 上，你可以从这里下载：[econometrics-handouts](https://github.com/czxa/econometrics-handouts)。
+
+## 许可证
+
+本书是一本开源书籍，使用 [Creative Commons Attribution-NonCommercial-NoDerivs 3.0](http://creativecommons.org/licenses/by-nc-nd/3.0/us/) 许可证。这意味着：
+
+```{r cca, echo=FALSE, fig.align='center', fig.cap = 'Creative Commons Attribution-NonCommercial-NoDerivs 3.0 协议要点', out.width='90%', fig.align='center'}
+knitr::include_graphics('assets/license.png')
+```
+
+如果你想支持作者的工作，欢迎前往[作者的网站](https://www.czxa.top)对作者进行打赏。你的支持将会促使作者更加及时地改进这本书。
+
+## 读者反馈
+
+欢迎读者的反馈。你对本书有任何想法，喜欢或者不喜欢什么，请告知我。你可以在下面的评论区里评论，如果你阅读的是 PDF 版本，你可以前往 [econometrics-handouts](https://github.com/czxa/econometrics-handouts) 创建 issues。

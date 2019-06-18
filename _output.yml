@@ -1,0 +1,17 @@
+bookdown::gitbook:
+  toc_depth: 2
+  css: style.css
+  config:
+    output_dir: docs
+    toc:
+      collapse: none
+      before: |
+        <li><a href="./">计量经济学与Stata的应用讲义</a></li>
+      after: |
+        <li><a href="https://github.com/rstudio/bookdown" target="blank">使用 bookdown 编排</a></li>
+    download: ["pdf"]
+    edit: https://github.com/czxa/econometrics-handouts/edit/master/%s
+    sharing:
+      github: yes
+      facebook: no
+      twitter: no

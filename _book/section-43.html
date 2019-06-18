@@ -1,0 +1,1798 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>第 8 章 习题讲解 | 计量经济学与 Stata 的应用讲义</title>
+  <meta name="description" content="第 8 章 习题讲解 | 计量经济学与 Stata 的应用讲义" />
+  <meta name="generator" content="bookdown 0.10.1 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="第 8 章 习题讲解 | 计量经济学与 Stata 的应用讲义" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="第 8 章 习题讲解 | 计量经济学与 Stata 的应用讲义" />
+  <meta name="github-repo" content="czxa/econometrics-handouts" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="第 8 章 习题讲解 | 计量经济学与 Stata 的应用讲义" />
+  
+  <meta name="twitter:description" content="第 8 章 习题讲解 | 计量经济学与 Stata 的应用讲义" />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="stata-docx-.html">
+
+<script src="libs/jquery/jquery.min.js"></script>
+<link href="libs/gitbook/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets/htmlwidgets.js"></script>
+<link href="libs/leaflet/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet/leaflet.js"></script>
+<link href="libs/leafletfix/leafletfix.css" rel="stylesheet" />
+<script src="libs/Proj4Leaflet/proj4-compressed.js"></script>
+<script src="libs/Proj4Leaflet/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding/leaflet.js"></script>
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">计量经济学与Stata的应用讲义</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> 前言</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#section-1"><i class="fa fa-check"></i><b>1.1</b> 本书内容</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#section-2"><i class="fa fa-check"></i><b>1.2</b> 阅读本书之前的准备工作</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#section-3"><i class="fa fa-check"></i><b>1.3</b> 目标读者</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#section-4"><i class="fa fa-check"></i><b>1.4</b> 排版约定</a></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#section-5"><i class="fa fa-check"></i><b>1.5</b> 下载示例代码</a></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#section-6"><i class="fa fa-check"></i><b>1.6</b> 许可证</a></li>
+<li class="chapter" data-level="1.7" data-path="index.html"><a href="index.html#section-7"><i class="fa fa-check"></i><b>1.7</b> 读者反馈</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="stata-sublime-text3-.html"><a href="stata-sublime-text3-.html"><i class="fa fa-check"></i><b>2</b> Stata 安装与 Sublime Text3 配置教程</a><ul>
+<li class="chapter" data-level="2.1" data-path="stata-sublime-text3-.html"><a href="stata-sublime-text3-.html#stata-"><i class="fa fa-check"></i><b>2.1</b> Stata 安装包获取</a></li>
+<li class="chapter" data-level="2.2" data-path="stata-sublime-text3-.html"><a href="stata-sublime-text3-.html#stata14-"><i class="fa fa-check"></i><b>2.2</b> Stata14 的安装</a></li>
+<li class="chapter" data-level="2.3" data-path="stata-sublime-text3-.html"><a href="stata-sublime-text3-.html#stata15-"><i class="fa fa-check"></i><b>2.3</b> Stata15 的安装</a></li>
+<li class="chapter" data-level="2.4" data-path="stata-sublime-text3-.html"><a href="stata-sublime-text3-.html#stata--1"><i class="fa fa-check"></i><b>2.4</b> Stata 代码编辑器的配置</a></li>
+<li class="chapter" data-level="2.5" data-path="stata-sublime-text3-.html"><a href="stata-sublime-text3-.html#shelldos-"><i class="fa fa-check"></i><b>2.5</b> 常用 shell/Dos 命令安装</a></li>
+<li class="chapter" data-level="2.6" data-path="stata-sublime-text3-.html"><a href="stata-sublime-text3-.html#stata--2"><i class="fa fa-check"></i><b>2.6</b> Stata 更新</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="stata-3.html"><a href="stata-3.html"><i class="fa fa-check"></i><b>3</b> Stata 基础操作</a><ul>
+<li class="chapter" data-level="3.1" data-path="stata-3.html"><a href="stata-3.html#stata--4"><i class="fa fa-check"></i><b>3.1</b> Stata 是什么</a></li>
+<li class="chapter" data-level="3.2" data-path="stata-3.html"><a href="stata-3.html#stata--5"><i class="fa fa-check"></i><b>3.2</b> Stata 能做什么</a></li>
+<li class="chapter" data-level="3.3" data-path="stata-3.html"><a href="stata-3.html#stata--6"><i class="fa fa-check"></i><b>3.3</b> Stata 基本操作</a></li>
+<li class="chapter" data-level="3.4" data-path="stata-3.html"><a href="stata-3.html#section-15"><i class="fa fa-check"></i><b>3.4</b> 数据处理</a></li>
+<li class="chapter" data-level="3.5" data-path="stata-3.html"><a href="stata-3.html#section-16"><i class="fa fa-check"></i><b>3.5</b> 数据导出</a></li>
+<li class="chapter" data-level="3.6" data-path="stata-3.html"><a href="stata-3.html#section-17"><i class="fa fa-check"></i><b>3.6</b> 绘图</a></li>
+<li class="chapter" data-level="3.7" data-path="stata-3.html"><a href="stata-3.html#section-18"><i class="fa fa-check"></i><b>3.7</b> 统计相关</a></li>
+<li class="chapter" data-level="3.8" data-path="stata-3.html"><a href="stata-3.html#t-"><i class="fa fa-check"></i><b>3.8</b> t 检验、方差分析和因子分析</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="section-23.html"><a href="section-23.html"><i class="fa fa-check"></i><b>4</b> 弹性与半弹性</a><ul>
+<li class="chapter" data-level="4.1" data-path="section-23.html"><a href="section-23.html#section-24"><i class="fa fa-check"></i><b>4.1</b> 弹性</a></li>
+<li class="chapter" data-level="4.2" data-path="section-23.html"><a href="section-23.html#section-25"><i class="fa fa-check"></i><b>4.2</b> 半弹性</a></li>
+<li class="chapter" data-level="4.3" data-path="section-23.html"><a href="section-23.html#section-28"><i class="fa fa-check"></i><b>4.3</b> 总结</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="stata-8.html"><a href="stata-8.html"><i class="fa fa-check"></i><b>5</b> Stata 网页表格爬取示例</a><ul>
+<li class="chapter" data-level="5.1" data-path="stata-8.html"><a href="stata-8.html#section-29"><i class="fa fa-check"></i><b>5.1</b> 准备工作</a></li>
+<li class="chapter" data-level="5.2" data-path="stata-8.html"><a href="stata-8.html#section-30"><i class="fa fa-check"></i><b>5.2</b> 网页分析</a></li>
+<li class="chapter" data-level="5.3" data-path="stata-8.html"><a href="stata-8.html#section-31"><i class="fa fa-check"></i><b>5.3</b> 开始爬取</a></li>
+<li class="chapter" data-level="5.4" data-path="stata-8.html"><a href="stata-8.html#section-36"><i class="fa fa-check"></i><b>5.4</b> 多页面爬取</a></li>
+<li class="chapter" data-level="5.5" data-path="stata-8.html"><a href="stata-8.html#section-39"><i class="fa fa-check"></i><b>5.5</b> 数据呈现</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="stata-9.html"><a href="stata-9.html"><i class="fa fa-check"></i><b>6</b> Stata 修图与操作记录</a></li>
+<li class="chapter" data-level="7" data-path="stata-docx-.html"><a href="stata-docx-.html"><i class="fa fa-check"></i><b>7</b> Stata 与 docx 文档的协同</a><ul>
+<li class="chapter" data-level="7.1" data-path="stata-docx-.html"><a href="stata-docx-.html#section-40"><i class="fa fa-check"></i><b>7.1</b> 安装</a></li>
+<li class="chapter" data-level="7.2" data-path="stata-docx-.html"><a href="stata-docx-.html#section-41"><i class="fa fa-check"></i><b>7.2</b> 使用</a></li>
+<li class="chapter" data-level="7.3" data-path="stata-docx-.html"><a href="stata-docx-.html#section-42"><i class="fa fa-check"></i><b>7.3</b> 父母身高与子女身高</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="section-43.html"><a href="section-43.html"><i class="fa fa-check"></i><b>8</b> 习题讲解</a><ul>
+<li class="chapter" data-level="8.1" data-path="section-43.html"><a href="section-43.html#section-44"><i class="fa fa-check"></i><b>8.1</b> 习题 6.5</a></li>
+<li class="chapter" data-level="8.2" data-path="section-43.html"><a href="section-43.html#section-45"><i class="fa fa-check"></i><b>8.2</b> 习题 6.6</a></li>
+<li class="chapter" data-level="8.3" data-path="section-43.html"><a href="section-43.html#section-46"><i class="fa fa-check"></i><b>8.3</b> 习题 7.2</a></li>
+<li class="chapter" data-level="8.4" data-path="section-43.html"><a href="section-43.html#section-47"><i class="fa fa-check"></i><b>8.4</b> 习题 7.3</a></li>
+<li class="chapter" data-level="8.5" data-path="section-43.html"><a href="section-43.html#section-48"><i class="fa fa-check"></i><b>8.5</b> 习题 9.4</a></li>
+<li class="chapter" data-level="8.6" data-path="section-43.html"><a href="section-43.html#section-49"><i class="fa fa-check"></i><b>8.6</b> 习题 9.5</a></li>
+<li class="chapter" data-level="8.7" data-path="section-43.html"><a href="section-43.html#section-50"><i class="fa fa-check"></i><b>8.7</b> 习题 10.5</a></li>
+<li class="chapter" data-level="8.8" data-path="section-43.html"><a href="section-43.html#section-51"><i class="fa fa-check"></i><b>8.8</b> 习题 10.6</a></li>
+<li class="chapter" data-level="8.9" data-path="section-43.html"><a href="section-43.html#section-52"><i class="fa fa-check"></i><b>8.9</b> 习题 12.3</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">使用 bookdown 编排</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">计量经济学与 Stata 的应用讲义</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="section-43" class="section level1">
+<h1><span class="header-section-number">第 8 章</span> 习题讲解</h1>
+<div id="section-44" class="section level2">
+<h2><span class="header-section-number">8.1</span> 习题 6.5</h2>
+<p><strong>【题目】：</strong>
+使用数据集 <code>grilic.dta</code>，以稳健标准误估计下面的回归方程：</p>
+<p><span class="math display">\[
+ln w = \beta_{1} + \beta_{2} s + \beta_{3} expr + \beta_{4} tenure + \beta_{5} smsa + \varepsilon
+\]</span></p>
+<ol style="list-style-type: decimal">
+<li>使用全样本，估计方程（6.43）。</li>
+<li>使用美国南方的子样本，估计方程（6.43）。</li>
+<li>使用美国北方的子样本，估计方程（6.43）。</li>
+<li>与全样本相比，子样本估计量的标准误有何变化，为什么？</li>
+</ol>
+<p><strong>【解答】：</strong></p>
+<p>（1）：使用全样本：</p>
+<pre class="stata"><code>cuse grilic, clear web
+// 因为我的数据里面的lnw的名字是lw，为了和书上的统一，重命名为lnw
+ren lw lnw
+reg lnw s expr tenure smsa, r
+
+*&gt; Linear regression                               Number of obs     =        758
+*&gt;                                                 F(4, 753)         =      98.36
+*&gt;                                                 Prob &gt; F          =     0.0000
+*&gt;                                                 R-squared         =     0.3448
+*&gt;                                                 Root MSE          =     .34813
+*&gt; ------------------------------------------------------------------------------
+*&gt;              |               Robust
+*&gt;          lnw |      Coef.   Std. Err.      t    P&gt;|t|     [95% Conf. Interval]
+*&gt; -------------+----------------------------------------------------------------
+*&gt;            s |   .1035073   .0062235    16.63   0.000     .0912899    .1157247
+*&gt;         expr |   .0381933   .0066362     5.76   0.000     .0251656     .051221
+*&gt;       tenure |   .0363505   .0081018     4.49   0.000     .0204457    .0522554
+*&gt;         smsa |   .1523258   .0276534     5.51   0.000      .098039    .2066127
+*&gt;        _cons |   4.059067   .0861023    47.14   0.000     3.890038    4.228096
+*&gt; ------------------------------------------------------------------------------</code></pre>
+<p>根据估计结果，拟合的模型为：</p>
+<p><span class="math display">\[
+lnw = 4.059 + 0.104s + 0.036expr + 0.152smsa +\hat{\varepsilon}
+\]</span></p>
+<p>（2）：使用南方样本(rns == 1)估计</p>
+<pre class="stata"><code>reg lnw s expr tenure smsa if rns, r
+
+*&gt; Linear regression                               Number of obs     =        204
+*&gt;                                                 F(4, 199)         =      36.04
+*&gt;                                                 Prob &gt; F          =     0.0000
+*&gt;                                                 R-squared         =     0.4203
+*&gt;                                                 Root MSE          =     .34929
+*&gt; ------------------------------------------------------------------------------
+*&gt;              |               Robust
+*&gt;          lnw |      Coef.   Std. Err.      t    P&gt;|t|     [95% Conf. Interval]
+*&gt; -------------+----------------------------------------------------------------
+*&gt;            s |   .1198242   .0120804     9.92   0.000     .0960021    .1436463
+*&gt;         expr |   .0451903   .0143038     3.16   0.002     .0169839    .0733967
+*&gt;       tenure |   .0092643   .0177777     0.52   0.603    -.0257926    .0443211
+*&gt;         smsa |   .1746563   .0496961     3.51   0.001     .0766579    .2726548
+*&gt;        _cons |   3.806148   .1582838    24.05   0.000     3.494019    4.118276
+*&gt; ------------------------------------------------------------------------------</code></pre>
+<p>根据估计结果，拟合的模型为：</p>
+<p><span class="math display">\[
+lnw = 3.806 + 0.120s + 0.045expr + 0.175smsa +\hat{\varepsilon}
+\]</span></p>
+<p>（3）：使用北方样本(rns == 0)估计：</p>
+<pre class="stata"><code>reg lnw s expr tenure smsa if !rns, r
+
+*&gt; Linear regression                               Number of obs     =        554
+*&gt;                                                 F(4, 549)         =      59.45
+*&gt;                                                 Prob &gt; F          =     0.0000
+*&gt;                                                 R-squared         =     0.3127
+*&gt;                                                 Root MSE          =     .34356
+*&gt; ------------------------------------------------------------------------------
+*&gt;              |               Robust
+*&gt;          lnw |      Coef.   Std. Err.      t    P&gt;|t|     [95% Conf. Interval]
+*&gt; -------------+----------------------------------------------------------------
+*&gt;            s |   .0944787   .0072808    12.98   0.000      .080177    .1087804
+*&gt;         expr |   .0358675   .0073509     4.88   0.000     .0214281    .0503068
+*&gt;       tenure |   .0455117   .0088423     5.15   0.000     .0281429    .0628806
+*&gt;         smsa |   .1199364    .034029     3.52   0.000     .0530934    .1867794
+*&gt;        _cons |   4.214014    .103448    40.74   0.000     4.010812    4.417217
+*&gt; ------------------------------------------------------------------------------</code></pre>
+<p>根据估计结果，拟合的模型为：</p>
+<p><span class="math display">\[
+lnw = 4.021 + 0.094s + 0.036expr + 0.120smsa +\hat{\varepsilon}
+\]</span></p>
+<p>（4）：比较</p>
+<p>三个模型的估计量标准误如下：</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">估计参数</th>
+<th align="center">全样本</th>
+<th align="center">北方样本</th>
+<th align="center">南方样本</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">s</td>
+<td align="center">0.0062</td>
+<td align="center">0.0073</td>
+<td align="center">0.0120</td>
+</tr>
+<tr class="even">
+<td align="center">expr</td>
+<td align="center">0.0066</td>
+<td align="center">0.0074</td>
+<td align="center">0.0143</td>
+</tr>
+<tr class="odd">
+<td align="center">tenure</td>
+<td align="center">0.0081</td>
+<td align="center">0.0088</td>
+<td align="center">0.0178</td>
+</tr>
+<tr class="even">
+<td align="center">smsa</td>
+<td align="center">0.0277</td>
+<td align="center">0.0340</td>
+<td align="center">0.0497</td>
+</tr>
+<tr class="odd">
+<td align="center">_cons</td>
+<td align="center">0.0861</td>
+<td align="center">0.1034</td>
+<td align="center">0.1583</td>
+</tr>
+</tbody>
+</table>
+<p>还可以把这个画出来，如图：</p>
+<div class="figure" style="text-align: center"><span id="fig:pic65"></span>
+<img src="assets/6_5%E6%A8%A1%E5%9E%8B%E6%AF%94%E8%BE%83.png" alt="模型比较" width="90%" />
+<p class="caption">
+图 8.1: 模型比较
+</p>
+</div>
+<p>从图中可以很容易看出全样本估计的模型各个参数的标准误都较子样本的小。这是当样本量增加时，样本更加接近总体，对参数的估计自然更加准确，标准误会更小。</p>
+<p>绘图代码：</p>
+<pre class="stata"><code>clear
+input str10 var sd1 sd2 sd3
+&quot;s&quot; 0.0062  0.0073 0.0120
+&quot;expr&quot; 0.0066 0.0074 0.0143
+&quot;tenure&quot; 0.0081 0.0088 0.0178
+&quot;smsa&quot; 0.0277 0.0340 0.0497
+&quot;_cons&quot; 0.0861 0.1034 0.1583
+end
+reshape long sd, i(var) j(m)
+encode var, gen(varlab) lab(var)
+* colorscheme是一个选择配色的命令，安装方法：
+* net install colorscheme.pkg, from(&quot;https://github.com/matthieugomez/stata-colorscheme/raw/master/&quot;)
+* 详细介绍可以参考我的这篇博客：https://www.czxa.top/posts/16049/
+colorscheme 3, palette(Dark2)
+ret list
+tw ///
+line sd varlab if m == 1, lp(solid) lc(&quot;`r(color1)&#39;&quot;) || ///
+line sd varlab if m == 2, lp(solid) lc(&quot;`r(color2)&#39;&quot;) || ///
+line sd varlab if m == 3, lp(solid) lc(&quot;`r(color3)&#39;&quot;) ||, ///
+xlab(, val labsize(*1.2)) ylab(, format(%6.2f) labsize(*1.2)) ///
+xti(&quot;估计参数&quot;) yti(&quot;标准误&quot;) ///
+leg(order(1 &quot;全样本&quot; 2 &quot;北方样本&quot; 3 &quot;南方样本&quot;) pos(6) row(1))
+gr export &quot;6_5模型比较.png&quot;, replace</code></pre>
+<p>另外一种办法是把标准误存储起来使用：</p>
+<pre class="stata"><code>cuse grilic, clear
+ren lw lnw
+reg lnw s expr tenure smsa, r
+ret list
+mat list r(table)
+mat m1 = r(table)
+mat list m1
+
+reg lnw s expr tenure smsa if rns, r
+mat m2 = r(table)
+
+reg lnw s expr tenure smsa if !rns, r
+mat m3 = r(table)
+
+mat list m1
+mat list m2
+mat list m3
+
+clear
+gen var = &quot;&quot;
+gen sd1 = .
+gen sd2 = .
+gen sd3 = .
+set obs 5
+
+di m1[1,1]
+forval i = 1/`=_N&#39;{
+    replace sd1 = m1[2, `i&#39;] in `i&#39;
+    replace sd2 = m2[2, `i&#39;] in `i&#39;
+    replace sd3 = m3[2, `i&#39;] in `i&#39;
+}
+
+local k = 1
+foreach j in &quot;s&quot; &quot;expr&quot; &quot;tenure&quot; &quot;smsa&quot; &quot;_cons&quot;{
+    replace var = &quot;`j&#39;&quot; in `k&#39;
+    local ++k
+}
+reshape long sd, i(var) j(m)
+encode var, gen(varlab) lab(var)
+colorscheme 3, palette(Dark2)
+ret list
+tw ///
+line sd varlab if m == 1, lp(solid) lc(&quot;`r(color1)&#39;&quot;) || ///
+line sd varlab if m == 2, lp(solid) lc(&quot;`r(color2)&#39;&quot;) || ///
+line sd varlab if m == 3, lp(solid) lc(&quot;`r(color3)&#39;&quot;) ||, ///
+xlab(, val labsize(*1.2)) ylab(, format(%6.2f) labsize(*1.2)) ///
+xti(&quot;估计参数&quot;) yti(&quot;标准误&quot;) ///
+leg(order(1 &quot;全样本&quot; 2 &quot;南方样本&quot; 3 &quot;北方样本&quot;) pos(6) row(1))
+gr export &quot;6_5模型比较.png&quot;, replace</code></pre>
+<hr />
+</div>
+<div id="section-45" class="section level2">
+<h2><span class="header-section-number">8.2</span> 习题 6.6</h2>
+<p><strong>【题目】：</strong>
+房屋的价格如何决定？一种理论认为，房价由房屋的性能决定，成为“特征价格法”。数据集<code>hprice2a.dta</code>包含了美国波士顿 506 个社区的房屋中位数价格的横截面数据。考虑以下特征价格回归：</p>
+<p><span class="math display">\[
+lprice_i = \beta_1 + \beta_2lnox_i + \beta_3ldist_i + \beta_4rooms_i + \beta_5stratio_i + \varepsilon_i
+\]</span></p>
+<p>其中，<span class="math inline">\(lprice\)</span>为房价的对数，<span class="math inline">\(lnox\)</span>为空气污染程度的对数，<span class="math inline">\(ldist\)</span>为社区到就业中心距离的对数，<span class="math inline">\(rooms\)</span>为房屋的平均房间数，<span class="math inline">\(stratio\)</span>为社区学校的<code>学生 - 教师</code>比例，下标<span class="math inline">\(i\)</span>表示社区<span class="math inline">\(i\)</span>。</p>
+<p>（1）使用普通标准误进行回归，并评论解释变量系数的符号、统计显著性及经济意义。
+（2）使用稳健标准误进行回归，稳健标准误和普通标准误差别大么？
+（3）使用稳健标准误，以 5%的显著性水平，检验<span class="math inline">\(H_0: \beta_3 = \beta_5\)</span>。
+（4）使用稳健标准误，以 5%的显著性水平，检验<span class="math inline">\(H_0: \beta_4 = 0.31\)</span>与<span class="math inline">\(H_0: \beta_4 = 0.30\)</span>。</p>
+<p><strong>【解答】</strong></p>
+<p>（1）：普通标准误回归</p>
+<pre class="stata"><code>cuse hprice2a, clear
+gen ldist = ln(dist)
+reg lprice lnox ldist rooms stratio
+
+*&gt;       Source |       SS           df       MS      Number of obs   =       506
+*&gt; -------------+----------------------------------   F(4, 501)       =    175.86
+*&gt;        Model |  49.3987735         4  12.3496934   Prob &gt; F        =    0.0000
+*&gt;     Residual |  35.1834974       501  .070226542   R-squared       =    0.5840
+*&gt; -------------+----------------------------------   Adj R-squared   =    0.5807
+*&gt;        Total |  84.5822709       505  .167489645   Root MSE        =      .265
+*&gt; ------------------------------------------------------------------------------
+*&gt;       lprice |      Coef.   Std. Err.      t    P&gt;|t|     [95% Conf. Interval]
+*&gt; -------------+----------------------------------------------------------------
+*&gt;         lnox |    -.95354   .1167418    -8.17   0.000    -1.182904   -.7241762
+*&gt;        ldist |  -.1343401   .0431032    -3.12   0.002    -.2190255   -.0496548
+*&gt;        rooms |   .2545271   .0185303    13.74   0.000     .2181203    .2909338
+*&gt;      stratio |  -.0524512   .0058971    -8.89   0.000    -.0640373   -.0408651
+*&gt;        _cons |   11.08387   .3181115    34.84   0.000     10.45887    11.70886
+*&gt; ------------------------------------------------------------------------------</code></pre>
+<ol style="list-style-type: decimal">
+<li>lnox：系数为负，在 5%的显著性水平上显著，表示空气污染程度每加剧 1%，房价平均下跌 0.95%；</li>
+<li>ldist：系数为负，在 5%的显著性水平上显著，表示社区到就业中心的距离每增加 1%，房价平均下跌 0.13%；</li>
+<li>rooms：系数为正，在 5%的显著性水平上显著，表示房屋的平均房间数增加 1，房价平均上涨 25.45%；</li>
+<li>stratio：系数为负，在 5%的显著性水平上显著，表示社区学校的学生-教师比例每提高一个单位，房价平均下跌 5.24%。</li>
+</ol>
+<p>（2）：稳健标准误的回归</p>
+<pre class="stata"><code>reg lprice lnox ldist rooms stratio, r
+
+*&gt; Linear regression                               Number of obs     =        506
+*&gt;                                                 F(4, 501)         =     146.27
+*&gt;                                                 Prob &gt; F          =     0.0000
+*&gt;                                                 R-squared         =     0.5840
+*&gt;                                                 Root MSE          =       .265
+*&gt; ------------------------------------------------------------------------------
+*&gt;              |               Robust
+*&gt;       lprice |      Coef.   Std. Err.      t    P&gt;|t|     [95% Conf. Interval]
+*&gt; -------------+----------------------------------------------------------------
+*&gt;         lnox |    -.95354   .1268006    -7.52   0.000    -1.202667   -.7044135
+*&gt;        ldist |  -.1343401   .0535287    -2.51   0.012    -.2395086   -.0291717
+*&gt;        rooms |   .2545271   .0247204    10.30   0.000     .2059586    .3030956
+*&gt;      stratio |  -.0524512   .0046082   -11.38   0.000     -.061505   -.0433974
+*&gt;        _cons |   11.08387   .3772952    29.38   0.000     10.34259    11.82514
+*&gt; ------------------------------------------------------------------------------</code></pre>
+<p>显然差别不大。</p>
+<p>（3）：5%显著性水平，检验<span class="math inline">\(\beta_3 = \beta_5\)</span></p>
+<pre class="stata"><code>test ldist = stratio
+
+*&gt; ( 1)  ldist - stratio = 0
+*&gt;
+*&gt;       F(  1,   501) =    2.27
+*&gt;            Prob &gt; F =    0.1322</code></pre>
+<p>p 值大于 5%，不显著，因此无法拒绝原假设。</p>
+<p>（4）：5% 显著性水平，检验<span class="math inline">\(\beta_4 = 0.31 / 0.30\)</span></p>
+<pre class="stata"><code>test rooms = 0.31
+
+*&gt; ( 1)  rooms = .31
+
+*&gt;       F(  1,   501) =    5.04
+*&gt;            Prob &gt; F =    0.0253
+
+test rooms = 0.30
+
+*&gt; ( 1)  rooms = .3
+*&gt;
+*&gt;       F(  1,   501) =    3.38
+*&gt;            Prob &gt; F =    0.0664</code></pre>
+<p>第一个检验的结果是拒绝原假设的，第二个结果是无法拒绝原假设。</p>
+<hr />
+</div>
+<div id="section-46" class="section level2">
+<h2><span class="header-section-number">8.3</span> 习题 7.2</h2>
+<p><strong>【题目】</strong>
+房价的回归是否存在异方差？继续考虑上题中的房价模型：
+1. 以 5%的置信度，使用 BP 检验，检验是否存在异方差（假设扰动项为 iid，分别以拟合值<span class="math inline">\(\hat{y}以及所有解释变量进行检验\)</span>）。
+2. 以 5%的置信度，使用怀特检验，检验是否存在异方差。</p>
+<p><strong>【解答】</strong></p>
+<p>（1）：BP 检验
+首先是以拟合值进行检验：</p>
+<pre class="stata"><code>cuse hprice2a, clear
+gen ldist = ln(dist)
+qui reg lprice lnox ldist rooms stratio
+estat hettest, iid
+
+*&gt; Breusch-Pagan / Cook-Weisberg test for heteroskedasticity
+*&gt;          Ho: Constant variance
+*&gt;          Variables: fitted values of lprice
+*&gt; 
+*&gt;          chi2(1)      =    37.57
+*&gt;          Prob &gt; chi2  =   0.0000</code></pre>
+<p>然后再使用所有的解释变量进行检验：</p>
+<pre class="stata"><code>estat hettest, iid rhs
+
+*&gt; Breusch-Pagan / Cook-Weisberg test for heteroskedasticity
+*&gt;          Ho: Constant variance
+*&gt;          Variables: lnox ldist rooms stratio
+*&gt; 
+*&gt;          chi2(4)      =    69.87
+*&gt;          Prob &gt; chi2  =   0.0000</code></pre>
+<p>两次检验的结果都强烈拒绝拒绝同方差的原假设，因为认为存在异方差。</p>
+<p>（2）：怀特检验</p>
+<pre class="stata"><code>estat imtest, white
+
+*&gt; White&#39;s test for Ho: homoskedasticity
+*&gt;          against Ha: unrestricted heteroskedasticity
+
+*&gt;          chi2(14)     =    143.98
+*&gt;          Prob &gt; chi2  =    0.0000
+
+*&gt; Cameron &amp; Trivedi&#39;s decomposition of IM-test
+
+*&gt; ---------------------------------------------------
+*&gt;               Source |       chi2     df      p
+*&gt; ---------------------+-----------------------------
+*&gt;   Heteroskedasticity |     143.98     14    0.0000
+*&gt;             Skewness |      16.99      4    0.0019
+*&gt;             Kurtosis |      11.30      1    0.0008
+*&gt; ---------------------+-----------------------------
+*&gt;                Total |     172.26     19    0.0000
+*&gt; ---------------------------------------------------</code></pre>
+<p>结果同样强烈拒绝同方差的原假设，认为存在异方差。</p>
+</div>
+<div id="section-47" class="section level2">
+<h2><span class="header-section-number">8.4</span> 习题 7.3</h2>
+<p><strong>【题目】</strong>
+恩格尔系数是否存在异方差？数据集<code>food.dta</code>包含有关每周食物开支(food_exp)和周收入(income)的 40 个观测值。
+1. 将 food_exp 和 income 的散点图和线性拟合图画在一起。根据此图，是否可能存在异方差？此异方差和收入的关系是怎样的？
+2. 将 food_exp 对 income 进行回归。
+3. 以 5%的置信度，使用 BP 检验，检验是否存在异方差（iid 假设）。
+4. 以 5%的置信度，使用怀特检验，检验是否存在异方差。
+5. 定义食物开支比例 food_share = food_exp/income，将 food_share 与 income 的散点图与线性拟合图画在一起。从图上看，是否还存在异方差？
+6. 将 food_share 对 income 进行回归。
+7. 5%、BP 检验、iid。
+8. 5%、怀特检验。</p>
+<p><strong>【解答】</strong></p>
+<p>（1）：图表</p>
+<pre class="stata"><code>cuse food, clear
+tw ///
+sc food_exp income || ///
+lfit food_exp income ||, ///
+leg(pos(6) row(1))
+gr export &quot;7_3恩格尔系数1.png&quot;, replace</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:pic73"></span>
+<img src="assets/7_3%E6%81%A9%E6%A0%BC%E5%B0%94%E7%B3%BB%E6%95%B01.png" alt="恩格尔系数" width="90%" />
+<p class="caption">
+图 8.2: 恩格尔系数
+</p>
+</div>
+<p>从图可以看出，很可能存在异方差，并且收入越高方差越大。</p>
+<p>（2）：回归</p>
+<pre class="stata"><code>reg food_exp income
+
+*&gt;       Source |       SS           df       MS      Number of obs   =        40
+*&gt; -------------+----------------------------------   F(1, 38)        =     23.79
+*&gt;        Model |  190626.976         1  190626.976   Prob &gt; F        =    0.0000
+*&gt;     Residual |  304505.177        38  8013.29412   R-squared       =    0.3850
+*&gt; -------------+----------------------------------   Adj R-squared   =    0.3688
+*&gt;        Total |  495132.153        39  12695.6962   Root MSE        =    89.517
+*&gt; ------------------------------------------------------------------------------
+*&gt;     food_exp |      Coef.   Std. Err.      t    P&gt;|t|     [95% Conf. Interval]
+*&gt; -------------+----------------------------------------------------------------
+*&gt;       income |   .1020964   .0209326     4.88   0.000     .0597205    .1444723
+*&gt;        _cons |   83.41601   43.41016     1.92   0.062     -4.46327    171.2953
+*&gt; ------------------------------------------------------------------------------</code></pre>
+<p>拟合的模型为：</p>
+<p><span class="math display">\[
+food\_exp = 83.416 + 0.102income + \varepsilon
+\]</span></p>
+<p>（3）：BP 检验</p>
+<pre class="stata"><code>estat hettest, iid
+
+*&gt; Breusch-Pagan / Cook-Weisberg test for heteroskedasticity
+*&gt;          Ho: Constant variance
+*&gt;          Variables: fitted values of food_exp
+*&gt;          chi2(1)      =     7.38
+*&gt;          Prob &gt; chi2  =   0.0066
+
+estat hettest, iid rhs
+
+*&gt; Breusch-Pagan / Cook-Weisberg test for heteroskedasticity
+*&gt;          Ho: Constant variance
+*&gt;          Variables: income
+*&gt;          chi2(1)      =     7.38
+*&gt;          Prob &gt; chi2  =   0.0066</code></pre>
+<p>两个 BP 检验的结果都强烈拒绝同方差的原假设，因此认为存在异方差。</p>
+<p>（4）：怀特检验</p>
+<pre class="stata"><code>estat imtest, white
+
+*&gt; White&#39;s test for Ho: homoskedasticity
+*&gt;          against Ha: unrestricted heteroskedasticity
+
+*&gt;          chi2(2)      =      7.56
+*&gt;          Prob &gt; chi2  =    0.0229
+
+*&gt; Cameron &amp; Trivedi&#39;s decomposition of IM-test
+
+*&gt; ---------------------------------------------------
+*&gt;               Source |       chi2     df      p
+*&gt; ---------------------+-----------------------------
+*&gt;   Heteroskedasticity |       7.56      2    0.0229
+*&gt;             Skewness |       0.13      1    0.7146
+*&gt;             Kurtosis |       0.00      1    0.9825
+*&gt; ---------------------+-----------------------------
+*&gt;                Total |       7.69      4    0.1036
+*&gt; ---------------------------------------------------</code></pre>
+<p>怀特检验的结果也强烈拒绝同方差的原假设，因此认为存在异方差。</p>
+<p>（5）：food_share &amp; income</p>
+<pre class="stata"><code>gen food_share = food_exp / income
+tw ///
+sc food_share income || ///
+lfit food_share income ||, ///
+leg(pos(6) row(1)) ylab(, format(%6.2f))
+gr export &quot;7_3恩格尔系数2.png&quot;, replace</code></pre>
+<p><img src="assets/7_3%E6%81%A9%E6%A0%BC%E5%B0%94%E7%B3%BB%E6%95%B02.png" /></p>
+<p>可以看出异方差现象不如刚刚那般明显了。</p>
+<p>（6）：回归</p>
+<pre class="stata"><code>reg food_share income
+
+*&gt;       Source |       SS           df       MS      Number of obs   =        40
+*&gt; -------------+----------------------------------   F(1, 38)        =     24.39
+*&gt;        Model |  .050217947         1  .050217947   Prob &gt; F        =    0.0000
+*&gt;     Residual |  .078224368        38  .002058536   R-squared       =    0.3910
+*&gt; -------------+----------------------------------   Adj R-squared   =    0.3749
+*&gt;        Total |  .128442315        39  .003293393   Root MSE        =    .04537
+
+*&gt; ------------------------------------------------------------------------------
+*&gt;   food_share |      Coef.   Std. Err.      t    P&gt;|t|     [95% Conf. Interval]
+*&gt; -------------+----------------------------------------------------------------
+*&gt;       income |  -.0000524   .0000106    -4.94   0.000    -.0000739   -.0000309
+*&gt;        _cons |   .2595986   .0220021    11.80   0.000     .2150576    .3041397
+*&gt; ------------------------------------------------------------------------------</code></pre>
+<p>拟合的模型为：</p>
+<p><span class="math display">\[
+food\_share = -5.24e^{-5}income + 0.26 + \varepsilon
+\]</span></p>
+<p>（7）：BP 检验</p>
+<pre class="stata"><code>estat hettest, iid
+
+*&gt; Breusch-Pagan / Cook-Weisberg test for heteroskedasticity
+*&gt;          Ho: Constant variance
+*&gt;          Variables: fitted values of food_share
+*&gt; 
+*&gt;          chi2(1)      =     0.08
+*&gt;          Prob &gt; chi2  =   0.7748
+
+estat hettest, iid rhs
+
+*&gt; Breusch-Pagan / Cook-Weisberg test for heteroskedasticity
+*&gt;          Ho: Constant variance
+*&gt;          Variables: income
+
+*&gt;          chi2(1)      =     0.08
+*&gt;          Prob &gt; chi2  =   0.7748</code></pre>
+<p>两个 BP 检验的结果都无法拒绝同方差的原假设，因此不认为存在异方差。</p>
+<p>（8）：怀特检验</p>
+<pre class="stata"><code>estat imtest, white
+
+*&gt; White&#39;s test for Ho: homoskedasticity
+*&gt;          against Ha: unrestricted heteroskedasticity
+
+*&gt;          chi2(2)      =      2.60
+*&gt;          Prob &gt; chi2  =    0.2722
+
+*&gt; Cameron &amp; Trivedi&#39;s decomposition of IM-test
+
+*&gt; ---------------------------------------------------
+*&gt;               Source |       chi2     df      p
+*&gt; ---------------------+-----------------------------
+*&gt;   Heteroskedasticity |       2.60      2    0.2722
+*&gt;             Skewness |       0.37      1    0.5421
+*&gt;             Kurtosis |       2.71      1    0.1000
+*&gt; ---------------------+-----------------------------
+*&gt;                Total |       5.68      4    0.2244
+*&gt; ---------------------------------------------------</code></pre>
+<p>怀特检验的结果无法拒绝同方差的原假设，因此不认为存在异方差。</p>
+</div>
+<div id="section-48" class="section level2">
+<h2><span class="header-section-number">8.5</span> 习题 9.4</h2>
+<p><strong>【题目】：</strong></p>
+<p>使用数据集<code>Growth.dta</code>考察贸易与增长的关系，该数据集的被解释变量为 65 个国家 1960——1995 年的平均增长率，而主要解释变量为 1960——1995 年的平均贸易开放度（tradeshare）。</p>
+<ol style="list-style-type: decimal">
+<li>将 growth 与 tradeshare 的散点图和线性拟合图画在一起。二者看起来是否有关系？</li>
+<li>有一个国家马耳他（Malta），其贸易开放度比其他国家高很多，在散点图上找出马耳他。它是否像极端值？</li>
+<li>使用全样本，把 growth 对 tradeshare 进行回归，该回归的斜率和截距的估计值分别是多少？</li>
+<li>计算每个观测值的影响力，以及此影响力的最大值和平均值只比，是否存在极端值？</li>
+<li>去掉马耳他重复上述回归，并再次回答（3）中的问题。</li>
+<li>马耳他在哪？马耳他的贸易开放度为什么这么高？是否应该在本研究中去掉马耳他？</li>
+<li>把 growth 对 tradeshare，rgdp60（1960 年的人均 GDP），yearsschool（1960 年的平均受教育年限），rev_coups（1960 年-1995 年的年平均政变次数），以及 assassinations（1960——1995 年的年平均政治暗杀次数）进行回归。评论各变量系数的符号、统计显著性及经济意义。</li>
+<li>为什么把变量 r60 与 yearsschool 的取值定为起初的 1960 年？</li>
+</ol>
+<p><strong>【解答】：</strong></p>
+<p>（1）：散点图&amp;线性拟合图</p>
+<pre class="stata"><code>use growth, clear
+tw ///
+lfit growth tradeshare || ///
+sc growth tradeshare ||, ///
+leg(order(1 &quot;线性拟合值&quot;) pos(1) ring(0) row(1)) ///
+xti(&quot;1960——1995年的平均贸易开放程度&quot;) ///
+yti(&quot;1960——1995年的平均增长率&quot;) ///
+xlab(, format(%6.0f))
+gr export &quot;9_4散点+线性拟合图.png&quot;, replace</code></pre>
+<p><img src="assets/9_4%E6%95%A3%E7%82%B9+%E7%BA%BF%E6%80%A7%E6%8B%9F%E5%90%88%E5%9B%BE.png" /></p>
+<p>显然，贸易开放程度和经济增长之间存在正相关的关系。</p>
+<p>（2）：马耳他</p>
+<pre class="stata"><code>* 预保存数据
+preserve
+keep if country_name == &quot;Malta&quot;
+* 存储马耳他的数据
+local y = growth[1]
+local x = tradeshare[1]
+di &quot;x = &quot; `x&#39; &quot; 而 y = &quot;`y&#39;
+* 恢复数据
+restore
+* 可以看到local变量还在
+di &quot;x = &quot; `x&#39; &quot; 而 y = &quot;`y&#39;
+
+tw ///
+lfit growth tradeshare || ///
+scatteri `y&#39; `x&#39; (7) &quot;马耳他&quot;, ms(D) mc(&quot;dkorange&quot;) || ///
+sc growth tradeshare if country_name != &quot;Malta&quot; ||, ///
+leg(order(1 &quot;线性拟合值&quot;) pos(1) ring(0) row(1)) ///
+xti(&quot;1960——1995年的平均贸易开放程度&quot;) ///
+yti(&quot;1960——1995年的平均增长率&quot;) ///
+xlab(, format(%6.0f))
+gr export &quot;9_4散点+线性拟合图+极端值.png&quot;, replace</code></pre>
+<p><img src="assets/9_4%E6%95%A3%E7%82%B9+%E7%BA%BF%E6%80%A7%E6%8B%9F%E5%90%88%E5%9B%BE+%E6%9E%81%E7%AB%AF%E5%80%BC.png" /></p>
+<p>可以看出，马耳他看起来很像极端值。</p>
+<p>（3）：全样本回归</p>
+<pre class="stata"><code>reg growth tradeshare
+
+*&gt;       Source |       SS           df       MS      Number of obs   =        65
+*&gt; -------------+----------------------------------   F(1, 63)        =      8.89
+*&gt;        Model |  28.4885066         1  28.4885066   Prob &gt; F        =    0.0041
+*&gt;     Residual |  201.851551        63  3.20399287   R-squared       =    0.1237
+*&gt; -------------+----------------------------------   Adj R-squared   =    0.1098
+*&gt;        Total |  230.340057        64  3.59906339   Root MSE        =      1.79
+*&gt; ------------------------------------------------------------------------------
+*&gt;       growth |      Coef.   Std. Err.      t    P&gt;|t|     [95% Conf. Interval]
+*&gt; -------------+----------------------------------------------------------------
+*&gt;   tradeshare |   2.306434    .773485     2.98   0.004     .7607473     3.85212
+*&gt;        _cons |   .6402653   .4899767     1.31   0.196    -.3388749    1.619405
+*&gt; ------------------------------------------------------------------------------</code></pre>
+<p>斜率为<code>2.3064</code>，截距为<code>0.6403</code>。</p>
+<p>（4）：影响力</p>
+<pre class="stata"><code>* 计算leverage
+predict lev, lev
+qui sum lev
+di r(max)/r(mean)</code></pre>
+<p>计算的结果为 12.87，经验规则表明，这是相当大的，因此认为存在极端值。</p>
+<p>（5）：去掉极端值的回归</p>
+<pre class="stata"><code>reg growth tradeshare if country_name != &quot;Malta&quot;
+
+*&gt;       Source |       SS           df       MS      Number of obs   =        64
+*&gt; -------------+----------------------------------   F(1, 62)        =      2.90
+*&gt;        Model |  9.28031557         1  9.28031557   Prob &gt; F        =    0.0937
+*&gt;     Residual |  198.527844        62  3.20206201   R-squared       =    0.0447
+*&gt; -------------+----------------------------------   Adj R-squared   =    0.0292
+*&gt;        Total |   207.80816        63  3.29854222   Root MSE        =    1.7894
+*&gt; 
+*&gt; ------------------------------------------------------------------------------
+*&gt;       growth |      Coef.   Std. Err.      t    P&gt;|t|     [95% Conf. Interval]
+*&gt; -------------+----------------------------------------------------------------
+*&gt;   tradeshare |   1.680905   .9873624     1.70   0.094    -.2928046    3.654614
+*&gt;        _cons |   .9574107   .5803727     1.65   0.104    -.2027378    2.117559
+*&gt; ------------------------------------------------------------------------------</code></pre>
+<p>此时斜率为 1.6809，截距为 0.9574。（对比刚刚的（2.3064 和 0.6403））</p>
+<p>（6）：马耳他
+马耳他是一个位于地中海中心的岛国。是一个高度发达的资本主义国家，经济以服务业和金融业为主，旅游业是马耳他主要的外汇来源。马耳他同 100 多个国家和地区有贸易关系，欧盟是马耳他最重要的贸易伙伴。另外，马耳他社会保障体系较为完备，实行免费教育，免费医疗及退休保险制。
+也就是地中海的这个位置：</p>
+<p>绘图代码（<a href="https://rstudio.github.io/leaflet/">R 语言 + leaflet</a>）:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(leaflet)
+
+Maltatag &lt;-<span class="st"> </span><span class="kw">makeIcon</span>(
+  <span class="dt">iconUrl =</span> <span class="st">&quot;malta.jpeg&quot;</span>,
+  <span class="dt">iconWidth =</span> <span class="dv">90</span>, <span class="dt">iconHeight =</span> <span class="dv">55</span>,
+  <span class="dt">iconAnchorX =</span> <span class="dv">22</span>, <span class="dt">iconAnchorY =</span> <span class="dv">94</span>
+)
+content &lt;-<span class="st"> </span><span class="kw">paste</span>(<span class="dt">sep =</span> <span class="st">&quot;&lt;br/&gt;&quot;</span>,
+                 <span class="st">&quot;&lt;b&gt;&lt;a href=&#39;https://baike.baidu.com/item/%E9%A9%AC%E8%80%B3%E4%BB%96&#39;&gt;马耳他&lt;/a&gt;&lt;/b&gt;&quot;</span>,
+                 <span class="st">&quot;人口：44万&quot;</span>,
+                 <span class="st">&quot;面积：316平方公里&quot;</span>
+)
+
+<span class="kw">leaflet</span>(<span class="dt">width =</span> <span class="st">&quot;100%&quot;</span>, <span class="dt">height =</span> <span class="st">&quot;500px&quot;</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">setView</span>(<span class="dt">lng =</span> <span class="fl">14.31</span>, <span class="dt">lat =</span> <span class="fl">35.53</span>, <span class="dt">zoom =</span> <span class="dv">5</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">addTiles</span>() <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">addPopups</span>(<span class="dt">lng =</span> <span class="fl">14.31</span>, <span class="dt">lat =</span> <span class="fl">36.5</span>, content) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">addMarkers</span>(<span class="dt">lng =</span> <span class="fl">17.31</span>, <span class="dt">lat =</span> <span class="fl">32.5</span>, <span class="dt">icon =</span> Maltatag)</code></pre>
+<div id="htmlwidget-e2d6cf5f3498c35bcc8d" style="width:100%;height:500px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e2d6cf5f3498c35bcc8d">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"setView":[[35.53,14.31],5,[]],"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addPopups","args":[36.5,14.31,"<b><a href='https://baike.baidu.com/item/%E9%A9%AC%E8%80%B3%E4%BB%96'>马耳他<\/a><\/b><br/>人口：44万<br/>面积：316平方公里",null,null,{"maxWidth":300,"minWidth":50,"autoPan":true,"keepInView":false,"closeButton":true,"className":""}]},{"method":"addMarkers","args":[32.5,17.31,{"iconUrl":{"data":"malta.jpeg","index":0},"iconWidth":90,"iconHeight":55,"iconAnchorX":22,"iconAnchorY":94},null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[32.5,36.5],"lng":[14.31,17.31]}},"evals":[],"jsHooks":[]}</script>
+<p>由于马耳他是极端值且对估计结果影响较大，所以还是去掉比较好。</p>
+<p>（7）：完整模型的估计</p>
+<pre class="stata"><code>reg growth tradeshare rgdp60 yearsschool rev_coups assasinations
+
+*&gt;       Source |       SS           df       MS      Number of obs   =        65
+*&gt; -------------+----------------------------------   F(5, 59)        =      6.61
+*&gt;        Model |  82.6634812         5  16.5326962   Prob &gt; F        =    0.0001
+*&gt;     Residual |  147.676576        59  2.50299281   R-squared       =    0.3589
+*&gt; -------------+----------------------------------   Adj R-squared   =    0.3045
+*&gt;        Total |  230.340057        64  3.59906339   Root MSE        =    1.5821
+*&gt; 
+*&gt; -------------------------------------------------------------------------------
+*&gt;        growth |      Coef.   Std. Err.      t    P&gt;|t|     [95% Conf. Interval]
+*&gt; --------------+----------------------------------------------------------------
+*&gt;    tradeshare |   1.561696   .7579475     2.06   0.044     .0450462    3.078345
+*&gt;        rgdp60 |  -.0004693   .0001482    -3.17   0.002    -.0007659   -.0001728
+*&gt;   yearsschool |   .5748461   .1393379     4.13   0.000     .2960316    .8536606
+*&gt;     rev_coups |  -2.157503   1.110292    -1.94   0.057    -4.379191    .0641853
+*&gt; assasinations |   .3540784   .4773943     0.74   0.461    -.6011854    1.309342
+*&gt;         _cons |   .4897603   .6895996     0.71   0.480    -.8901254    1.869646
+*&gt; -------------------------------------------------------------------------------</code></pre>
+<ol style="list-style-type: decimal">
+<li>tradeshare：符号为正，在 5%的显著性水平上显著，表示平均贸易开放程度每增加一个单位，经济平均增长率平均上升 1.56%。</li>
+<li>rgdp60：符号为负，在 5%的显著性水平上显著，表示 1960 年的人均 GDP 每增加一块钱，经济平均增长率就平均下降 0.00047%。</li>
+<li>yearsschool：符号为正，在 5%的显著性水平上显著，表示 1960 年的平均受教育年限每增加 1 年，经济平均增长率就平均上升 0.57%。</li>
+<li>rev_coups：符号为负，在 10%的显著性水平上显著，表示 1960——1995 年间的年平均政变次数每增加一次，经济平均增长率就平均下降 2.15%。</li>
+<li>assassinations：符号为负，但是很不显著，因此没有意义。</li>
+</ol>
+<p>（8）：期初
+这样可以避免逆向因果的问题，而且比较符合逻辑。</p>
+<hr />
+</div>
+<div id="section-49" class="section level2">
+<h2><span class="header-section-number">8.6</span> 习题 9.5</h2>
+<p><strong>【题目】：</strong>
+美国的汽油需求函数是否稳定？使用数据集<code>gasoline.dta</code>，估计美国 1953——2004 年的汽油需求函数（参见第八章）：</p>
+<p><span class="math display">\[\begin{align}
+lgasq_t =&amp; \beta_0 + \beta_1 lgasq_{t-1} + \beta_2lincome_t + \beta_3lgasp_t \\
+&amp; + \beta_4lpnc_t + \beta_5lpuc_t + \varepsilon_t
+\end{align}\]</span></p>
+<p>其中被解释变量 lgasq 为人均汽油消费量的对数，解释变量 lincome 为人均收入对数，lgasp 为汽油价格指数的对数，lpnc 为新车价格指数的对数，lpuc 为二手车价格指数的对数。</p>
+<ol style="list-style-type: decimal">
+<li>将 lgasq 与 lgasp 的时间趋势图画在一起。根据此图，在 1953——2004 年期间，美国的汽油需求函数是否曾出现结构变动？</li>
+<li>使用 OLS 估计方程（9.48）.</li>
+<li>使用 BP 检验与怀特检验，检验是否存在异方差。</li>
+<li>使用 BG 检验与 Q 检验，检验是否存在自相关。</li>
+<li>1973 年 10 月爆发石油危机，可能引发汽油需求的结构变动。使用虚拟变量法，检验美国的汽油需求函数是否在 1974 年发生结构变动。根据（3）与（4）的检验结果决定是否应该使用稳健标准误。</li>
+</ol>
+<p><strong>【解答】：</strong></p>
+<p>（1）：时间趋势图</p>
+<pre class="stata"><code>use gasoline, clear
+* 使用调色板命令配色
+colorscheme 3, palette(Dark2)
+ret list
+* &quot;027 158 119&quot; &quot;217 095 002&quot;
+tw ///
+line lgasq year, lc(&quot;027 158 119&quot;) yaxis(1) || ///
+line lgasp year, lc(&quot;217 095 002&quot;) yaxis(2) ||, ///
+leg(order(1 &quot;对数人均汽油消费量&quot; 2 &quot;对数汽油价格指数&quot;) pos(10) ring(0)) ///
+yti(&quot;对数人均汽油消费量&quot;, axis(1)) ///
+yti(&quot;对数汽油价格指数&quot;, axis(2)) ///
+xti(&quot;年份&quot;)
+
+gr export &quot;9_5趋势图.png&quot;, replace</code></pre>
+<p><img src="assets/9_5%E8%B6%8B%E5%8A%BF%E5%9B%BE.png" /></p>
+<p>（2）：OLS 估计</p>
+<pre class="stata"><code>reg lgasq l.lgasq lincome lgasp lpnc lpuc
+
+*&gt;       Source |       SS           df       MS      Number of obs   =        51
+*&gt; -------------+----------------------------------   F(5, 45)        =   1830.77
+*&gt;        Model |  2.59056415         5   .51811283   Prob &gt; F        =    0.0000
+*&gt;     Residual |  .012735088        45  .000283002   R-squared       =    0.9951
+*&gt; -------------+----------------------------------   Adj R-squared   =    0.9946
+*&gt;        Total |  2.60329924        50  .052065985   Root MSE        =    .01682
+*&gt; 
+*&gt; ------------------------------------------------------------------------------
+*&gt;        lgasq |      Coef.   Std. Err.      t    P&gt;|t|     [95% Conf. Interval]
+*&gt; -------------+----------------------------------------------------------------
+*&gt;        lgasq |
+*&gt;          L1. |   .8309713   .0457633    18.16   0.000     .7387994    .9231433
+*&gt;              |
+*&gt;      lincome |   .1640462   .0550263     2.98   0.005     .0532175    .2748748
+*&gt;        lgasp |  -.0695317   .0147326    -4.72   0.000    -.0992047   -.0398587
+*&gt;         lpnc |  -.1783946   .0551726    -3.23   0.002    -.2895179   -.0672714
+*&gt;         lpuc |   .1270093   .0357704     3.55   0.001      .054964    .1990546
+*&gt;        _cons |   -3.12318   .9958266    -3.14   0.003    -5.128878   -1.117483
+*&gt; ------------------------------------------------------------------------------</code></pre>
+<p>拟合的模型为：</p>
+<p><span class="math display">\[\begin{align}
+lgasq_t =&amp; -3.12 + 0.83 lgasq_{t-1} + 0.16lincome_t + -0.07lgasp_t \\
+&amp; - 0.18lpnc_t + 0.13lpuc_t + \varepsilon_t
+\end{align}\]</span></p>
+<p>（3）：异方差检验</p>
+<pre class="stata"><code>estat hettest, iid
+
+*&gt; Breusch-Pagan / Cook-Weisberg test for heteroskedasticity
+*&gt;          Ho: Constant variance
+*&gt;          Variables: fitted values of lgasq
+
+*&gt;          chi2(1)      =     0.31
+*&gt;          Prob &gt; chi2  =   0.5788
+
+estat hettest, iid rhs
+
+*&gt; Breusch-Pagan / Cook-Weisberg test for heteroskedasticity
+*&gt;          Ho: Constant variance
+*&gt;          Variables: L.lgasq lincome lgasp lpnc lpuc
+*&gt;          chi2(5)      =     7.46
+*&gt;          Prob &gt; chi2  =   0.1884
+
+estat imtest, white
+
+*&gt; White&#39;s test for Ho: homoskedasticity
+*&gt;          against Ha: unrestricted heteroskedasticity
+*&gt; 
+*&gt;          chi2(20)     =     33.20
+*&gt;          Prob &gt; chi2  =    0.0321
+*&gt; 
+*&gt; Cameron &amp; Trivedi&#39;s decomposition of IM-test
+*&gt; 
+*&gt; ---------------------------------------------------
+*&gt;               Source |       chi2     df      p
+*&gt; ---------------------+-----------------------------
+*&gt;   Heteroskedasticity |      33.20     20    0.0321
+*&gt;             Skewness |       9.58      5    0.0881
+*&gt;             Kurtosis |       0.61      1    0.4356
+*&gt; ---------------------+-----------------------------
+*&gt;                Total |      43.38     26    0.0176
+*&gt; ---------------------------------------------------</code></pre>
+<p>两种 BP 检验的结果表明无法拒绝同方差的原假设，而怀特检验表明拒绝同方差的原假设。考虑到两种检验的区别，所以结论是：不存在线性的异方差，但是存在非线性的异方差。</p>
+<p>（4）：自相关检验</p>
+<pre class="stata"><code>tsset year
+*&gt;    time variable:  year, 1953 to 2004
+*&gt;            delta:  1 unit
+
+qui reg lgasq l.lgasq lincome lgasp lpnc lpuc
+
+* BG检验
+estat bgo
+
+*&gt; Breusch-Godfrey LM test for autocorrelation
+*&gt; ---------------------------------------------------------------------------
+*&gt;     lags(p)  |          chi2               df                 Prob &gt; chi2
+*&gt; -------------+-------------------------------------------------------------
+*&gt;        1     |          0.545               1                   0.4603
+*&gt; ---------------------------------------------------------------------------
+*&gt;                         H0: no serial correlation
+
+estat bgo, nom
+
+*&gt; Breusch-Godfrey LM test for autocorrelation
+*&gt; ---------------------------------------------------------------------------
+*&gt;     lags(p)  |          chi2               df                 Prob &gt; chi2
+*&gt; -------------+-------------------------------------------------------------
+*&gt;        1     |          1.361               1                   0.2434
+*&gt; ---------------------------------------------------------------------------
+*&gt;                         H0: no serial correlation
+
+* Q检验
+
+predict e1, r
+*&gt; (1 missing value generated)
+
+wntestq e1
+
+*&gt; Portmanteau test for white noise
+*&gt; ---------------------------------------
+*&gt;  Portmanteau (Q) statistic =    25.2413
+*&gt;  Prob &gt; chi2(23)           =     0.3380</code></pre>
+<p>两种检验都无法拒绝无自相关的原假设。</p>
+<p>（5）：检验结构变动</p>
+<pre class="stata"><code>use gasoline, clear
+gen yearid = (year &gt;= 1973)
+gen interaction = yearid * lgasp
+reg lgasq l.lgasq lincome lgasp lpnc lpuc yearid interaction, r
+
+*&gt; Linear regression                               Number of obs     =         51
+*&gt;                                                 F(7, 43)          =    2328.20
+*&gt;                                                 Prob &gt; F          =     0.0000
+*&gt;                                                 R-squared         =     0.9967
+*&gt;                                                 Root MSE          =     .01421*&gt; 
+
+*&gt; ------------------------------------------------------------------------------
+*&gt;              |               Robust
+*&gt;        lgasq |      Coef.   Std. Err.      t    P&gt;|t|     [95% Conf. Interval]
+*&gt; -------------+----------------------------------------------------------------
+*&gt;        lgasq |
+*&gt;          L1. |   .4682407    .096862     4.83   0.000     .2728999    .6635815
+*&gt;              |
+*&gt;      lincome |   .3143699   .0528124     5.95   0.000     .2078636    .4208762
+*&gt;        lgasp |   .5230541   .1386092     3.77   0.000      .243522    .8025862
+*&gt;         lpnc |  -.0353864   .0503548    -0.70   0.486    -.1369365    .0661638
+*&gt;         lpuc |   .0381906   .0297671     1.28   0.206    -.0218405    .0982217
+*&gt;       yearid |   1.934971     .42312     4.57   0.000     1.081668    2.788274
+*&gt;  interaction |  -.6175106   .1377708    -4.48   0.000    -.8953518   -.3396694
+*&gt;        _cons |  -11.08808   2.034093    -5.45   0.000    -15.19022   -6.985939
+*&gt; ------------------------------------------------------------------------------
+
+* 另外再进行检验
+test yearid interaction
+
+*&gt; ( 1)  yearid = 0
+*&gt; ( 2)  interaction = 0
+*&gt;       F(  2,    43) =   18.80
+*&gt;            Prob &gt; F =    0.0000</code></pre>
+<p>由于存在异方差问题，所以使用稳健的标准误。
+可以看出生成的虚拟变量和虚拟变量与汽油价格指数对数的交互项的系数都非常显著，因此认为在 1973 年发生了结构变动。</p>
+</div>
+<div id="section-50" class="section level2">
+<h2><span class="header-section-number">8.7</span> 习题 10.5</h2>
+<p><strong>【题目】：</strong>
+使用数据集<code>acemoglu.dta</code>。该数据集包含 64 个曾为欧洲殖民地的国家，主要变量为<code>logpgp95</code>（1995 年人均 GDP，PPP），<code>avexpr</code>（1985——1995 年间的平均产权保护程度，0 为最低，10 为最高），<code>lat_abst</code>（首都纬度的绝对值/90），以及<code>logem4</code>（殖民者死亡率的对数）。另外，变量<code>shortnam</code>以三个字母表示每个国家的简称。</p>
+<ol style="list-style-type: decimal">
+<li>为了直观地考察产权保护与经济发展的关系，将<code>logpgp95</code>和<code>avexpr</code>的散点图和线性拟合图画在一起，并为每个散点标注国家简称。</li>
+<li>为了使用稳健标准误，把<code>logpgp95</code>对<code>avexpr</code>及<code>lat_abst</code>进行回归，评论变量的符号、统计显著性及经济意义。</li>
+<li>由于<code>avexpr</code>可能为内生解释变量，使用<code>logem4</code>作为<code>avexpr</code>的工具变量，重新进行（2）回归。工具变量回归的结果与 OLS 有何不同？</li>
+<li><code>logem4</code>是否为弱工具变量？</li>
+</ol>
+<p><strong>【解答】：</strong></p>
+<p>（1）：散点图+线性拟合图+散点标签</p>
+<pre class="stata"><code>cuse acemoglu, clear web
+* 这里需要处理一下散点标签遮盖的问题
+* ssc install egenmore
+egen clock = mlabvpos(logpgp95 avexpr)
+tw ///
+sc logpgp95 avexpr, mlab(shortnam) mlabvpos(clock) || ///
+lfit logpgp95 avexpr ||, ///
+  leg(order(1 &quot;1995年PPP人均GDP&quot; 2 &quot;线性拟合值&quot;) pos(10) ring(0)) ///
+  xti(&quot;1985——1995年间的平均产权保护程度&quot;)
+gr export &quot;10_5散点图.png&quot;, replace</code></pre>
+<p><img src="assets/10_5%E6%95%A3%E7%82%B9%E5%9B%BE.png" /></p>
+<p>虽然还是不能完美的处理散点遮盖的问题，但是已经处理的相当不错了，如果你想追求完全没有任何散点遮盖，你可以逐个修改 clock 变量的某些值。不过 R 的 ggplot2+ggrepel 包能够完美的解决散点相互遮盖的问题。</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># install.packages(&quot;RStata&quot;)</span>
+<span class="co"># 读取数据的方法一：使用RStata包，</span>
+<span class="co"># 该包的详细使用可以参考：https://www.czxa.top/posts/13184/</span>
+<span class="kw">library</span>(RStata)
+<span class="kw">library</span>(ggplot2)
+<span class="kw">library</span>(ggrepel)
+<span class="kw">options</span>(<span class="st">&quot;RStata.StataPath&quot;</span> =<span class="st"> &quot;/Applications/Stata/StataSE.app/Contents/MacOS/stata-se&quot;</span>)
+<span class="kw">options</span>(<span class="st">&quot;RStata.StataVersion&quot;</span> =<span class="st"> </span><span class="dv">15</span>)
+s &lt;-<span class="st"> </span><span class="kw">stata</span>(<span class="st">&quot;cuse acemoglu, clear web&quot;</span>, <span class="dt">data.out =</span> T)
+
+<span class="co"># 读取数据的方法二：使用readstata13包直接读取dta文件，</span>
+<span class="co"># 之所以用这个包的原因是这个包读地最快。</span>
+<span class="kw">library</span>(readstata13)
+s &lt;-<span class="st"> </span><span class="kw">read.dta13</span>(<span class="st">&quot;acemoglu.dta&quot;</span>)
+<span class="co"># 之所以为散点创建颜色映射，是因为我闲的无聊</span>
+<span class="kw">ggplot</span>(<span class="dt">data =</span> s, <span class="kw">aes</span>(<span class="dt">x =</span> avexpr, <span class="dt">y =</span> logpgp95, <span class="dt">colour =</span> shortnam)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="dt">se =</span> F, <span class="dt">colour =</span> <span class="st">&quot;#fc8d62&quot;</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_label_repel</span>(<span class="dt">arrow =</span> <span class="kw">arrow</span>(<span class="dt">length =</span> <span class="kw">unit</span>(<span class="fl">0.01</span>, <span class="st">&quot;npc&quot;</span>),
+                  <span class="dt">type =</span> <span class="st">&quot;closed&quot;</span>, <span class="dt">ends =</span> <span class="st">&quot;first&quot;</span>),
+                  <span class="dt">force =</span> <span class="dv">10</span>,
+    <span class="kw">aes</span>(<span class="dt">label =</span> shortnam)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;1985——1995年间的平均产权保护程度&quot;</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.title.y =</span> <span class="kw">element_blank</span>()) <span class="op">+</span>
+<span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">&quot;none&quot;</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.title.x =</span> <span class="kw">element_text</span>(<span class="dt">size =</span> <span class="dv">14</span>))</code></pre>
+<p><img src="assets/10_5%E6%95%A3%E7%82%B9%E5%9B%BEr.png" /></p>
+<p>取消颜色映射：</p>
+<pre class="stata"><code>ggplot(data = s, aes(x = avexpr, y = logpgp95)) +
+  geom_point() +
+  geom_smooth(method = &quot;lm&quot;, se = F, colour = &quot;#fc8d62&quot;) +
+  geom_label_repel(arrow = arrow(length = unit(0.01, &quot;npc&quot;),
+                  type = &quot;closed&quot;, ends = &quot;first&quot;),
+                  force = 10,
+    aes(label = shortnam)) +
+  labs(x = &quot;1985——1995年间的平均产权保护程度&quot;) +
+  theme(axis.title.y = element_blank()) +
+  theme(legend.position = &quot;none&quot;) +
+  theme(axis.title.x = element_text(size = 14))</code></pre>
+<p><img src="assets/10_5%E6%95%A3%E7%82%B9%E5%9B%BEr1.png" /></p>
+<p>（2）：稳健回归</p>
+<pre class="stata"><code>reg logpgp95 avexpr lat_abst, r
+
+*&gt; Linear regression                               Number of obs     =         64
+*&gt;                                                 F(2, 61)          =      64.91
+*&gt;                                                 Prob &gt; F          =     0.0000
+*&gt;                                                 R-squared         =     0.5745
+*&gt;                                                 Root MSE          =     .69166
+*&gt; ------------------------------------------------------------------------------
+*&gt;              |               Robust
+*&gt;     logpgp95 |      Coef.   Std. Err.      t    P&gt;|t|     [95% Conf. Interval]
+*&gt; -------------+----------------------------------------------------------------
+*&gt;       avexpr |   .4678871   .0626811     7.46   0.000     .3425484    .5932257
+*&gt;     lat_abst |   1.576884   .6506046     2.42   0.018     .2759197    2.877848
+*&gt;        _cons |   4.728082   .3413732    13.85   0.000     4.045464      5.4107
+*&gt; ------------------------------------------------------------------------------</code></pre>
+<ol style="list-style-type: decimal">
+<li>avexpr：符号为正，表示 1985——1995 年间的平均产权保护程度每提高 1，1995 年的 PPP 人均 GDP 平均提高 47%。</li>
+<li>lat_abst：符号为正，表示纬度每上升 1%，1995 年的 PPP 人均 GDP 平均提高 1.57%。</li>
+</ol>
+<p>（3）：IV</p>
+<pre class="stata"><code>ivregress 2sls logpgp95 (avexpr = logem4) lat_abst, r
+
+*&gt; Instrumental variables (2SLS) regression          Number of obs   =         64
+*&gt;                                                   Wald chi2(2)    =      28.33
+*&gt;                                                   Prob &gt; chi2     =     0.0000
+*&gt;                                                   R-squared       =     0.1025
+*&gt;                                                   Root MSE        =      .9807
+
+*&gt; ------------------------------------------------------------------------------
+*&gt;              |               Robust
+*&gt;     logpgp95 |      Coef.   Std. Err.      z    P&gt;|z|     [95% Conf. Interval]
+*&gt; -------------+----------------------------------------------------------------
+*&gt;       avexpr |    .995704   .2403256     4.14   0.000     .5246745    1.466734
+*&gt;     lat_abst |  -.6472071   1.227012    -0.53   0.598    -3.052107    1.757692
+*&gt;        _cons |   1.691814   1.447779     1.17   0.243    -1.145781    4.529409
+*&gt; ------------------------------------------------------------------------------
+*&gt; Instrumented:  avexpr
+*&gt; Instruments:   lat_abst logem4</code></pre>
+<p>IV 的回归结果中 avexpr 的系数变大，lat_abst 的系数由正变负，但是不再显著。</p>
+<p>（4）：弱工具变量检验</p>
+<pre class="stata"><code>estat first
+
+*&gt; First-stage regression summary statistics
+*&gt; --------------------------------------------------------------------------
+*&gt;              |            Adjusted      Partial       Robust
+*&gt;     Variable |   R-sq.       R-sq.        R-sq.       F(1,61)   Prob &gt; F
+*&gt; -------------+------------------------------------------------------------
+*&gt;       avexpr |  0.2960      0.2729       0.1767       9.52499    0.0030
+*&gt; --------------------------------------------------------------------------</code></pre>
+<p>由于 F 统计量小于 10，因此无法拒绝存在弱工具变量的原假设，认为其是弱工具变量。</p>
+<hr />
+</div>
+<div id="section-51" class="section level2">
+<h2><span class="header-section-number">8.8</span> 习题 10.6</h2>
+<p><strong>【题目】：</strong>
+生育行为如何影响劳动力供给？具体来说，如果妇女多生一位小孩，其劳动力供给将下降多少？本题使用来自美国 1980 年人口普查的数据集<code>fertility_small.dta</code>进行估计。此数据集包含了美国 21～35 岁已婚且有两个或更多子女的妇女信息，主要变量为 weeks（1979 年的工作周数），morekids（是否有两个以上小孩），以及 samesex（头两个小孩是否性别相同）。</p>
+<ol style="list-style-type: decimal">
+<li>把 weeks 对虚拟变量 morekids 进行回归。有两个以上小孩的的妇女是否比有两个小孩的妇女工作更少？少多少？此效应是否在统计上显著？</li>
+<li>上面（1）的回归能否估计生育行为对劳动力供给的因果效应？为什么？</li>
+<li>把 morekids 对 samesex 进行回归。如果头两个小孩的性别相同，是否更可能生第三个小孩，此效应大么？是否在统计上显著？</li>
+<li>在 weeks 对 morekids 的回归中，能否将 samesex 作为有效工具变量？为什么？</li>
+<li>samesex 是否为弱工具变量？</li>
+<li>以 samesex 为工具变量，把 weeks 对 morekids 进行回归。生育行为对劳动力供给的效应有多大？是否在统计上显著？</li>
+</ol>
+<p><strong>【解答】：</strong></p>
+<p>（1）：OLS</p>
+<pre class="stata"><code>cuse fertility_small.dta, clear
+reg weeks morekids
+
+*&gt;      Source |       SS           df       MS      Number of obs   =    30,000
+*&gt; -------------+----------------------------------   F(1, 29998)     =    538.16
+*&gt;       Model |  254515.369         1  254515.369   Prob &gt; F        =    0.0000
+*&gt;    Residual |  14187250.9    29,998  472.939893   R-squared       =    0.0176
+*&gt; -------------+----------------------------------   Adj R-squared   =    0.0176
+*&gt;       Total |  14441766.3    29,999  481.408257   Root MSE        =    21.747
+*&gt; ------------------------------------------------------------------------------
+*&gt;       weeks |      Coef.   Std. Err.      t    P&gt;|t|     [95% Conf. Interval]
+*&gt; -------------+----------------------------------------------------------------
+*&gt;    morekids |  -6.008217   .2589951   -23.20   0.000    -6.515858   -5.500575
+*&gt;       _cons |    21.4782   .1591503   134.96   0.000     21.16626    21.79014
+*&gt; ------------------------------------------------------------------------------</code></pre>
+<p>从结果可以看出，有两个以上小孩的妇女确实比只有两个孩子的妇女的工作时间更少，在 5%的显著性水平上显著，平均每周少 6 个小时。</p>
+<p>（2）：因果判断
+显然是不能的，这里面存在逆向因果的问题，也就是妇女可能会因为有闲暇时间而选择生孩子。</p>
+<p>（3）：回归</p>
+<pre class="stata"><code>reg morekids samesex
+
+*&gt;       Source |       SS           df       MS      Number of obs   =    30,000
+*&gt; -------------+----------------------------------   F(1, 29998)     =    143.15
+*&gt;        Model |  33.4852461         1  33.4852461   Prob &gt; F        =    0.0000
+*&gt;     Residual |  7017.06195    29,998   .23391766   R-squared       =    0.0047
+*&gt; -------------+----------------------------------   Adj R-squared   =    0.0047
+*&gt;        Total |   7050.5472    29,999  .235026074   Root MSE        =    .48365
+*&gt; ------------------------------------------------------------------------------
+*&gt;     morekids |      Coef.   Std. Err.      t    P&gt;|t|     [95% Conf. Interval]
+*&gt; -------------+----------------------------------------------------------------
+*&gt;      samesex |   .0668197   .0055848    11.96   0.000     .0558732    .0777662
+*&gt;        _cons |   .3439785   .0039616    86.83   0.000     .3362137    .3517433
+*&gt; ------------------------------------------------------------------------------</code></pre>
+<p>结果显著为正，表明如果前两个孩子性别相同，更可能生第三个孩子。但是效应不大。</p>
+<p>（4）：IV
+从逻辑上分析 samesex 变量影响 morekids（相关性），且 weeks 不会影响 samesex（外生性），所以 samesex 是一个很好的工具变量。</p>
+<p>（5）：弱工具变量的检验</p>
+<pre class="stata"><code>ivregress 2sls weeks (morekids = samesex), r
+
+*&gt; Instrumental variables (2SLS) regression          Number of obs   =     30,000
+*&gt;                                                   Wald chi2(1)    =       2.58
+*&gt;                                                   Prob &gt; chi2     =     0.1084
+*&gt;                                                   R-squared       =     0.0176
+*&gt;                                                   Root MSE        =     21.746
+*&gt; ------------------------------------------------------------------------------
+*&gt;              |               Robust
+*&gt;        weeks |      Coef.   Std. Err.      z    P&gt;|z|     [95% Conf. Interval]
+*&gt; -------------+----------------------------------------------------------------
+*&gt;     morekids |  -6.033194   3.758162    -1.61   0.108    -13.39906    1.332668
+*&gt;        _cons |   21.48763   1.425247    15.08   0.000      18.6942    24.28107
+*&gt; ------------------------------------------------------------------------------
+*&gt; Instrumented:  morekids
+*&gt; Instruments:   samesex
+
+estat first
+
+*&gt; First-stage regression summary statistics
+*&gt; --------------------------------------------------------------------------
+*&gt;              |            Adjusted      Partial       Robust
+*&gt;     Variable |   R-sq.       R-sq.        R-sq.    F(1,29998)   Prob &gt; F
+*&gt; -------------+------------------------------------------------------------
+*&gt;     morekids |  0.0047      0.0047       0.0047       143.213    0.0000
+*&gt; --------------------------------------------------------------------------</code></pre>
+<p>对工具变量的有效性检验表明，F &gt; 10，因此拒绝 samesex 是弱工具变量的原假设。</p>
+<p>（6）：IV</p>
+<p>（5）中的回归结果表明生育行为对劳动力的供给确实会存在影响，具体来说，生育超过两个孩子的妇女平均比只生育两个孩子的妇女每周少工作 6 个小时。结果并不显著的。</p>
+<p>（7）：增加控制变量
+回归略；结果发生了变化，因为这些被遗漏的控制变量会对生育行为产生影响。</p>
+<hr />
+</div>
+<div id="section-52" class="section level2">
+<h2><span class="header-section-number">8.9</span> 习题 12.3</h2>
+<p><strong>【题目】：</strong>
+数据集 <code>munnell.dta</code> 包含了美国 48 个州、1970——1986 年的年度数据。为了估计公共资本对经济增长的贡献，使用此数据集进行以下回归：</p>
+<p><span class="math display">\[\begin{align}
+lny_{it} = &amp; \beta_0 + \beta_1lnk_{1, it} + \beta_2lnk_{2, ik} + \\
+&amp; \beta_3lnlabor_{it} + \beta_4unemp_{it} + u_{i} + \varepsilon_{it}
+\end{align}\]</span></p>
+<p>其中，y 为州产值（gross state product），<span class="math inline">\(k_1\)</span>为公共资本，<span class="math inline">\(k_2\)</span>为私人资本存量，labor 为非农劳动力，unemp 为州失业率（反映影响产出的经济周期因素）。面板变量为 state，时间变量为 year。
+1. 进行混合回归，评论<span class="math inline">\(lnk_1\)</span>的系数符号、显著性与经济意义。
+2. 对随机效应模型进行 FGLS 估计。<span class="math inline">\(lnk_1\)</span>的系数符号与显著性是否有变化？检验是否存在个体随机效应。
+3. 对随机效应模型进行 MLE 估计。
+4. 对固定效应模型进行组内估计。<span class="math inline">\(lnk_1\)</span>的系数符号与显著性是否有变化？
+5. 对固定效应进行 LSDV 估计， 检验是否存在个体固定效应。
+6. 进行传统的豪斯曼检验。
+7. 进行稳健的豪斯曼检验。
+8. 在组内估计中，加入时间趋势项。时间趋势项是否显著？
+9. 在组内估计中，加入时间虚拟变量，估计双向固定效应模型。时间效应是否显著？
+10. 计算一阶差分估计量。<span class="math inline">\(lnk_1\)</span>的系数符号与显著性是否有变化？
+11. 计算组间估计量。此估计量是否可信？</p>
+<p><strong>【解答】：</strong></p>
+<p>（1）：混合回归</p>
+<pre class="stata"><code>cuse munnell, clear
+xtset state year
+reg lny lnk1 lnk2 lnlabor unemp, vce(cluster state)
+
+*&gt; Linear regression                               Number of obs     =        816
+*&gt;                                                 F(4, 47)          =    2706.83
+*&gt;                                                 Prob &gt; F          =     0.0000
+*&gt;                                                 R-squared         =     0.9926
+*&gt;                                                 Root MSE          =      .0881
+*&gt;                                  (Std. Err. adjusted for 48 clusters in state)
+*&gt; ------------------------------------------------------------------------------
+*&gt;              |               Robust
+*&gt;          lny |      Coef.   Std. Err.      t    P&gt;|t|     [95% Conf. Interval]
+*&gt; -------------+----------------------------------------------------------------
+*&gt;         lnk1 |    .155007   .0609054     2.55   0.014     .0324812    .2775328
+*&gt;         lnk2 |   .3091902    .046834     6.60   0.000     .2149723     .403408
+*&gt;      lnlabor |   .5939349   .0695029     8.55   0.000     .4541131    .7337567
+*&gt;        unemp |   -.006733   .0031308    -2.15   0.037    -.0130314   -.0004346
+*&gt;        _cons |   1.643302    .247374     6.64   0.000      1.14565    2.140955
+*&gt; ------------------------------------------------------------------------------</code></pre>
+<p><span class="math inline">\(lnk_1\)</span>的系数为正，在 5%的显著性水平上显著。经济意义是公共资本每增加 1%，州产值平均增加 0.155%。</p>
+<p>（2）：随机效应 + FGLS</p>
+<pre class="stata"><code>xtreg lny lnk1 lnk2 lnlabor unemp, r theta
+
+*&gt; Random-effects GLS regression                   Number of obs     =        816
+*&gt; Group variable: state                           Number of groups  =         48
+*&gt; 
+*&gt; R-sq:                                           Obs per group:
+*&gt;      within  = 0.9412                                         min =         17
+*&gt;      between = 0.9928                                         avg =       17.0
+*&gt;      overall = 0.9917                                         max =         17
+*&gt; 
+*&gt;                                                 Wald chi2(4)      =    4408.64
+*&gt; corr(u_i, X)   = 0 (assumed)                    Prob &gt; chi2       =     0.0000
+*&gt; theta          = .8888353
+*&gt; 
+*&gt;                                  (Std. Err. adjusted for 48 clusters in state)
+*&gt; ------------------------------------------------------------------------------
+*&gt;              |               Robust
+*&gt;          lny |      Coef.   Std. Err.      z    P&gt;|z|     [95% Conf. Interval]
+*&gt; -------------+----------------------------------------------------------------
+*&gt;         lnk1 |   .0044388   .0553107     0.08   0.936    -.1039682    .1128458
+*&gt;         lnk2 |   .3105483    .044162     7.03   0.000     .2239923    .3971043
+*&gt;      lnlabor |   .7296705   .0708825    10.29   0.000     .5907434    .8685976
+*&gt;        unemp |  -.0061725   .0023631    -2.61   0.009    -.0108041   -.0015409
+*&gt;        _cons |   2.135411   .2417872     8.83   0.000     1.661516    2.609305
+*&gt; -------------+----------------------------------------------------------------
+*&gt;      sigma_u |   .0826905
+*&gt;      sigma_e |  .03813705
+*&gt;          rho |  .82460109   (fraction of variance due to u_i)
+*&gt; ------------------------------------------------------------------------------</code></pre>
+<p>此时不再显著。为了检验个体效应，下面进行 LM 检验：</p>
+<pre class="stata"><code>xttest0
+
+*&gt; Breusch and Pagan Lagrangian multiplier test for random effects
+
+*&gt;         lny[state,t] = Xb + u[state] + e[state,t]
+
+*&gt;         Estimated results:
+*&gt;                          |       Var     sd = sqrt(Var)
+*&gt;                 ---------+-----------------------------
+*&gt;                      lny |    1.04271       1.021132
+*&gt;                        e |   .0014544       .0381371
+*&gt;                        u |   .0068377       .0826905
+
+*&gt;         Test:   Var(u) = 0
+*&gt;                              chibar2(01) =  4134.96
+*&gt;                           Prob &gt; chibar2 =   0.0000</code></pre>
+<p>结果强烈拒绝“不存在个体随机效应的假设”，即认为存在个体效应。</p>
+<p>（3）：随机效应 + MLE</p>
+<pre class="stata"><code>xtreg lny lnk1 lnk2 lnlabor unemp, mle nolog
+
+*&gt; Random-effects ML regression                    Number of obs     =        816
+*&gt; Group variable: state                           Number of groups  =         48
+*&gt; Random effects u_i ~ Gaussian                   Obs per group:
+*&gt;                                                               min =         17
+*&gt;                                                               avg =       17.0
+*&gt;                                                               max =         17
+*&gt;                                                 LR chi2(4)        =    2412.91
+*&gt; Log likelihood  =  1401.9041                    Prob &gt; chi2       =     0.0000
+*&gt; ------------------------------------------------------------------------------
+*&gt;          lny |      Coef.   Std. Err.      z    P&gt;|z|     [95% Conf. Interval]
+*&gt; -------------+----------------------------------------------------------------
+*&gt;         lnk1 |   .0031446   .0239185     0.13   0.895    -.0437348     .050024
+*&gt;         lnk2 |    .309811    .020081    15.43   0.000      .270453     .349169
+*&gt;      lnlabor |   .7313372   .0256936    28.46   0.000     .6809787    .7816957
+*&gt;        unemp |  -.0061382   .0009143    -6.71   0.000    -.0079302   -.0043462
+*&gt;        _cons |   2.143865   .1376582    15.57   0.000      1.87406    2.413671
+*&gt; -------------+----------------------------------------------------------------
+*&gt;     /sigma_u |    .085162   .0090452                      .0691573    .1048706
+*&gt;     /sigma_e |   .0380836   .0009735                      .0362226    .0400402
+*&gt;          rho |   .8333481   .0304597                      .7668537    .8861754
+*&gt; ------------------------------------------------------------------------------
+*&gt; LR test of sigma_u=0: chibar2(01) = 1149.84            Prob &gt;= chibar2 = 0.000</code></pre>
+<p>（4）：固定效应 + 组内估计</p>
+<pre class="stata"><code>xtreg lny lnk1 lnk2 lnlabor unemp, fe r
+
+*&gt; Fixed-effects (within) regression               Number of obs     =        816
+*&gt; Group variable: state                           Number of groups  =         48
+*&gt; 
+*&gt; R-sq:                                           Obs per group:
+*&gt;      within  = 0.9413                                         min =         17
+*&gt;      between = 0.9921                                         avg =       17.0
+*&gt;      overall = 0.9910                                         max =         17
+*&gt; 
+*&gt;                                                 F(4,47)           =     395.61
+*&gt; corr(u_i, Xb)  = 0.0608                         Prob &gt; F          =     0.0000
+*&gt; 
+*&gt;                                  (Std. Err. adjusted for 48 clusters in state)
+*&gt; ------------------------------------------------------------------------------
+*&gt;              |               Robust
+*&gt;          lny |      Coef.   Std. Err.      t    P&gt;|t|     [95% Conf. Interval]
+*&gt; -------------+----------------------------------------------------------------
+*&gt;         lnk1 |  -.0261493   .0611148    -0.43   0.671    -.1490964    .0967978
+*&gt;         lnk2 |   .2920067   .0625495     4.67   0.000     .1661733    .4178401
+*&gt;      lnlabor |   .7681595   .0827326     9.28   0.000      .601723     .934596
+*&gt;        unemp |  -.0052977   .0025285    -2.10   0.042    -.0103844   -.0002111
+*&gt;        _cons |   2.352898    .314594     7.48   0.000     1.720017     2.98578
+*&gt; -------------+----------------------------------------------------------------
+*&gt;      sigma_u |  .09057293
+*&gt;      sigma_e |  .03813705
+*&gt;          rho |   .8494045   (fraction of variance due to u_i)
+*&gt; ------------------------------------------------------------------------------</code></pre>
+<p><span class="math inline">\(lnk_1\)</span> 的符号变为负，同样不显著。</p>
+<p>（5）：固定效应 + LSDV</p>
+<pre class="stata"><code>xtreg lny lnk1 lnk2 lnlabor unemp i.state, vce(cluster state)
+
+*&gt; Random-effects GLS regression                   Number of obs     =        816
+*&gt; Group variable: state                           Number of groups  =         48
+
+*&gt; R-sq:                                           Obs per group:
+*&gt;      within  = 0.9413                                         min =         17
+*&gt;      between = 1.0000                                         avg =       17.0
+*&gt;      overall = 0.9987                                         max =         17
+
+*&gt;                                                 Wald chi2(4)      =          .
+*&gt; corr(u_i, X)   = 0 (assumed)                    Prob &gt; chi2       =          .
+
+*&gt;                                     (Std. Err. adjusted for 48 clusters in state)
+*&gt; ---------------------------------------------------------------------------------
+*&gt;                 |               Robust
+*&gt;             lny |      Coef.   Std. Err.      z    P&gt;|z|     [95% Conf. Interval]
+*&gt; ----------------+----------------------------------------------------------------
+*&gt;            lnk1 |  -.0261493   .0629666    -0.42   0.678    -.1495615    .0972629
+*&gt;            lnk2 |   .2920067   .0644448     4.53   0.000     .1656972    .4183162
+*&gt;         lnlabor |   .7681595   .0852394     9.01   0.000     .6010934    .9352256
+*&gt;           unemp |  -.0052977   .0026051    -2.03   0.042    -.0104036   -.0001919
+*&gt;                 |
+*&gt;           state |
+*&gt;        ARIZONA  |   .1664708   .0131244    12.68   0.000     .1407475    .1921942
+*&gt;       ARKANSAS  |   .0613989   .0201529     3.05   0.002     .0218998    .1008979
+*&gt;     CALIFORNIA  |   .2988061   .0732358     4.08   0.000     .1552666    .4423455
+*&gt;       COLORADO  |   .1942932   .0086412    22.48   0.000     .1773568    .2112296
+*&gt;    CONNECTICUT  |   .2695868   .0341927     7.88   0.000     .2025704    .3366032
+*&gt;       DELAWARE  |   .2118447   .0451819     4.69   0.000     .1232898    .3003996
+*&gt;        FLORIDA  |   .1315363   .0385407     3.41   0.001     .0559979    .2070746
+*&gt;        GEORGIA  |   .0565913   .0241312     2.35   0.019     .0092949    .1038876
+*&gt;          IDAHO  |   .1367973   .0457483     2.99   0.003     .0471321    .2264624
+*&gt;       ILLINOIS  |   .1857042   .0448826     4.14   0.000     .0977359    .2736726
+*&gt;        INDIANA  |   .0577659   .0161645     3.57   0.000      .026084    .0894479
+*&gt;           IOWA  |   .1255467   .0159194     7.89   0.000     .0943453    .1567482
+*&gt;         KANSAS  |   .1371023   .0257417     5.33   0.000     .0866494    .1875551
+*&gt;       KENTUCKY  |   .1976712   .0128558    15.38   0.000     .1724743    .2228682
+*&gt;      LOUISIANA  |   .3130538   .0447378     7.00   0.000     .2253693    .4007384
+*&gt;          MAINE  |   .0667996   .0397777     1.68   0.093    -.0111633    .1447626
+*&gt;       MARYLAND  |   .1986622   .0368114     5.40   0.000     .1265132    .2708113
+*&gt;  MASSACHUSETTS  |   .1606044   .0505757     3.18   0.001     .0614778    .2597309
+*&gt;       MICHIGAN  |   .2153771   .0384914     5.60   0.000     .1399354    .2908188
+*&gt;      MINNESOTA  |   .1139324   .0209493     5.44   0.000     .0728724    .1549923
+*&gt;    MISSISSIPPI  |   .0484076   .0145654     3.32   0.001       .01986    .0769552
+*&gt;       MISSOURI  |   .1120074   .0205456     5.45   0.000     .0717388     .152276
+*&gt;        MONTANA  |   .1465373   .0661967     2.21   0.027     .0167942    .2762804
+*&gt;       NEBRASKA  |   .1096629   .0355752     3.08   0.002     .0399369     .179389
+*&gt;         NEVADA  |   .1402696   .0459828     3.05   0.002      .050145    .2303941
+*&gt;  NEW_HAMPSHIRE  |   .1225309   .0446646     2.74   0.006     .0349898    .2100719
+*&gt;     NEW_JERSEY  |   .2412521   .0422531     5.71   0.000     .1584374    .3240667
+*&gt;     NEW_MEXICO  |   .2527582   .0460158     5.49   0.000     .1625689    .3429476
+*&gt;       NEW_YORK  |   .2743703    .077557     3.54   0.000     .1223614    .4263792
+*&gt; NORTH_CAROLINA  |   .0360083    .030923     1.16   0.244    -.0245997    .0966164
+*&gt;   NORTH_DAKOTA  |   .1422781   .0748141     1.90   0.057    -.0043548     .288911
+*&gt;           OHIO  |   .1210272   .0431546     2.80   0.005     .0364457    .2056087
+*&gt;       OKLAHOMA  |   .2143161   .0255197     8.40   0.000     .1642985    .2643337
+*&gt;         OREGON  |   .1492874   .0121212    12.32   0.000     .1255303    .1730444
+*&gt;   PENNSYLVANIA  |   .0877255   .0488119     1.80   0.072    -.0079441    .1833952
+*&gt;   RHODE_ISLAND  |   .1867343   .0561357     3.33   0.001     .0767105    .2967582
+*&gt; SOUTH_CAROLINA  |   -.082223   .0207814    -3.96   0.000    -.1229539   -.0414922
+*&gt;   SOUTH_DAKOTA  |   .0880636   .0596279     1.48   0.140     -.028805    .2049322
+*&gt;       TENNESSE  |   .0274807   .0188807     1.46   0.146    -.0095248    .0644862
+*&gt;          TEXAS  |   .1920419   .0443789     4.33   0.000     .1050609    .2790229
+*&gt;           UTAH  |   .1270401   .0261314     4.86   0.000     .0758236    .1782566
+*&gt;        VERMONT  |   .1345834   .0546054     2.46   0.014     .0275587    .2416081
+*&gt;       VIRGINIA  |   .1788493   .0311795     5.74   0.000     .1177386    .2399599
+*&gt;     WASHINGTON  |   .2451644   .0331981     7.38   0.000     .1800973    .3102315
+*&gt;  WEST_VIRGINIA  |   .0915334   .0315848     2.90   0.004     .0296284    .1534383
+*&gt;      WISCONSIN  |   .1273426   .0258475     4.93   0.000     .0766825    .1780027
+*&gt;        WYOMING  |   .4469402   .1067769     4.19   0.000     .2376613    .6562192
+*&gt;                 |
+*&gt;           _cons |   2.201616   .3258801     6.76   0.000     1.562903    2.840329
+*&gt; ----------------+----------------------------------------------------------------
+*&gt;         sigma_u |          0
+*&gt;         sigma_e |  .03813705
+*&gt;             rho |          0   (fraction of variance due to u_i)
+*&gt; ---------------------------------------------------------------------------------</code></pre>
+<p>从估计结果中可以看出，基本所有州的估计系数都是显著的，因此可以放心拒绝“所有个体虚拟变量的系数都为 0”的原假设，即认为存在个体固定效应。</p>
+<p>（6）：传统的 Hausman 检验</p>
+<pre class="stata"><code>qui xtreg lny lnk1 lnk2 lnlabor unemp, re
+est store RE
+qui xtreg lny lnk1 lnk2 lnlabor unemp, fe
+est store FE
+hausman FE RE, constant sigmamore
+
+*&gt;                  ---- Coefficients ----
+*&gt;              |      (b)          (B)            (b-B)     sqrt(diag(V_b-V_B))
+*&gt;              |       FE           RE         Difference          S.E.
+*&gt; -------------+----------------------------------------------------------------
+*&gt;         lnk1 |   -.0261493     .0044388       -.0305881        .0172815
+*&gt;         lnk2 |    .2920067     .3105483       -.0185416        .0155955
+*&gt;      lnlabor |    .7681595     .7296705         .038489        .0170552
+*&gt;        unemp |   -.0052977    -.0061725        .0008747        .0004016
+*&gt;        _cons |    2.352898     2.135411        .2174875        .1138557
+*&gt; ------------------------------------------------------------------------------
+*&gt;                            b = consistent under Ho and Ha; obtained from xtreg
+*&gt;             B = inconsistent under Ha, efficient under Ho; obtained from xtreg
+*&gt; 
+*&gt;     Test:  Ho:  difference in coefficients not systematic
+*&gt; 
+*&gt;                   chi2(5) = (b-B)‘[(V_b-V_B)^(-1)](b-B)
+*&gt;                           =        9.65
+*&gt;                 Prob&gt;chi2 =      0.0858
+*&gt;                 (V_b-V_B is not positive definite)</code></pre>
+<p>p 值为 0.0858，虽然在 5%的显著性水平上无法拒绝原假设“<span class="math inline">\(H_0：u_i\)</span>与解释变量不相关”，但是在 10%的显著性水平上可以拒绝，认为应该使用固定效应而非随机效应模型。</p>
+<p>（7）：稳健的豪斯曼检验</p>
+<pre class="stata"><code>qui xtreg lny lnk1 lnk2 lnlabor unemp, r
+xtoverid
+
+*&gt; Test of overidentifying restrictions: fixed vs random effects
+*&gt; Cross-section time-series model: xtreg re  robust cluster(state)
+*&gt; Sargan-Hansen statistic  19.333  Chi-sq(4)    P-value = 0.0007</code></pre>
+<p>检验的结果是强烈拒绝随机效应的原假设。</p>
+<p>（8）：组内估计 + 时间趋势</p>
+<pre class="stata"><code>xtreg lny lnk1 lnk2 lnlabor unemp year, fe r
+
+*&gt; Fixed-effects (within) regression               Number of obs     =        816
+*&gt; Group variable: state                           Number of groups  =         48
+*&gt; R-sq:                                           Obs per group:
+*&gt;      within  = 0.9475                                         min =         17
+*&gt;      between = 0.9883                                         avg =       17.0
+*&gt;      overall = 0.9864                                         max =         17
+*&gt;                                                 F(5,47)           =     383.39
+*&gt; corr(u_i, Xb)  = 0.8393                         Prob &gt; F          =     0.0000
+*&gt;                                  (Std. Err. adjusted for 48 clusters in state)
+*&gt; ------------------------------------------------------------------------------
+*&gt;              |               Robust
+*&gt;          lny |      Coef.   Std. Err.      t    P&gt;|t|     [95% Conf. Interval]
+*&gt; -------------+----------------------------------------------------------------
+*&gt;         lnk1 |  -.0283785   .0610049    -0.47   0.644    -.1511046    .0943477
+*&gt;         lnk2 |   .1434502   .0826932     1.73   0.089    -.0229069    .3098074
+*&gt;      lnlabor |    .725201   .0840044     8.63   0.000     .5562061     .894196
+*&gt;        unemp |  -.0076736   .0023959    -3.20   0.002    -.0124935   -.0028537
+*&gt;         year |   .0070499   .0014881     4.74   0.000     .0040561    .0100437
+*&gt;        _cons |  -9.686101   2.439071    -3.97   0.000    -14.59288   -4.779322
+*&gt; -------------+----------------------------------------------------------------
+*&gt;      sigma_u |  .21134823
+*&gt;      sigma_e |  .03608959
+*&gt;          rho |  .97166754   (fraction of variance due to u_i)
+*&gt; ------------------------------------------------------------------------------</code></pre>
+<p>时间趋势项是显著的。</p>
+<p>（9）：组内估计 + 时间虚拟变量</p>
+<pre class="stata"><code>tab year, gen(year)
+
+xtreg lny lnk1 lnk2 lnlabor unemp year2-year17, fe r
+
+*&gt; Fixed-effects (within) regression               Number of obs     =        816
+*&gt; Group variable: state                           Number of groups  =         48
+
+*&gt; R-sq:                                           Obs per group:
+*&gt;      within  = 0.9536                                         min =         17
+*&gt;      between = 0.9890                                         avg =       17.0
+*&gt;      overall = 0.9879                                         max =         17
+
+*&gt;                                                 F(20,47)          =     364.45
+*&gt; corr(u_i, Xb)  = 0.7201                         Prob &gt; F          =     0.0000
+
+*&gt;                                  (Std. Err. adjusted for 48 clusters in state)
+*&gt; ------------------------------------------------------------------------------
+*&gt;              |               Robust
+*&gt;          lny |      Coef.   Std. Err.      t    P&gt;|t|     [95% Conf. Interval]
+*&gt; -------------+----------------------------------------------------------------
+*&gt;         lnk1 |  -.0301757   .0582405    -0.52   0.607    -.1473404    .0869891
+*&gt;         lnk2 |   .1688277   .0856799     1.97   0.055    -.0035381    .3411934
+*&gt;      lnlabor |   .7693063   .0850678     9.04   0.000     .5981719    .9404406
+*&gt;        unemp |  -.0042211   .0031954    -1.32   0.193    -.0106494    .0022072
+*&gt;        year2 |    .015136   .0033617     4.50   0.000      .008373    .0218989
+*&gt;        year3 |    .029522   .0045477     6.49   0.000     .0203732    .0386708
+*&gt;        year4 |   .0425394   .0076907     5.53   0.000     .0270677     .058011
+*&gt;        year5 |   .0152535   .0103313     1.48   0.146    -.0055304    .0360374
+*&gt;        year6 |   .0158935   .0137346     1.16   0.253    -.0117369    .0435239
+*&gt;        year7 |   .0231792   .0138496     1.67   0.101    -.0046827     .051041
+*&gt;        year8 |   .0312112    .014556     2.14   0.037     .0019283    .0604941
+*&gt;        year9 |   .0387562   .0164337     2.36   0.023     .0056959    .0718165
+*&gt;       year10 |   .0360904   .0188087     1.92   0.061    -.0017478    .0739287
+*&gt;       year11 |   .0274387   .0223685     1.23   0.226     -.017561    .0724384
+*&gt;       year12 |   .0442891   .0233254     1.90   0.064    -.0026355    .0912136
+*&gt;       year13 |   .0419059   .0258024     1.62   0.111    -.0100018    .0938136
+*&gt;       year14 |   .0588273   .0258947     2.27   0.028     .0067339    .1109206
+*&gt;       year15 |   .0784954   .0249182     3.15   0.003     .0283665    .1286243
+*&gt;       year16 |   .0873012   .0263323     3.32   0.002     .0343275    .1402749
+*&gt;       year17 |   .0979994     .02765     3.54   0.001     .0423749     .153624
+*&gt;        _cons |   3.637237    .679395     5.35   0.000     2.270471    5.004004
+*&gt; -------------+----------------------------------------------------------------
+*&gt;      sigma_u |  .15633758
+*&gt;      sigma_e |   .0342888
+*&gt;          rho |  .95410413   (fraction of variance due to u_i)
+*&gt; ------------------------------------------------------------------------------
+
+local cmd = &quot;&quot;
+
+forval i = 2/17{
+  local cmd &quot;`cmd&#39; year`i&#39;&quot;
+}
+
+di &quot;`cmd&#39;&quot;
+*&gt;  year2 year3 year4 year5 year6 year7 year8 year9 year10 year11 year12 year13 year14 year15 year16 year17
+
+test `cmd&#39;
+
+*&gt;  ( 1)  year2 = 0
+*&gt;  ( 2)  year3 = 0
+*&gt;  ( 3)  year4 = 0
+*&gt;  ( 4)  year5 = 0
+*&gt;  ( 5)  year6 = 0
+*&gt;  ( 6)  year7 = 0
+*&gt;  ( 7)  year8 = 0
+*&gt;  ( 8)  year9 = 0
+*&gt;  ( 9)  year10 = 0
+*&gt;  (10)  year11 = 0
+*&gt;  (11)  year12 = 0
+*&gt;  (12)  year13 = 0
+*&gt;  (13)  year14 = 0
+*&gt;  (14)  year15 = 0
+*&gt;  (15)  year16 = 0
+*&gt;  (16)  year17 = 0
+*&gt;        F( 16,    47) =   28.90
+*&gt;             Prob &gt; F =    0.0000</code></pre>
+<p>时间效应显著。</p>
+<p>（10）：FD</p>
+<pre class="stata"><code>* net install st0039.pkg, from(&quot;http://www.stata-journal.com/software/sj3-2/&quot;)
+xtserial lny lnk1 lnk2 lnlabor unemp year2-year17, output
+
+*&gt; Linear regression                               Number of obs     =        768
+*&gt;                                                 F(20, 47)         =     363.63
+*&gt;                                                 Prob &gt; F          =     0.0000
+*&gt;                                                 R-squared         =     0.8539
+*&gt;                                                 Root MSE          =     .01845
+
+*&gt;                                  (Std. Err. adjusted for 48 clusters in state)
+*&gt; ------------------------------------------------------------------------------
+*&gt;              |               Robust
+*&gt;        D.lny |      Coef.   Std. Err.      t    P&gt;|t|     [95% Conf. Interval]
+*&gt; -------------+----------------------------------------------------------------
+*&gt;         lnk1 |
+*&gt;          D1. |  -.0416268   .0440097    -0.95   0.349     -.130163    .0469093
+*&gt;              |
+*&gt;         lnk2 |
+*&gt;          D1. |   .0062043   .0257296     0.24   0.810    -.0455569    .0579656
+*&gt;              |
+*&gt;      lnlabor |
+*&gt;          D1. |   .9050566   .0362855    24.94   0.000     .8320596    .9780535
+*&gt;              |
+*&gt;        unemp |
+*&gt;          D1. |   -.002949   .0009908    -2.98   0.005    -.0049422   -.0009558
+*&gt;              |
+*&gt;        year2 |
+*&gt;          D1. |   .0193292    .003322     5.82   0.000     .0126461    .0260123
+*&gt;              |
+*&gt;        year3 |
+*&gt;          D1. |   .0333364   .0052652     6.33   0.000     .0227441    .0439287
+*&gt;              |
+*&gt;        year4 |
+*&gt;          D1. |   .0465709   .0087431     5.33   0.000      .028982    .0641598
+*&gt;              |
+*&gt;        year5 |
+*&gt;          D1. |   .0229254   .0092568     2.48   0.017     .0043031    .0415476
+*&gt;              |
+*&gt;        year6 |
+*&gt;          D1. |    .028394   .0106514     2.67   0.010     .0069662    .0498217
+*&gt;              |
+*&gt;        year7 |
+*&gt;          D1. |   .0380152    .012365     3.07   0.004     .0131401    .0628903
+*&gt;              |
+*&gt;        year8 |
+*&gt;          D1. |   .0441399   .0141835     3.11   0.003     .0156065    .0726734
+*&gt;              |
+*&gt;        year9 |
+*&gt;          D1. |   .0502516   .0155829     3.22   0.002     .0189028    .0816003
+*&gt;              |
+*&gt;       year10 |
+*&gt;          D1. |   .0491132   .0165744     2.96   0.005     .0157699    .0824565
+*&gt;              |
+*&gt;       year11 |
+*&gt;          D1. |    .045003   .0167655     2.68   0.010     .0112752    .0787307
+*&gt;              |
+*&gt;       year12 |
+*&gt;          D1. |   .0643423   .0177688     3.62   0.001     .0285962    .1000885
+*&gt;              |
+*&gt;       year13 |
+*&gt;          D1. |   .0668306   .0172853     3.87   0.000      .032057    .1016041
+*&gt;              |
+*&gt;       year14 |
+*&gt;          D1. |   .0852646   .0177724     4.80   0.000     .0495112    .1210181
+*&gt;              |
+*&gt;       year15 |
+*&gt;          D1. |   .1034262   .0190686     5.42   0.000      .065065    .1417874
+*&gt;              |
+*&gt;       year16 |
+*&gt;          D1. |   .1135096    .020332     5.58   0.000     .0726068    .1544123
+*&gt;              |
+*&gt;       year17 |
+*&gt;          D1. |   .1269322   .0217636     5.83   0.000     .0831494     .170715
+*&gt; ------------------------------------------------------------------------------
+
+*&gt; Wooldridge test for autocorrelation in panel data
+*&gt; H0: no first-order autocorrelation
+*&gt;     F(  1,      47) =    121.713
+*&gt;            Prob &gt; F =      0.0000</code></pre>
+<p><span class="math inline">\(lnk_1\)</span> 系数为负，不显著。</p>
+<p>（11）：组间估计量</p>
+<pre class="stata"><code>xtreg lny lnk1 lnk2 lnlabor unemp, be
+
+*&gt; Between regression (regression on group means)  Number of obs     =        816
+*&gt; Group variable: state                           Number of groups  =         48
+
+*&gt; R-sq:                                           Obs per group:
+*&gt;      within  = 0.9330                                         min =         17
+*&gt;      between = 0.9939                                         avg =       17.0
+*&gt;      overall = 0.9925                                         max =         17
+
+*&gt;                                                 F(4,43)           =    1754.11
+*&gt; sd(u_i + avg(e_i.))=  .0832062                  Prob &gt; F          =     0.0000
+
+*&gt; ------------------------------------------------------------------------------
+*&gt;          lny |      Coef.   Std. Err.      t    P&gt;|t|     [95% Conf. Interval]
+*&gt; -------------+----------------------------------------------------------------
+*&gt;         lnk1 |   .1793651   .0719719     2.49   0.017     .0342199    .3245104
+*&gt;         lnk2 |   .3019542   .0418215     7.22   0.000     .2176132    .3862953
+*&gt;      lnlabor |   .5761274   .0563746    10.22   0.000     .4624372    .6898176
+*&gt;        unemp |  -.0038903   .0099084    -0.39   0.697    -.0238724    .0160918
+*&gt;        _cons |   1.589444   .2329796     6.82   0.000     1.119596    2.059292
+*&gt; ------------------------------------------------------------------------------</code></pre>
+<p>由于豪斯曼检验选择了固定效应，而组间估计量只在随机效应成立的情况下才是一致的，所以其结果不可信。</p>
+
+</div>
+</div>
+<div id="valine-thread"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: true,
+        verify: false,
+        app_id: 'HS0fE2GH92TyPjSpxeuEpr9P-gzGzoHsz',
+        app_key: 'hyvGUifU6e34ODKmahBUtoN6',
+        placeholder: '在这里评论～记得留下邮箱哈，这样有回复的时候会有邮件通知。',
+        avatar: 'monsterid',
+        avatar_cdn: 'https://gravatar.loli.net/avatar/',
+        pageSize: '2'
+    });
+</script>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="stata-docx-.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook/js/app.min.js"></script>
+<script src="libs/gitbook/js/lunr.js"></script>
+<script src="libs/gitbook/js/plugin-search.js"></script>
+<script src="libs/gitbook/js/plugin-sharing.js"></script>
+<script src="libs/gitbook/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": false,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/czxa/econometrics-handouts/edit/master/07-exer.Rmd",
+"text": "编辑"
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["econometrics-handouts.pdf"],
+"toc": {
+"collapse": "none"
+},
+"output_dir": "docs"
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

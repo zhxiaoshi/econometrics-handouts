@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>第 7 章 Stata 与 docx 文档的协同 | 计量经济学与 Stata 的应用讲义</title>
+  <meta name="description" content="第 7 章 Stata 与 docx 文档的协同 | 计量经济学与 Stata 的应用讲义" />
+  <meta name="generator" content="bookdown 0.10.1 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="第 7 章 Stata 与 docx 文档的协同 | 计量经济学与 Stata 的应用讲义" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="第 7 章 Stata 与 docx 文档的协同 | 计量经济学与 Stata 的应用讲义" />
+  <meta name="github-repo" content="czxa/econometrics-handouts" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="第 7 章 Stata 与 docx 文档的协同 | 计量经济学与 Stata 的应用讲义" />
+  
+  <meta name="twitter:description" content="第 7 章 Stata 与 docx 文档的协同 | 计量经济学与 Stata 的应用讲义" />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="stata-9.html">
+<link rel="next" href="section-43.html">
+<script src="libs/jquery/jquery.min.js"></script>
+<link href="libs/gitbook/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets/htmlwidgets.js"></script>
+<link href="libs/leaflet/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet/leaflet.js"></script>
+<link href="libs/leafletfix/leafletfix.css" rel="stylesheet" />
+<script src="libs/Proj4Leaflet/proj4-compressed.js"></script>
+<script src="libs/Proj4Leaflet/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding/leaflet.js"></script>
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">计量经济学与Stata的应用讲义</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> 前言</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#section-1"><i class="fa fa-check"></i><b>1.1</b> 本书内容</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#section-2"><i class="fa fa-check"></i><b>1.2</b> 阅读本书之前的准备工作</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#section-3"><i class="fa fa-check"></i><b>1.3</b> 目标读者</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#section-4"><i class="fa fa-check"></i><b>1.4</b> 排版约定</a></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#section-5"><i class="fa fa-check"></i><b>1.5</b> 下载示例代码</a></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#section-6"><i class="fa fa-check"></i><b>1.6</b> 许可证</a></li>
+<li class="chapter" data-level="1.7" data-path="index.html"><a href="index.html#section-7"><i class="fa fa-check"></i><b>1.7</b> 读者反馈</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="stata-sublime-text3-.html"><a href="stata-sublime-text3-.html"><i class="fa fa-check"></i><b>2</b> Stata 安装与 Sublime Text3 配置教程</a><ul>
+<li class="chapter" data-level="2.1" data-path="stata-sublime-text3-.html"><a href="stata-sublime-text3-.html#stata-"><i class="fa fa-check"></i><b>2.1</b> Stata 安装包获取</a></li>
+<li class="chapter" data-level="2.2" data-path="stata-sublime-text3-.html"><a href="stata-sublime-text3-.html#stata14-"><i class="fa fa-check"></i><b>2.2</b> Stata14 的安装</a></li>
+<li class="chapter" data-level="2.3" data-path="stata-sublime-text3-.html"><a href="stata-sublime-text3-.html#stata15-"><i class="fa fa-check"></i><b>2.3</b> Stata15 的安装</a></li>
+<li class="chapter" data-level="2.4" data-path="stata-sublime-text3-.html"><a href="stata-sublime-text3-.html#stata--1"><i class="fa fa-check"></i><b>2.4</b> Stata 代码编辑器的配置</a></li>
+<li class="chapter" data-level="2.5" data-path="stata-sublime-text3-.html"><a href="stata-sublime-text3-.html#shelldos-"><i class="fa fa-check"></i><b>2.5</b> 常用 shell/Dos 命令安装</a></li>
+<li class="chapter" data-level="2.6" data-path="stata-sublime-text3-.html"><a href="stata-sublime-text3-.html#stata--2"><i class="fa fa-check"></i><b>2.6</b> Stata 更新</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="stata-3.html"><a href="stata-3.html"><i class="fa fa-check"></i><b>3</b> Stata 基础操作</a><ul>
+<li class="chapter" data-level="3.1" data-path="stata-3.html"><a href="stata-3.html#stata--4"><i class="fa fa-check"></i><b>3.1</b> Stata 是什么</a></li>
+<li class="chapter" data-level="3.2" data-path="stata-3.html"><a href="stata-3.html#stata--5"><i class="fa fa-check"></i><b>3.2</b> Stata 能做什么</a></li>
+<li class="chapter" data-level="3.3" data-path="stata-3.html"><a href="stata-3.html#stata--6"><i class="fa fa-check"></i><b>3.3</b> Stata 基本操作</a></li>
+<li class="chapter" data-level="3.4" data-path="stata-3.html"><a href="stata-3.html#section-15"><i class="fa fa-check"></i><b>3.4</b> 数据处理</a></li>
+<li class="chapter" data-level="3.5" data-path="stata-3.html"><a href="stata-3.html#section-16"><i class="fa fa-check"></i><b>3.5</b> 数据导出</a></li>
+<li class="chapter" data-level="3.6" data-path="stata-3.html"><a href="stata-3.html#section-17"><i class="fa fa-check"></i><b>3.6</b> 绘图</a></li>
+<li class="chapter" data-level="3.7" data-path="stata-3.html"><a href="stata-3.html#section-18"><i class="fa fa-check"></i><b>3.7</b> 统计相关</a></li>
+<li class="chapter" data-level="3.8" data-path="stata-3.html"><a href="stata-3.html#t-"><i class="fa fa-check"></i><b>3.8</b> t 检验、方差分析和因子分析</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="section-23.html"><a href="section-23.html"><i class="fa fa-check"></i><b>4</b> 弹性与半弹性</a><ul>
+<li class="chapter" data-level="4.1" data-path="section-23.html"><a href="section-23.html#section-24"><i class="fa fa-check"></i><b>4.1</b> 弹性</a></li>
+<li class="chapter" data-level="4.2" data-path="section-23.html"><a href="section-23.html#section-25"><i class="fa fa-check"></i><b>4.2</b> 半弹性</a></li>
+<li class="chapter" data-level="4.3" data-path="section-23.html"><a href="section-23.html#section-28"><i class="fa fa-check"></i><b>4.3</b> 总结</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="stata-8.html"><a href="stata-8.html"><i class="fa fa-check"></i><b>5</b> Stata 网页表格爬取示例</a><ul>
+<li class="chapter" data-level="5.1" data-path="stata-8.html"><a href="stata-8.html#section-29"><i class="fa fa-check"></i><b>5.1</b> 准备工作</a></li>
+<li class="chapter" data-level="5.2" data-path="stata-8.html"><a href="stata-8.html#section-30"><i class="fa fa-check"></i><b>5.2</b> 网页分析</a></li>
+<li class="chapter" data-level="5.3" data-path="stata-8.html"><a href="stata-8.html#section-31"><i class="fa fa-check"></i><b>5.3</b> 开始爬取</a></li>
+<li class="chapter" data-level="5.4" data-path="stata-8.html"><a href="stata-8.html#section-36"><i class="fa fa-check"></i><b>5.4</b> 多页面爬取</a></li>
+<li class="chapter" data-level="5.5" data-path="stata-8.html"><a href="stata-8.html#section-39"><i class="fa fa-check"></i><b>5.5</b> 数据呈现</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="stata-9.html"><a href="stata-9.html"><i class="fa fa-check"></i><b>6</b> Stata 修图与操作记录</a></li>
+<li class="chapter" data-level="7" data-path="stata-docx-.html"><a href="stata-docx-.html"><i class="fa fa-check"></i><b>7</b> Stata 与 docx 文档的协同</a><ul>
+<li class="chapter" data-level="7.1" data-path="stata-docx-.html"><a href="stata-docx-.html#section-40"><i class="fa fa-check"></i><b>7.1</b> 安装</a></li>
+<li class="chapter" data-level="7.2" data-path="stata-docx-.html"><a href="stata-docx-.html#section-41"><i class="fa fa-check"></i><b>7.2</b> 使用</a></li>
+<li class="chapter" data-level="7.3" data-path="stata-docx-.html"><a href="stata-docx-.html#section-42"><i class="fa fa-check"></i><b>7.3</b> 父母身高与子女身高</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="section-43.html"><a href="section-43.html"><i class="fa fa-check"></i><b>8</b> 习题讲解</a><ul>
+<li class="chapter" data-level="8.1" data-path="section-43.html"><a href="section-43.html#section-44"><i class="fa fa-check"></i><b>8.1</b> 习题 6.5</a></li>
+<li class="chapter" data-level="8.2" data-path="section-43.html"><a href="section-43.html#section-45"><i class="fa fa-check"></i><b>8.2</b> 习题 6.6</a></li>
+<li class="chapter" data-level="8.3" data-path="section-43.html"><a href="section-43.html#section-46"><i class="fa fa-check"></i><b>8.3</b> 习题 7.2</a></li>
+<li class="chapter" data-level="8.4" data-path="section-43.html"><a href="section-43.html#section-47"><i class="fa fa-check"></i><b>8.4</b> 习题 7.3</a></li>
+<li class="chapter" data-level="8.5" data-path="section-43.html"><a href="section-43.html#section-48"><i class="fa fa-check"></i><b>8.5</b> 习题 9.4</a></li>
+<li class="chapter" data-level="8.6" data-path="section-43.html"><a href="section-43.html#section-49"><i class="fa fa-check"></i><b>8.6</b> 习题 9.5</a></li>
+<li class="chapter" data-level="8.7" data-path="section-43.html"><a href="section-43.html#section-50"><i class="fa fa-check"></i><b>8.7</b> 习题 10.5</a></li>
+<li class="chapter" data-level="8.8" data-path="section-43.html"><a href="section-43.html#section-51"><i class="fa fa-check"></i><b>8.8</b> 习题 10.6</a></li>
+<li class="chapter" data-level="8.9" data-path="section-43.html"><a href="section-43.html#section-52"><i class="fa fa-check"></i><b>8.9</b> 习题 12.3</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">使用 bookdown 编排</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">计量经济学与 Stata 的应用讲义</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="stata--docx-" class="section level1">
+<h1><span class="header-section-number">第 7 章</span> Stata 与 docx 文档的协同</h1>
+<p>注意：后来爬虫俱乐部对这些命令进行了更新，更新后的命令支持了字体的自定义，推荐直接学习爬虫俱乐部的相关命令：</p>
+<pre class="stata"><code>ssc install reg2docx
+ssc install corr2docx
+ssc install sum2docx</code></pre>
+<p>在实证论文写作的时候我们经常需要在论文中使用三种表格：描述性统计表、回归表以及相关系数表（当然这个不是必须）。有时候变量特别多，这些表格的排版就变得十分困难，幸运的是，我们有 Stata15。Stata15 比起前代的 Stata 在文本编排上有着巨大的进步，简单来说，Stata15 可以直接写论文了。本文就以上周的作业为例，讲解如何使用 Stata15 进行文本编排。其中用到了 reg2docx、sum2docx 和 corr2docx 三个命令。这三个命令都是外部命令，由爬虫俱乐部编写。不过我觉得非常不地道。根本不是为中文论文写作编写的，所以我稍作改编以方便我们自己使用，改编后的命令名为 reg2docx2、sum2docx2 和 corr2docx2。</p>
+<div id="section-40" class="section level2">
+<h2><span class="header-section-number">7.1</span> 安装</h2>
+<p>首先安装这三个命令的中文适配版：</p>
+<pre class="stata"><code>github install czxa/stata2docx, replace</code></pre>
+<p>暂时只修改了两个地方：
+1. 把字体的默认参数设置为<code>"宋体", 14, black</code>。这个比较贴近我们的毕业论文排版要求，因为我们的毕业论文的要求就是正文宋体四号字。
+2. 添加了自定义字体选项。</p>
+</div>
+<div id="section-41" class="section level2">
+<h2><span class="header-section-number">7.2</span> 使用</h2>
+<p>安装好之后就可以使用 help 命令查看帮助文件了，我贴心的准备了中文的帮助文档。</p>
+<pre class="stata"><code>help stata2docx
+help corr2docx2
+help reg2docx2
+help sum2docx2</code></pre>
+</div>
+<div id="section-42" class="section level2">
+<h2><span class="header-section-number">7.3</span> 父母身高与子女身高</h2>
+<p>作为示例，我以上周的作业为例讲解如何使用 Stata 进行文本编排，如果想要完整的学习 Stata 编排 docx 文档，还要自己对着 help 文档学习。
+Stata15 的 docx 文本编排主要使用 pudocx 命令，</p>
+<p>文档的创建一般分为三步
+1. 创建用于输出的文件；
+2. 文本操作；
+3. 关闭保存文件。</p>
+<p>putdocx 命令的使用方法也是如此：</p>
+<pre class="stata"><code>clear all
+* 首先打开文档，设置纸张大小为A4，字体为宋体、14号（即四号字）
+putdocx begin, pagesize(A4) font(&quot;宋体&quot;, 14, black)
+* 开启一个段落，居中，设置风格为标题（为了写标题）
+putdocx paragraph, halign(center) style(Title)
+putdocx text (&quot;使用Stata可进行docx文件的排版&quot;), bold ///
+    font(&quot;宋体&quot;, 18, black)
+* 新段落，副标题
+putdocx paragraph, halign(center) style(Subtitle)
+* linebreak：在文本后断行
+putdocx text (&quot;程振兴&quot;), bold font(&quot;华文楷体&quot;, 12, black) linebreak
+putdocx text (&quot;2018年10月9日&quot;), bold ///
+    font(&quot;华文楷体&quot;, 12, black) linebreak
+* 保存文档
+putdocx save mydoc.docx, replace</code></pre>
+<p>然后我们运行刚刚的代码，打开 mydoc.docx 文件：</p>
+<p><img src="assets/docx1.png" /></p>
+<p>可能这个副标题的斜体风格不是我们想要的，那就去掉<code>style(Subtitle)</code>选项就好了。</p>
+<p>继续，下面我们先把题目抄上去：</p>
+<pre class="stata"><code>* 把题目抄写上去
+* 打开文档
+putdocx begin
+* 开启一个新段落，为段落设置字体
+putdocx paragraph, halign(left) font(&quot;华文楷体&quot;, 14, black)
+* 为这两个字单独设置字体
+putdocx text (&quot;【作业】&quot;), bold font(&quot;宋体&quot;, 14, black)
+putdocx text (&quot;数据集galton.dta 包含了Galton(1886)的原始数据集。///
+变量parent为父母的平均身高（英寸），而child为子女的身高（英寸）。///
+其中，为平衡身高的性别差异，女性身高（包括母亲和女儿）///
+均乘以1.08。&quot;), linebreak
+putdocx text (&quot;（1）计算变量child与parent的基本统计特征；&quot;), linebreak
+putdocx text (&quot;（2）将变量child与parent的散点图和线性拟合图画在一起；&quot;), ///
+    linebreak
+putdocx text (&quot;（3）考虑一下回归方程：&quot;), linebreak
+
+* 开启新段落，这段是公式，比较费事
+putdocx paragraph, halign(center) font(&quot;宋体&quot;, 14, black)
+
+putdocx text (&quot;child&quot;),
+putdocx text (&quot;i&quot;), script(sub)
+putdocx text (&quot; = &quot;)
+putdocx text (&quot;α&quot;)
+putdocx text (&quot; + &quot;)
+putdocx text (&quot;β&quot;)
+putdocx text (&quot; * &quot;)
+putdocx text (&quot;parent&quot;)
+* 下标
+putdocx text (&quot;i&quot;), script(sub)
+putdocx text (&quot; + &quot;)
+putdocx text (&quot;ε&quot;)
+putdocx text (&quot;i&quot;), script(sub)
+putdocx text (&quot;    &quot;)
+putdocx text (&quot;(4.46)&quot;), linebreak
+
+* 新段落，楷体
+putdocx paragraph, halign(left) font(&quot;华文楷体&quot;, 14, black)
+putdocx text (&quot;其中，随机扰动项 ε&quot;)
+putdocx text (&quot;i&quot;), script(sub)
+putdocx text (&quot;代表哪些因素？&quot;), linebreak
+* 因为代码太长，所以我用三道斜线换个行
+putdocx text (&quot;（4）使用OLS估计上面的方程(4.46)并回答：///
+父母的身高每增加1英寸，子女的身高平均将增加多少？///
+父母的身高可以解释子女身高变动的百分之几？&quot;), linebreak
+putdocx text (&quot;（5）定义parent_dev为父母的身高减去父母那一///
+辈人的平均身高，并定义gengap为子女身高减去父母身高。将///
+gengap对parent_dev进行回归，是否存在“回归均值现象”？&quot;), linebreak
+* 保存，注意应该是append，指定接在上面的那个文档后面
+putdocx save mydoc.docx, append</code></pre>
+<p><img src="assets/docx2.png" /></p>
+<p>接下来开始解答这道题：</p>
+<pre class="stata"><code>putdocx begin, font(&quot;宋体&quot;, 14, black)
+putdocx paragraph, halign(left)
+putdocx text (&quot;【解答】&quot;), bold linebreak
+putdocx text (&quot;(1) child和parent变量的描述性统计表&quot;)
+putdocx pagebreak
+putdocx paragraph, halign(center)
+putdocx text (&quot;表1.1 child和parent变量的描述性统计表&quot;)
+putdocx save mydoc.docx, append</code></pre>
+<p><img src="assets/docx3.png" /></p>
+<p>接下来我们是要添加一个描述性统计表。使用 sum2docx2 即可：</p>
+<pre class="stata"><code>cuse galton, c w
+* 实际上font(&quot;宋体&quot;, 14, black)是默认选项，不加也一样
+sum2docx2 child parent using mydoc.docx, append ///
+    obs mean(%9.2f) sd min(%9.2f) max(%9.2f) ///
+    font(&quot;宋体&quot;, 14, black)
+
+putdocx begin, font(&quot;宋体&quot;, 14, black)
+putdocx paragraph, halign(left)
+putdocx text (&quot;(2) child与parent的散点图和线性拟合图: &quot;)
+putdocx save mydoc.docx, append</code></pre>
+<p><img src="assets/docx4.png" /></p>
+<p>接下来第二题，画个图然后放进去，注意按照毕业论文的要求，图标题放置在图片的下方，表标题放置在表的上方。：</p>
+<pre class="stata"><code>tw ///
+sc child parent || ///
+lfit child parent ||, ///
+    leg(off) ///
+    xti(&quot;父母的平均身高(英寸)&quot;) ///
+    yti(&quot;子女的平均身高(英寸)&quot;) ///
+    xlab(64(1)74)
+gr export img1.png, replace
+
+putdocx begin, font(&quot;宋体&quot;, 14, black)
+putdocx paragraph, halign(center)
+putdocx image &quot;img1.png&quot;
+putdocx text (&quot;图1.1 child与parent的散点图和线性拟合图&quot;)
+putdocx save mydoc.docx, append</code></pre>
+<p><img src="assets/img1.png" /></p>
+<p>编排效果：</p>
+<p><img src="assets/docx5.png" /></p>
+<p>继续：</p>
+<pre class="stata"><code>putdocx begin, font(&quot;宋体&quot;, 14, black)
+putdocx paragraph, halign(left)
+putdocx text (&quot;(3) 例如营养水平，后期运动量情况等。///
+只要是不由父母的遗传决定但是会影响人身高的因素///
+差不多都在里面了。&quot;), linebreak
+putdocx text (&quot;(4) 首先估计方程(4.46)，回归结果如下：&quot;), linebreak
+putdocx pagebreak
+putdocx paragraph, halign(center)
+putdocx text (&quot;表1.2 模型估计表&quot;)
+putdocx save mydoc.docx, append</code></pre>
+<p><img src="assets/docx6.png" /></p>
+<p>再接下来就是一件大活了，把回归结果放在文档中，一般论文里面都要用到三五个模型，甚至更多，涉及的变量往往七八九十个，回归系数、显著性水平加起来估计有七八九十一百个。手动制表往往非常困难，使用 reg2docx 就能很方便的解决这个问题：</p>
+<pre class="stata"><code>qui reg child parent
+est store m1
+reg2docx2 m1 using mydoc.docx, append b(%6.2f) p(%6.4f) ///
+    mtitles(&quot;OLS&quot;) r2(%6.2f) ar2(%6.2f) font(&quot;宋体&quot;, 14, black)</code></pre>
+<p><img src="assets/docx7.png" /></p>
+<p>帮助文档中有更加复杂的例子，我们也来尝试一下：</p>
+<pre class="stata"><code>clear
+set obs 1000
+gen x1 = uniform()
+gen x2 = uniform()
+gen x3 = uniform()
+gen x4 = uniform()
+gen x5 = uniform()
+gen x6 = uniform()
+gen ind = mod(_n,10)
+tab ind, gen(ind)
+gen y = 0.4+.5*x1+.6*x2+.7*x3+.8*x4+rnormal()*3
+replace y = y-.7*x5-.8*x6
+forvalue i = 1(1)10{
+    replace y = y+sqrt(`i&#39;)*ind`i&#39;
+}
+reg y x1 x5 x6 ind2-ind10
+est store m1
+reg y x1 x2 x5 x6 ind2-ind10
+est store m2
+reg y x1 x2 x3 x5 x6 ind2-ind10
+est store m3
+reg y x1 x2 x3 x4 x5 x6 ind2-ind10
+est store m4
+reg2docx2 m1 m2 m3 m4 using mydoc.docx, append ///
+    indicate(&quot;ind=ind*&quot;) drop(x2 x3) r2(%9.3f) ///
+    ar2(%9.2f) order(x6 x5) b(%9.3f) t(%7.2f) ///
+    title(table2: OLS regression results) ///
+    mtitles(&quot;model 1&quot; &quot;model 2&quot; &quot;&quot; &quot;model 4&quot;)</code></pre>
+<p><img src="assets/docx8.png" /></p>
+<p>可以看出，虽然这个命令里面有添加表格标题的功能，但是不建议使用，建议像我刚才那样自己添加标题。</p>
+<p>删除掉刚刚的那段，继续做作业：</p>
+<pre class="stata"><code>putdocx text (&quot;(5) 生成新变量进行回归，回归结果如下：&quot;), linebreak
+putdocx paragraph, halign(center)
+putdocx text (&quot;表1.3 模型估计表&quot;)
+putdocx save mydoc.docx, append
+
+cuse galton, c
+egen parent_dev = mean(parent)
+replace parent_dev = parent - parent_dev
+* 或者也可以这样
+* sum parent
+* gen parent_dev = parent - r(mean)
+gen gengap = child - parent
+
+reg gengap parent_dev
+qui reg child parent
+est store m2
+reg2docx2 m2 using mydoc.docx, append b(%6.2f) ///
+p(%6.4f) mtitles(&quot;OLS&quot;) r2(%6.2f) ar2(%6.2f)
+
+putdocx begin, font(&quot;宋体&quot;, 14, black)
+putdocx paragraph, halign(left)
+putdocx text (&quot;可以看到回归系数为 -0.35 &lt; 0，也就是说父母的身高///
+越偏离其同辈的平均身高(也就是越高)，其子女与父辈的身高差越低。///
+因此存在“回归均值的现象”。&quot;), linebreak
+putdocx save mydoc.docx, append</code></pre>
+<p>编排效果：</p>
+<p><img src="assets/docx9.png" /></p>
+<p>至此，我们的作业就完成了。下面再补充 corr2docx2 的使用：</p>
+<pre class="stata"><code>* 最后作为演示，我再讲解一下corr2docx的用法：
+putdocx begin, font(&quot;宋体&quot;, 14, black)
+putdocx pagebreak
+putdocx paragraph, halign(center)
+putdocx text (&quot;表1.4 相关系数表&quot;)
+putdocx save mydoc.docx, append
+
+corr2docx2 child parent gengap parent_dev using mydoc.docx, ///
+append star(** 0.01 * 0.05)  font(&quot;宋体&quot;, 14, black) ///
+notefont(&quot;宋体&quot;, 10, black)</code></pre>
+<p><img src="assets/docx10.png" />
+这样我们就完成了这篇小文章的编排，最后附上完整代码：</p>
+<pre class="stata"><code>* 首先打开文件：
+clear all
+putdocx begin, pagesize(A4) font(&quot;宋体&quot;, 14, black)
+putdocx paragraph, halign(center) style(Title)
+putdocx text (&quot;使用Stata可进行docx文件的排版&quot;), bold ///
+    font(&quot;宋体&quot;, 18, black)
+putdocx paragraph, halign(center) style(Subtitle)
+putdocx text (&quot;程振兴&quot;), bold font(&quot;华文楷体&quot;, 12, black) linebreak
+putdocx text (&quot;2018年10月9日&quot;), bold font(&quot;华文楷体&quot;, 12, black) ///
+    linebreak
+putdocx save mydoc.docx, replace
+
+* 把题目抄写上去
+* 打开文档
+putdocx begin
+* 开启一个新段落，为段落设置字体
+putdocx paragraph, halign(left) font(&quot;华文楷体&quot;, 14, black)
+* 为这两个字单独设置字体
+putdocx text (&quot;【作业】&quot;), bold font(&quot;宋体&quot;, 14, black)
+putdocx text (&quot;数据集galton.dta 包含了Galton(1886)的原始数据集。///
+变量parent为父母的平均身高（英寸），而child为子女的身高（英寸）。///
+其中，为平衡身高的性别差异，女性身高（包括母亲和女儿）///
+均乘以1.08。&quot;), linebreak
+putdocx text (&quot;（1）计算变量child与parent的基本统计特征；&quot;), linebreak
+putdocx text (&quot;（2）将变量child与parent的散点图和线性拟合图画在一起；&quot;), ///
+    linebreak
+putdocx text (&quot;（3）考虑一下回归方程：&quot;), linebreak
+
+* 开启新段落，这段是公式，比较费事
+putdocx paragraph, halign(center) font(&quot;宋体&quot;, 14, black)
+
+putdocx text (&quot;child&quot;),
+putdocx text (&quot;i&quot;), script(sub)
+putdocx text (&quot; = &quot;)
+putdocx text (&quot;α&quot;)
+putdocx text (&quot; + &quot;)
+putdocx text (&quot;β&quot;)
+putdocx text (&quot; * &quot;)
+putdocx text (&quot;parent&quot;)
+* 下标
+putdocx text (&quot;i&quot;), script(sub)
+putdocx text (&quot; + &quot;)
+putdocx text (&quot;ε&quot;)
+putdocx text (&quot;i&quot;), script(sub)
+putdocx text (&quot;    &quot;)
+putdocx text (&quot;(4.46)&quot;), linebreak
+
+* 新段落，楷体
+putdocx paragraph, halign(left) font(&quot;华文楷体&quot;, 14, black)
+putdocx text (&quot;其中，随机扰动项 ε&quot;)
+putdocx text (&quot;i&quot;), script(sub)
+putdocx text (&quot;代表哪些因素？&quot;), linebreak
+* 因为代码太长，所以我用三道斜线换个行
+putdocx text (&quot;（4）使用OLS估计上面的方程(4.46)并回答：///
+父母的身高每增加1英寸，子女的身高平均将增加多少？///
+父母的身高可以解释子女身高变动的百分之几？&quot;), linebreak
+putdocx text (&quot;（5）定义parent_dev为父母的身高减去父母那一///
+辈人的平均身高，并定义gengap为子女身高减去父母身高。将///
+gengap对parent_dev进行回归，是否存在“回归均值现象”？&quot;), linebreak
+* 保存，注意应该是append，指定接在上面的那个文档后面
+putdocx save mydoc.docx, append
+
+putdocx begin, font(&quot;宋体&quot;, 14, black)
+putdocx paragraph, halign(left)
+putdocx text (&quot;【解答】&quot;), bold linebreak
+putdocx text (&quot;(1) child和parent变量的描述性统计表&quot;)
+putdocx pagebreak
+putdocx paragraph, halign(center)
+putdocx text (&quot;表1.1 child和parent变量的描述性统计表&quot;)
+putdocx save mydoc.docx, append
+
+cuse galton, c
+sum2docx2 child parent using mydoc.docx, append ///
+    obs mean(%9.2f) sd min(%9.2f) max(%9.2f) ///
+    font(&quot;宋体&quot;, 14, black)
+
+putdocx begin, font(&quot;宋体&quot;, 14, black)
+putdocx paragraph, halign(left)
+putdocx text (&quot;(2) child与parent的散点图和线性拟合图: &quot;)
+putdocx save mydoc.docx, append
+
+* tw ///
+* sc child parent || ///
+* lfit child parent ||, ///
+*   leg(off) ///
+*   xti(&quot;父母的平均身高(英寸)&quot;) ///
+*   yti(&quot;子女的平均身高(英寸)&quot;) ///
+*   xlab(64(1)74)
+* gr export img1.png, replace
+
+putdocx begin, font(&quot;宋体&quot;, 14, black)
+putdocx paragraph, halign(center)
+putdocx image &quot;img1.png&quot;
+putdocx text (&quot;图1.1 child与parent的散点图和线性拟合图&quot;)
+putdocx save mydoc.docx, append
+
+putdocx begin, font(&quot;宋体&quot;, 14, black)
+putdocx paragraph, halign(left)
+putdocx text (&quot;(3) 例如营养水平，后期运动量情况等。///
+只要是不由父母的遗传决定但是会影响人身高的因素差不多都///
+在里面了。&quot;), linebreak
+putdocx text (&quot;(4) 首先估计方程(4.46)，回归结果如下：&quot;), linebreak
+putdocx pagebreak
+putdocx paragraph, halign(center)
+putdocx text (&quot;表1.2 模型估计表&quot;)
+putdocx save mydoc.docx, append
+
+qui reg child parent
+est store m1
+reg2docx2 m1 using mydoc.docx, append b(%6.2f) p(%6.4f) ///
+    mtitles(&quot;OLS&quot;) r2(%6.2f) ar2(%6.2f) font(&quot;宋体&quot;, 14, black)
+
+putdocx begin, font(&quot;宋体&quot;, 14, black)
+putdocx paragraph, halign(left)
+putdocx text (&quot;回归结果显示父母的身高每增加1英寸，///
+子女的身高平均将增加0.65英寸。父母的身高可以解释子女///
+身高变动的21.05%。&quot;), linebreak
+
+putdocx text (&quot;(5) 生成新变量进行回归，回归结果如下：&quot;), linebreak
+putdocx paragraph, halign(center)
+putdocx text (&quot;表1.3 模型估计表&quot;)
+putdocx save mydoc.docx, append
+
+cuse galton, c
+egen parent_dev = mean(parent)
+replace parent_dev = parent - parent_dev
+* 或者也可以这样
+* sum parent
+* gen parent_dev = parent - r(mean)
+gen gengap = child - parent
+
+reg gengap parent_dev
+qui reg child parent
+est store m2
+reg2docx2 m2 using mydoc.docx, append b(%6.2f) ///
+p(%6.4f) mtitles(&quot;OLS&quot;) r2(%6.2f) ar2(%6.2f)
+
+putdocx begin, font(&quot;宋体&quot;, 14, black)
+putdocx paragraph, halign(left)
+putdocx text (&quot;可以看到回归系数为 -0.35 &lt; ///
+0，也就是说父母的身高越偏离其同辈的平均身高(也就///
+是越高)，其子女与父辈的身高差越低。因此存在“回归均值///
+的现象”。&quot;), linebreak
+putdocx save mydoc.docx, append
+
+* 最后作为演示，我再讲解一下corr2docx的用法：
+putdocx begin, font(&quot;宋体&quot;, 14, black)
+putdocx pagebreak
+putdocx paragraph, halign(center)
+putdocx text (&quot;表1.4 相关系数表&quot;)
+putdocx save mydoc.docx, append
+
+corr2docx2 child parent gengap parent_dev using ///
+mydoc.docx, append star(** 0.01 * 0.05) ///
+font(&quot;宋体&quot;, 14, black) notefont(&quot;宋体&quot;, 10, black)</code></pre>
+
+</div>
+</div>
+<div id="valine-thread"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: true,
+        verify: false,
+        app_id: 'HS0fE2GH92TyPjSpxeuEpr9P-gzGzoHsz',
+        app_key: 'hyvGUifU6e34ODKmahBUtoN6',
+        placeholder: '在这里评论～记得留下邮箱哈，这样有回复的时候会有邮件通知。',
+        avatar: 'monsterid',
+        avatar_cdn: 'https://gravatar.loli.net/avatar/',
+        pageSize: '2'
+    });
+</script>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="stata-9.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="section-43.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook/js/app.min.js"></script>
+<script src="libs/gitbook/js/lunr.js"></script>
+<script src="libs/gitbook/js/plugin-search.js"></script>
+<script src="libs/gitbook/js/plugin-sharing.js"></script>
+<script src="libs/gitbook/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": false,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/czxa/econometrics-handouts/edit/master/06-docx.Rmd",
+"text": "编辑"
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["econometrics-handouts.pdf"],
+"toc": {
+"collapse": "none"
+},
+"output_dir": "docs"
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

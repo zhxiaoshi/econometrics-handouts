@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>第 5 章 Stata 网页表格爬取示例 | 计量经济学与 Stata 的应用讲义</title>
+  <meta name="description" content="第 5 章 Stata 网页表格爬取示例 | 计量经济学与 Stata 的应用讲义" />
+  <meta name="generator" content="bookdown 0.10.1 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="第 5 章 Stata 网页表格爬取示例 | 计量经济学与 Stata 的应用讲义" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="第 5 章 Stata 网页表格爬取示例 | 计量经济学与 Stata 的应用讲义" />
+  <meta name="github-repo" content="czxa/econometrics-handouts" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="第 5 章 Stata 网页表格爬取示例 | 计量经济学与 Stata 的应用讲义" />
+  
+  <meta name="twitter:description" content="第 5 章 Stata 网页表格爬取示例 | 计量经济学与 Stata 的应用讲义" />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="section-23.html">
+<link rel="next" href="stata-9.html">
+<script src="libs/jquery/jquery.min.js"></script>
+<link href="libs/gitbook/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets/htmlwidgets.js"></script>
+<link href="libs/leaflet/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet/leaflet.js"></script>
+<link href="libs/leafletfix/leafletfix.css" rel="stylesheet" />
+<script src="libs/Proj4Leaflet/proj4-compressed.js"></script>
+<script src="libs/Proj4Leaflet/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding/leaflet.js"></script>
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">计量经济学与Stata的应用讲义</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> 前言</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#section-1"><i class="fa fa-check"></i><b>1.1</b> 本书内容</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#section-2"><i class="fa fa-check"></i><b>1.2</b> 阅读本书之前的准备工作</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#section-3"><i class="fa fa-check"></i><b>1.3</b> 目标读者</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#section-4"><i class="fa fa-check"></i><b>1.4</b> 排版约定</a></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#section-5"><i class="fa fa-check"></i><b>1.5</b> 下载示例代码</a></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#section-6"><i class="fa fa-check"></i><b>1.6</b> 许可证</a></li>
+<li class="chapter" data-level="1.7" data-path="index.html"><a href="index.html#section-7"><i class="fa fa-check"></i><b>1.7</b> 读者反馈</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="stata-sublime-text3-.html"><a href="stata-sublime-text3-.html"><i class="fa fa-check"></i><b>2</b> Stata 安装与 Sublime Text3 配置教程</a><ul>
+<li class="chapter" data-level="2.1" data-path="stata-sublime-text3-.html"><a href="stata-sublime-text3-.html#stata-"><i class="fa fa-check"></i><b>2.1</b> Stata 安装包获取</a></li>
+<li class="chapter" data-level="2.2" data-path="stata-sublime-text3-.html"><a href="stata-sublime-text3-.html#stata14-"><i class="fa fa-check"></i><b>2.2</b> Stata14 的安装</a></li>
+<li class="chapter" data-level="2.3" data-path="stata-sublime-text3-.html"><a href="stata-sublime-text3-.html#stata15-"><i class="fa fa-check"></i><b>2.3</b> Stata15 的安装</a></li>
+<li class="chapter" data-level="2.4" data-path="stata-sublime-text3-.html"><a href="stata-sublime-text3-.html#stata--1"><i class="fa fa-check"></i><b>2.4</b> Stata 代码编辑器的配置</a></li>
+<li class="chapter" data-level="2.5" data-path="stata-sublime-text3-.html"><a href="stata-sublime-text3-.html#shelldos-"><i class="fa fa-check"></i><b>2.5</b> 常用 shell/Dos 命令安装</a></li>
+<li class="chapter" data-level="2.6" data-path="stata-sublime-text3-.html"><a href="stata-sublime-text3-.html#stata--2"><i class="fa fa-check"></i><b>2.6</b> Stata 更新</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="stata-3.html"><a href="stata-3.html"><i class="fa fa-check"></i><b>3</b> Stata 基础操作</a><ul>
+<li class="chapter" data-level="3.1" data-path="stata-3.html"><a href="stata-3.html#stata--4"><i class="fa fa-check"></i><b>3.1</b> Stata 是什么</a></li>
+<li class="chapter" data-level="3.2" data-path="stata-3.html"><a href="stata-3.html#stata--5"><i class="fa fa-check"></i><b>3.2</b> Stata 能做什么</a></li>
+<li class="chapter" data-level="3.3" data-path="stata-3.html"><a href="stata-3.html#stata--6"><i class="fa fa-check"></i><b>3.3</b> Stata 基本操作</a></li>
+<li class="chapter" data-level="3.4" data-path="stata-3.html"><a href="stata-3.html#section-15"><i class="fa fa-check"></i><b>3.4</b> 数据处理</a></li>
+<li class="chapter" data-level="3.5" data-path="stata-3.html"><a href="stata-3.html#section-16"><i class="fa fa-check"></i><b>3.5</b> 数据导出</a></li>
+<li class="chapter" data-level="3.6" data-path="stata-3.html"><a href="stata-3.html#section-17"><i class="fa fa-check"></i><b>3.6</b> 绘图</a></li>
+<li class="chapter" data-level="3.7" data-path="stata-3.html"><a href="stata-3.html#section-18"><i class="fa fa-check"></i><b>3.7</b> 统计相关</a></li>
+<li class="chapter" data-level="3.8" data-path="stata-3.html"><a href="stata-3.html#t-"><i class="fa fa-check"></i><b>3.8</b> t 检验、方差分析和因子分析</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="section-23.html"><a href="section-23.html"><i class="fa fa-check"></i><b>4</b> 弹性与半弹性</a><ul>
+<li class="chapter" data-level="4.1" data-path="section-23.html"><a href="section-23.html#section-24"><i class="fa fa-check"></i><b>4.1</b> 弹性</a></li>
+<li class="chapter" data-level="4.2" data-path="section-23.html"><a href="section-23.html#section-25"><i class="fa fa-check"></i><b>4.2</b> 半弹性</a></li>
+<li class="chapter" data-level="4.3" data-path="section-23.html"><a href="section-23.html#section-28"><i class="fa fa-check"></i><b>4.3</b> 总结</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="stata-8.html"><a href="stata-8.html"><i class="fa fa-check"></i><b>5</b> Stata 网页表格爬取示例</a><ul>
+<li class="chapter" data-level="5.1" data-path="stata-8.html"><a href="stata-8.html#section-29"><i class="fa fa-check"></i><b>5.1</b> 准备工作</a></li>
+<li class="chapter" data-level="5.2" data-path="stata-8.html"><a href="stata-8.html#section-30"><i class="fa fa-check"></i><b>5.2</b> 网页分析</a></li>
+<li class="chapter" data-level="5.3" data-path="stata-8.html"><a href="stata-8.html#section-31"><i class="fa fa-check"></i><b>5.3</b> 开始爬取</a></li>
+<li class="chapter" data-level="5.4" data-path="stata-8.html"><a href="stata-8.html#section-36"><i class="fa fa-check"></i><b>5.4</b> 多页面爬取</a></li>
+<li class="chapter" data-level="5.5" data-path="stata-8.html"><a href="stata-8.html#section-39"><i class="fa fa-check"></i><b>5.5</b> 数据呈现</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="stata-9.html"><a href="stata-9.html"><i class="fa fa-check"></i><b>6</b> Stata 修图与操作记录</a></li>
+<li class="chapter" data-level="7" data-path="stata-docx-.html"><a href="stata-docx-.html"><i class="fa fa-check"></i><b>7</b> Stata 与 docx 文档的协同</a><ul>
+<li class="chapter" data-level="7.1" data-path="stata-docx-.html"><a href="stata-docx-.html#section-40"><i class="fa fa-check"></i><b>7.1</b> 安装</a></li>
+<li class="chapter" data-level="7.2" data-path="stata-docx-.html"><a href="stata-docx-.html#section-41"><i class="fa fa-check"></i><b>7.2</b> 使用</a></li>
+<li class="chapter" data-level="7.3" data-path="stata-docx-.html"><a href="stata-docx-.html#section-42"><i class="fa fa-check"></i><b>7.3</b> 父母身高与子女身高</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="section-43.html"><a href="section-43.html"><i class="fa fa-check"></i><b>8</b> 习题讲解</a><ul>
+<li class="chapter" data-level="8.1" data-path="section-43.html"><a href="section-43.html#section-44"><i class="fa fa-check"></i><b>8.1</b> 习题 6.5</a></li>
+<li class="chapter" data-level="8.2" data-path="section-43.html"><a href="section-43.html#section-45"><i class="fa fa-check"></i><b>8.2</b> 习题 6.6</a></li>
+<li class="chapter" data-level="8.3" data-path="section-43.html"><a href="section-43.html#section-46"><i class="fa fa-check"></i><b>8.3</b> 习题 7.2</a></li>
+<li class="chapter" data-level="8.4" data-path="section-43.html"><a href="section-43.html#section-47"><i class="fa fa-check"></i><b>8.4</b> 习题 7.3</a></li>
+<li class="chapter" data-level="8.5" data-path="section-43.html"><a href="section-43.html#section-48"><i class="fa fa-check"></i><b>8.5</b> 习题 9.4</a></li>
+<li class="chapter" data-level="8.6" data-path="section-43.html"><a href="section-43.html#section-49"><i class="fa fa-check"></i><b>8.6</b> 习题 9.5</a></li>
+<li class="chapter" data-level="8.7" data-path="section-43.html"><a href="section-43.html#section-50"><i class="fa fa-check"></i><b>8.7</b> 习题 10.5</a></li>
+<li class="chapter" data-level="8.8" data-path="section-43.html"><a href="section-43.html#section-51"><i class="fa fa-check"></i><b>8.8</b> 习题 10.6</a></li>
+<li class="chapter" data-level="8.9" data-path="section-43.html"><a href="section-43.html#section-52"><i class="fa fa-check"></i><b>8.9</b> 习题 12.3</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">使用 bookdown 编排</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">计量经济学与 Stata 的应用讲义</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="stata--8" class="section level1">
+<h1><span class="header-section-number">第 5 章</span> Stata 网页表格爬取示例</h1>
+<p>本文以爬取<a href="http://data.eastmoney.com/cjsj/cpi.html">东方财富网 CPI 数据</a>为例，讲解如何使用 Stata 进行网页表格数据爬取。</p>
+<p>Stata 虽非数据爬取利器，但是能够轻松解决一些小的数据爬取任务。数据爬取的本质无非是数据请求和数据处理，因此熟练使用 Stata 进行数据爬取往往也是很好的数据处理能力的象征。在实际应用中，我们经常需要爬取一些公开数据。这些数据一种常见展示方式是通过 HTML 表示呈现。一个简单的 HTML 表格示例如下：</p>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;table&gt;</span>
+    <span class="kw">&lt;tr&gt;&lt;td</span><span class="ot"> bgcolor=</span><span class="st">&quot;red&quot;</span><span class="kw">&gt;</span>1<span class="kw">&lt;/td&gt;&lt;td</span><span class="ot"> bgcolor=</span><span class="st">&quot;yellow&quot;</span><span class="kw">&gt;</span>2<span class="kw">&lt;/td&gt;&lt;td</span><span class="ot"> bgcolor=</span><span class="st">&quot;blue&quot;</span><span class="kw">&gt;</span>3<span class="kw">&lt;/td&gt;&lt;/tr&gt;</span>
+    <span class="kw">&lt;tr&gt;&lt;td&gt;</span>1<span class="kw">&lt;/td&gt;&lt;td&gt;</span>2<span class="kw">&lt;/td&gt;&lt;td&gt;</span>3<span class="kw">&lt;/td&gt;&lt;/tr&gt;</span>
+<span class="kw">&lt;/table&gt;</span></code></pre>
+<p><a href="http://data.eastmoney.com/cjsj/cpi.html">东方财富网 CPI 数据</a>的表格是这样的：</p>
+<p><img src="assets/eastmoney.png" /></p>
+<p>下面我将一步步讲解如何爬取这个表格。</p>
+<div id="section-29" class="section level2">
+<h2><span class="header-section-number">5.1</span> 准备工作</h2>
+<ol style="list-style-type: decimal">
+<li>Stata14.0 以上版本的；</li>
+<li>Chrome 浏览器；</li>
+<li>想把数据爬下来的你。</li>
+</ol>
+</div>
+<div id="section-30" class="section level2">
+<h2><span class="header-section-number">5.2</span> 网页分析</h2>
+<p>首先讲解如何爬取一个页面的表格。这个网页的网址是：</p>
+<pre class="sourceCode markdown"><code class="sourceCode markdown">http://data.eastmoney.com/cjsj/cpi.html</code></pre>
+<p><img src="assets/eastmoney2.png" /></p>
+<p>在页面上右键选择显示网页源代码，很多浏览器都有查看网页源代码的功能，但是我还是最喜欢谷歌浏览器的。点击之后即可跳转至网页源代码界面：</p>
+<p><img src="assets/eastmoney3.png" /></p>
+<p>也就是说你刚刚看到的网页的本质实际上是这些源代码，之所以我们能看到各种炫彩的页面，那是因为浏览器帮我们翻译了源代码。</p>
+<p>下一步我们要做的事情就是找到这个表格在源代码的哪一块儿了，然后分析表格的特点，已方便在后面的 Stata 处理源代码的时候进行过滤。</p>
+<p>一个经常被用来寻找目标的方法是使用<code>查找</code>功能。Ctr+F（Mac 是 Command + F）即可打开搜索框，我们注意到表格里面有<code>月份</code>两个字，所以我们就用<code>月份</code>进行查找。</p>
+<p><img src="assets/eastmoney4.png" /></p>
+<p>我们首先在第 1987 行发现了这个词，仔细一看，这附近的代码就是表格的代码。</p>
+<p>下一步就是我们先分析一下这部分代码的特点：
+1. 所有表格中的数据在源代码中都是单独位于一行的，所以我们不能从其所在行入手了；
+2. 表格数据的上一行要么有字符串<code>&lt;td class=</code>要么有<code>&lt;span</code>。也可以发现，span 标签是控制文字颜色的。</p>
+<p>经过以上的网页分析我们就可以开始进行网页表格爬取了。</p>
+</div>
+<div id="section-31" class="section level2">
+<h2><span class="header-section-number">5.3</span> 开始爬取</h2>
+<p>总的来说，Stata 进行网页表格爬取分为 3 个步骤：
+1. 请求：把含有所需数据的源代码下载下来；
+2. 转码：很多网页并非使用 UTF-8 编码，直接读入 Stata 会出现乱码，因此可以预先进行 UTF-8 转码；
+3. 处理：这里主要是对字符串进行处理，常用操作有分割(split)、转置(sxpose)、提取(正则表达式或直接字符串提取)等等。</p>
+<div id="section-32" class="section level3">
+<h3><span class="header-section-number">5.3.1</span> 请求</h3>
+<p>由于这个网页没有设置反爬机制，所以可以直接使用<code>copy</code>命令进行下载，copy 命令不仅可以下载网页，还可以下载文件（当然网页其实就是一个 html 文件）。更多用法可以<code>help copy</code>。我们这里把要爬取的页面保存成一个名叫<code>temp.txt</code>的 txt 文件，为什么要起这个名字呢，因为爬完之后它就要被删除了，所以只是一个临时的文件。</p>
+<pre class="stata"><code>clear all
+* 设定工作目录
+cd &quot;你自己的工作目录（一个文件夹的路径）&quot;
+copy &quot;http://data.eastmoney.com/cjsj/pmi.html&quot; temp.txt, replace</code></pre>
+</div>
+<div id="section-33" class="section level3">
+<h3><span class="header-section-number">5.3.2</span> 转码</h3>
+<p>在我的 Stata 命令包——finance 包中，我编写了一个简单的转码命令，这个命令包的安装办法为：</p>
+<pre class="stata"><code>* 首先你需要安装github命令，这个命令是用来安装github上的命令的
+* net install github, from(&quot;https://haghish.github.io/github/&quot;)
+* 然后就可以安装这个命令了
+* github install czxa/finance, replace</code></pre>
+<p>安装成功之后，使用下面的命令就可以直接对 temp.txt 文件进行转码了：</p>
+<pre class="stata"><code>utrans temp.txt</code></pre>
+<p>如果返回的结果是<code>转码成功</code>，则表示<code>转码成功</code>了！（感觉像在说废话。。。）</p>
+<p>如果你不幸的因为各种各样的原因没能成功安装这个小命令，可以直接使用下面三句命令进行转码：</p>
+<pre class="stata"><code>unicode encoding set gb18030
+unicode translate temp.txt
+unicode erasebackups, badidea</code></pre>
+</div>
+<div id="section-34" class="section level3">
+<h3><span class="header-section-number">5.3.3</span> 读入</h3>
+<p>下面我们就要把 temp.txt 文件读入 Stata 进行处理了，一个非常常用的读取方法是使用 infix 命令：</p>
+<pre class="stata"><code>infix strL v 1-20000 using temp.txt, clear
+* 把变量v的显示格式变成 %60s （这样看起来更宽）
+format v %60s</code></pre>
+<p>这句命令的含义是创建一个格式为 strL 的变量 v，然后把 temp.txt 文件的每一行的前 1-20000 个字符（因为我们注意到 temp.txt 的每一行都没有超过 20000 个字符）读入变量 v 的每一个观测值。读入之后是这样的：</p>
+<p><img src="assets/czxa_2018-10-03_20.41.32.png" /></p>
+</div>
+<div id="section-35" class="section level3">
+<h3><span class="header-section-number">5.3.4</span> 处理</h3>
+<p>首先根据上面我们进行网页分析发现的结论，我们保留符合<font color = 'blue'>表格数据的上一行要么有字符串“&lt;td class=”要么有“&lt;span”</font>规律的观测值：</p>
+<pre class="stata"><code>keep if index(v[_n-1], &quot;&lt;td class=&quot;) | index(v[_n-1], &quot;&lt;span&quot;)
+* 再删除空观测值
+drop if v == &quot;&quot;
+* 再删除一些显然不是表格中数据的观测值，而这些无用观测值中都含有斜线
+drop if index(v, &quot;/&quot;)</code></pre>
+<p>这一步处理后的结果：</p>
+<p><img src="assets/craw1.png" /></p>
+<p>实际上到这一步，我们已经把表格整理的挺干净了，不过这不像一个表格，我们需要进行这样的一个操作：我们已经注意到了 1-13 行实际是表格的第一行，14-26 行实际是表格的第二行。我们该怎么完成这样的一个操作呢？一个非常好用的命令是<code>post命令</code>。这个命令的功能就像它的名字一样——邮局。它可以实现把 v 的每个观测值发送到我们想要得到的表格的指定位置。</p>
+<pre class="stata"><code>* 第一步postfile建立一个“邮局”，同时设定“收件人”（变量date、v1、v2、v3、v4）：
+postfile mypost str20 date str20 v1 str20 v2 str20 v3 ///
+    str20 v4 str20 v5 str20 v6 str20 v7 str20 v8 str20 v9 ///
+    str20 v10 str20 v11 str20 v12 using cpi.dta, replace
+* 然后循环将v的值对应发送给各个收件人
+forval i = 1(13)`=_N&#39;{
+    post mypost (v[`i&#39;]) (v[`i&#39; + 1]) (v[`i&#39; + 2]) (v[`i&#39; + 3]) ///
+                (v[`i&#39; + 4]) (v[`i&#39; + 5]) (v[`i&#39; + 6]) (v[`i&#39; + 7]) ///
+                (v[`i&#39; + 8]) (v[`i&#39; + 9]) (v[`i&#39; + 10]) (v[`i&#39; + 11]) ///
+                (v[`i&#39; + 12])
+}
+* 关闭邮局mypost
+postclose mypost
+
+* 打开 cpi.dta 就能看到整理好的数据了
+use cpi, clear</code></pre>
+<p>经过这个“邮局操作”，数据现在变成这个样子的了：</p>
+<p><img src="assets/post1.png" /></p>
+<p>到这一步我们实际上已经完成了这个表格的爬取了，不过接下来我们再把数据整理成更加规整的 Stata 数据。</p>
+<pre class="stata"><code>* 整理date变量
+replace date = subinstr(date, &quot;年&quot;, &quot;&quot;, .)
+replace date = subinstr(date, &quot;月份&quot;, &quot;&quot;, .)
+* date()函数把字符串日期变成Stata日期
+gen date1 = date(date, &quot;YM&quot;)
+* format一下便于我们人类理解
+format date1 %tdCY-N
+* 把date1变量放在第一列
+order date1
+* 删除date
+drop date
+* 重命名date1为date
+ren date1 date
+* 循环所有变量，把%删除
+foreach i of varlist _all{
+    cap replace `i&#39; = subinstr(`i&#39;, &quot;%&quot;, &quot;&quot;, .)
+}
+* 把所有能被转换为数值型变量的字符串变量转换成数值型变量
+destring, replace
+* 循环所有变量，如果变量名不是date就把显示格式变成%6.2f
+foreach i of varlist _all{
+    if &quot;`i&#39;&quot; != &quot;date&quot; {
+        format `i&#39; %6.2f
+    }
+}
+* 添加变量标签
+label var date &quot;月份&quot;
+label var v1 &quot;全国CPI&quot;
+label var v2 &quot;全国CPI年率&quot;
+label var v3 &quot;全国CPI月率&quot;
+label var v4 &quot;全国CPI累计&quot;
+label var v5 &quot;城市CPI&quot;
+label var v6 &quot;城市CPI年率&quot;
+label var v7 &quot;城市CPI月率&quot;
+label var v8 &quot;城市CPI累计&quot;
+label var v9 &quot;农村CPI&quot;
+label var v10 &quot;农村CPI年率&quot;
+label var v11 &quot;农村CPI月率&quot;
+label var v12 &quot;农村CPI累计&quot;
+* 数据集标签
+label data &quot;消费者价格指数&quot;
+
+* 变量重命名
+ren v1 cpi_all
+ren v2 cpi_all_year_rate
+ren v3 cpi_all_month_rate
+ren v4 cpi_all_accum
+ren v5 cpi_city
+ren v6 cpi_city_year_rate
+ren v7 cpi_city_month_rate
+ren v8 cpi_city_accum
+ren v9 cpi_village
+ren v10 cpi_village_year_rate
+ren v11 cpi_village_month_rate
+ren v12 cpi_village_accum
+save CPI_final, replace</code></pre>
+<p>这样整理之后的数据集是这样的：</p>
+<p><img src="assets/post2.png" /></p>
+<p>这样我们就爬好了单页面的表格。另外我们也注意到完整的表格有 7 页。我们点击下一页可以看到第二页的网址是：</p>
+<pre class="sourceCode html"><code class="sourceCode html">http://data.eastmoney.com/cjsj/consumerpriceindex.aspx?p=2</code></pre>
+<p>显然 url 中的最后一个参数就是页数。每页的结构都是一致的，所以可以循环运行刚刚的代码把剩下 6 个页面的表格依次爬下来然后合并。</p>
+</div>
+</div>
+<div id="section-36" class="section level2">
+<h2><span class="header-section-number">5.4</span> 多页面爬取</h2>
+<div id="section-37" class="section level3">
+<h3><span class="header-section-number">5.4.1</span> 纵向拼接示例</h3>
+<p>作为示例，我们再尝试用刚刚的代码爬第二页：</p>
+<pre class="stata"><code>clear
+copy &quot;http://data.eastmoney.com/cjsj/consumerpriceindex.aspx?p=2&quot; temp.txt, replace
+utrans temp.txt
+infix strL v 1-20000 using temp.txt, clear
+keep if index(v[_n-1], &quot;&lt;td class=&quot;) | index(v[_n-1], &quot;&lt;span&quot;)
+drop if v == &quot;&quot;
+drop if index(v, &quot;/&quot;)
+postfile mypost str20 date str20 v1 str20 v2 str20 v3 ///
+    str20 v4 str20 v5 str20 v6 str20 v7 str20 v8 str20 v9 ///
+    str20 v10 str20 v11 str20 v12 using CPI_temp.dta, replace
+forval i = 1(13)`=_N&#39;{
+    post mypost (v[`i&#39;]) (v[`i&#39; + 1]) (v[`i&#39; + 2]) (v[`i&#39; + 3]) ///
+                (v[`i&#39; + 4]) (v[`i&#39; + 5]) (v[`i&#39; + 6]) (v[`i&#39; + 7]) ///
+                (v[`i&#39; + 8]) (v[`i&#39; + 9]) (v[`i&#39; + 10]) (v[`i&#39; + 11]) ///
+                (v[`i&#39; + 12])
+}
+postclose mypost
+use CPI_temp, clear
+replace date = subinstr(date, &quot;年&quot;, &quot;&quot;, .)
+replace date = subinstr(date, &quot;月份&quot;, &quot;&quot;, .)
+gen date1 = date(date, &quot;YM&quot;)
+format date1 %tdCY-N
+order date1
+drop date
+ren date1 date
+foreach i of varlist _all{
+    cap replace `i&#39; = subinstr(`i&#39;, &quot;%&quot;, &quot;&quot;, .)
+}
+destring, replace
+foreach i of varlist _all{
+    if &quot;`i&#39;&quot; != &quot;date&quot; {
+        format `i&#39; %6.2f
+    }
+}
+ren v1 cpi_all
+ren v2 cpi_all_year_rate
+ren v3 cpi_all_month_rate
+ren v4 cpi_all_accum
+ren v5 cpi_city
+ren v6 cpi_city_year_rate
+ren v7 cpi_city_month_rate
+ren v8 cpi_city_accum
+ren v9 cpi_village
+ren v10 cpi_village_year_rate
+ren v11 cpi_village_month_rate
+ren v12 cpi_village_accum</code></pre>
+<p>这些代码运行之后可以得到一个和第一页爬取结果类似的表格，然后可以用 append 命令把这个表格纵向拼接到第一页爬取的数据集<code>CPI_final.dta</code>上：</p>
+<pre class="stata"><code>append using CPI_final
+save CPI_final, replace</code></pre>
+</div>
+<div id="section-38" class="section level3">
+<h3><span class="header-section-number">5.4.2</span> 循环拼接</h3>
+<p>为了连贯，我再把上面的代码重新写，因为有些代码可以在放在循环之后再运行，例如变量标签、变量名等。</p>
+<pre class="stata"><code>*===============================*
+*    东方财富网消费者价格指数爬取
+*===============================*
+* 下载第一页
+clear all
+cd &quot;~/Desktop&quot;
+copy &quot;http://data.eastmoney.com/cjsj/cpi.html&quot; temp.txt, replace
+utrans temp.txt
+infix strL v 1-20000 using temp.txt, clear
+keep if index(v[_n-1], &quot;&lt;td class=&quot;) | index(v[_n-1], &quot;&lt;span&quot;)
+drop if v == &quot;&quot;
+drop if index(v, &quot;/&quot;)
+postfile mypost str20 date str20 v1 str20 v2 str20 v3 ///
+    str20 v4 str20 v5 str20 v6 str20 v7 str20 v8 str20 v9 ///
+    str20 v10 str20 v11 str20 v12 using CPI_temp.dta, replace
+forval i = 1(13)`=_N&#39;{
+    post mypost (v[`i&#39;]) (v[`i&#39; + 1]) (v[`i&#39; + 2]) (v[`i&#39; + 3]) ///
+        (v[`i&#39; + 4]) (v[`i&#39; + 5]) (v[`i&#39; + 6]) (v[`i&#39; + 7]) ///
+        (v[`i&#39; + 8]) (v[`i&#39; + 9]) (v[`i&#39; + 10]) (v[`i&#39; + 11]) ///
+        (v[`i&#39; + 12])
+}
+postclose mypost
+use CPI_temp, clear
+save CPI_final, replace
+
+* 接下来循环第2到第7页，把每一页纵向拼接
+forval i = 2/7{
+    clear
+    copy &quot;http://data.eastmoney.com/cjsj/consumerpriceindex.aspx?p=`i&#39;&quot; temp.txt, replace
+    utrans temp.txt
+    infix strL v 1-20000 using temp.txt, clear
+    keep if index(v[_n-1], &quot;&lt;td class=&quot;) | index(v[_n-1], &quot;&lt;span&quot;)
+    drop if v == &quot;&quot;
+    drop if index(v, &quot;/&quot;)
+    postfile mypost str20 date str20 v1 str20 v2 str20 v3 ///
+        str20 v4 str20 v5 str20 v6 str20 v7 str20 v8 str20 v9 ///
+        str20 v10 str20 v11 str20 v12 using CPI_temp.dta, replace
+    forval i = 1(13)`=_N&#39;{
+        post mypost (v[`i&#39;]) (v[`i&#39; + 1]) (v[`i&#39; + 2]) (v[`i&#39; + 3]) ///
+            (v[`i&#39; + 4]) (v[`i&#39; + 5]) (v[`i&#39; + 6]) (v[`i&#39; + 7]) ///
+            (v[`i&#39; + 8]) (v[`i&#39; + 9]) (v[`i&#39; + 10]) (v[`i&#39; + 11]) ///
+            (v[`i&#39; + 12])
+    }
+    postclose mypost
+    use CPI_temp, clear
+    append using CPI_final
+    save CPI_final, replace
+}
+
+use CPI_final, clear
+replace date = subinstr(date, &quot;年&quot;, &quot;&quot;, .)
+replace date = subinstr(date, &quot;月份&quot;, &quot;&quot;, .)
+gen date1 = date(date, &quot;YM&quot;)
+format date1 %tdCY-N
+order date1
+drop date
+ren date1 date
+foreach i of varlist _all{
+    cap replace `i&#39; = subinstr(`i&#39;, &quot;%&quot;, &quot;&quot;, .)
+}
+destring, replace
+foreach i of varlist _all{
+    if &quot;`i&#39;&quot; != &quot;date&quot; {
+        format `i&#39; %6.2f
+    }
+}
+* 添加变量标签
+label var date &quot;月份&quot;
+label var v1 &quot;全国CPI&quot;
+label var v2 &quot;全国CPI年率&quot;
+label var v3 &quot;全国CPI月率&quot;
+label var v4 &quot;全国CPI累计&quot;
+label var v5 &quot;城市CPI&quot;
+label var v6 &quot;城市CPI年率&quot;
+label var v7 &quot;城市CPI月率&quot;
+label var v8 &quot;城市CPI累计&quot;
+label var v9 &quot;农村CPI&quot;
+label var v10 &quot;农村CPI年率&quot;
+label var v11 &quot;农村CPI月率&quot;
+label var v12 &quot;农村CPI累计&quot;
+* 数据集标签
+label data &quot;消费者价格指数&quot;
+
+* 变量重命名
+ren v1 cpi_all
+ren v2 cpi_all_year_rate
+ren v3 cpi_all_month_rate
+ren v4 cpi_all_accum
+ren v5 cpi_city
+ren v6 cpi_city_year_rate
+ren v7 cpi_city_month_rate
+ren v8 cpi_city_accum
+ren v9 cpi_village
+ren v10 cpi_village_year_rate
+ren v11 cpi_village_month_rate
+ren v12 cpi_village_accum
+save CPI_final, replace</code></pre>
+<p>爬取结果：</p>
+<p><img src="assets/czxa_2018-10-03_23.51.02.png" /></p>
+<p>至此，这个爬取任务我们就算完成了。下面我们进行一个简单的应用——数据展示。</p>
+</div>
+</div>
+<div id="section-39" class="section level2">
+<h2><span class="header-section-number">5.5</span> 数据呈现</h2>
+<p>假如我想观察 CPI 的走势，需要绘制一幅线图：</p>
+<pre class="stata"><code>use CPI_final, clear
+gsort date
+* 绘图
+* 推荐使用我最喜欢的绘图主题plotplain
+* 安装方法
+ssc install blindschemes, replace all
+* 把绘图主题永久性的设置为plotplain
+set scheme plotplain, permanently
+* 查看2018年6月对应的Stata日期
+di date(&quot;2018-06&quot;, &quot;YM&quot;)
+* ///表示代码换行，注意下面几行绘图代码要一起运行
+tw ///
+line cpi_all date,  ///
+    lc(blue*0.6) lp(solid)  ///
+    xline(21336) ||  ///
+line cpi_city date, lc(dkorange)  ///
+    lp(solid) ||  ///
+line cpi_village date, lc(orange_red) ||, ///
+    ti(&quot;图：消费者价格指数走势&quot;, size(*1.2)) ///
+    leg(pos(6) row(1))  ||  ///
+scatteri 102.3 21336 (12) &quot;2018年6月&quot;
+* 导出图片为png格式
+gr export 20181004a1.png, replace</code></pre>
+<p><img src="assets/20181004a1.png" /></p>
+<p>上面一些选项的含义：</p>
+<ul>
+<li>||: 用于分隔图层。</li>
+<li>line: 用于绘制线图</li>
+<li>tw: 全称是 twoway，用于组合多个图层</li>
+<li>lc: 全称为 lcolor()用于控制线图的颜色</li>
+<li>lp: 全称是 lpattern()用于控制线型</li>
+<li>yline: 在指定位置画一条水平线</li>
+<li>xline: 在指定位置画一条竖直线</li>
+<li>ti: 全称是 title()，控制标题，size 用于控制标题文字大小，这里是 1.2 倍</li>
+<li>leg: 全称是 legend()，控制图例，pos 用于控制图例的位置，
+这里是 6 点种方向，单行排列。</li>
+<li>scatteri: 用于在指定的坐标处画个点。“2018 年 6 月”是这个点的标签, (12)用于指定这个标签位于点的方向，指定为 12 点钟方向。</li>
+</ul>
+
+</div>
+</div>
+<div id="valine-thread"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: true,
+        verify: false,
+        app_id: 'HS0fE2GH92TyPjSpxeuEpr9P-gzGzoHsz',
+        app_key: 'hyvGUifU6e34ODKmahBUtoN6',
+        placeholder: '在这里评论～记得留下邮箱哈，这样有回复的时候会有邮件通知。',
+        avatar: 'monsterid',
+        avatar_cdn: 'https://gravatar.loli.net/avatar/',
+        pageSize: '2'
+    });
+</script>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="section-23.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="stata-9.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook/js/app.min.js"></script>
+<script src="libs/gitbook/js/lunr.js"></script>
+<script src="libs/gitbook/js/plugin-search.js"></script>
+<script src="libs/gitbook/js/plugin-sharing.js"></script>
+<script src="libs/gitbook/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": false,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/czxa/econometrics-handouts/edit/master/04-crawl.Rmd",
+"text": "编辑"
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["econometrics-handouts.pdf"],
+"toc": {
+"collapse": "none"
+},
+"output_dir": "docs"
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
