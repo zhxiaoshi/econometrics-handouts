@@ -30,7 +30,7 @@
   
   
 <link rel="prev" href="stata-docx-.html">
-
+<link rel="next" href="section-53.html">
 <script src="libs/jquery/jquery.min.js"></script>
 <link href="libs/gitbook/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
@@ -191,6 +191,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.8" data-path="section-43.html"><a href="section-43.html#section-51"><i class="fa fa-check"></i><b>8.8</b> 习题 10.6</a></li>
 <li class="chapter" data-level="8.9" data-path="section-43.html"><a href="section-43.html#section-52"><i class="fa fa-check"></i><b>8.9</b> 习题 12.3</a></li>
 </ul></li>
+<li class="chapter" data-level="9" data-path="section-53.html"><a href="section-53.html"><i class="fa fa-check"></i><b>9</b> 计量经济学课程的得分分布！</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">使用 bookdown 编排</a></li>
 
@@ -825,8 +826,8 @@ content &lt;-<span class="st"> </span><span class="kw">paste</span>(<span class=
 <span class="st">  </span><span class="kw">addTiles</span>() <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw">addPopups</span>(<span class="dt">lng =</span> <span class="fl">14.31</span>, <span class="dt">lat =</span> <span class="fl">36.5</span>, content) <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw">addMarkers</span>(<span class="dt">lng =</span> <span class="fl">17.31</span>, <span class="dt">lat =</span> <span class="fl">32.5</span>, <span class="dt">icon =</span> Maltatag)</code></pre>
-<div id="htmlwidget-e2d6cf5f3498c35bcc8d" style="width:100%;height:500px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-e2d6cf5f3498c35bcc8d">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"setView":[[35.53,14.31],5,[]],"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addPopups","args":[36.5,14.31,"<b><a href='https://baike.baidu.com/item/%E9%A9%AC%E8%80%B3%E4%BB%96'>马耳他<\/a><\/b><br/>人口：44万<br/>面积：316平方公里",null,null,{"maxWidth":300,"minWidth":50,"autoPan":true,"keepInView":false,"closeButton":true,"className":""}]},{"method":"addMarkers","args":[32.5,17.31,{"iconUrl":{"data":"malta.jpeg","index":0},"iconWidth":90,"iconHeight":55,"iconAnchorX":22,"iconAnchorY":94},null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[32.5,36.5],"lng":[14.31,17.31]}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-dac2308ca1afb116356a" style="width:100%;height:500px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-dac2308ca1afb116356a">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"setView":[[35.53,14.31],5,[]],"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addPopups","args":[36.5,14.31,"<b><a href='https://baike.baidu.com/item/%E9%A9%AC%E8%80%B3%E4%BB%96'>马耳他<\/a><\/b><br/>人口：44万<br/>面积：316平方公里",null,null,{"maxWidth":300,"minWidth":50,"autoPan":true,"keepInView":false,"closeButton":true,"className":""}]},{"method":"addMarkers","args":[32.5,17.31,{"iconUrl":{"data":"malta.jpeg","index":0},"iconWidth":90,"iconHeight":55,"iconAnchorX":22,"iconAnchorY":94},null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[32.5,36.5],"lng":[14.31,17.31]}},"evals":[],"jsHooks":[]}</script>
 <p>由于马耳他是极端值且对估计结果影响较大，所以还是去掉比较好。</p>
 <p>（7）：完整模型的估计</p>
 <pre class="stata"><code>reg growth tradeshare rgdp60 yearsschool rev_coups assasinations
@@ -1733,8 +1734,8 @@ xtserial lny lnk1 lnk2 lnlabor unemp year2-year17, output
           </div>
         </div>
       </div>
-<a href="stata-docx-.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="stata-docx-.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="section-53.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook/js/app.min.js"></script>
