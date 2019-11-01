@@ -406,8 +406,8 @@ Stata 的绘图系统是相当完整的。通过绘图主题的选择，Stata �
 <pre class="stata"><code>webuse query
 *&gt; (prefix now &quot;http://www.stata-press.com/data/r15&quot;)</code></pre>
 <p>我还可以换个地址：</p>
-<pre class="stata"><code>webuse set &quot;https://www.czxa.top/cuse/c&quot;
-*&gt; (prefix now &quot;https://www.czxa.top/cuse/c&quot;)</code></pre>
+<pre class="stata"><code>webuse set &quot;https://czxa.top/cuse/c&quot;
+*&gt; (prefix now &quot;https://czxa.top/cuse/c&quot;)</code></pre>
 <p>这个网址是我的数据仓库下的一个名称为 c 的子文件夹，里面放置着 c 开头的数据集。设定好网址指向之后就可以调用该指向下的数据集了：</p>
 <pre class="stata"><code>webuse cjd1617, clear
 *&gt; (金融学16和17年成绩单)</code></pre>
@@ -522,9 +522,9 @@ use ~/Desktop/datasets/grilic_small.dta, clear
 </div>
 <div id="csv-" class="section level3">
 <h3><span class="header-section-number">3.3.4</span> 读入 csv 数据集</h3>
-<p>csv 格式的数据集是逗号分隔的文本文件，可以直接用 Excel 打开。例如，我想读取 <code>pingan.csv</code> 文件，这个文件下载地址为：<code>http://www.czxa.top/mr/pingan.csv</code> 。</p>
+<p>csv 格式的数据集是逗号分隔的文本文件，可以直接用 Excel 打开。例如，我想读取 <code>pingan.csv</code> 文件，这个文件下载地址为：<code>http://czxa.top/mr/pingan.csv</code> 。</p>
 <p>Stata 的 copy 命令可以被用来下载文件：</p>
-<pre class="stata"><code>copy &quot;http://www.czxa.top/mr/pingan.csv&quot; pingan.csv, replace</code></pre>
+<pre class="stata"><code>copy &quot;http://czxa.top/mr/pingan.csv&quot; pingan.csv, replace</code></pre>
 <p>然后你就能在你的工作目录里面发现这个文件了。如果你不清楚你的工作目录在哪里，可以运行下面的命令：</p>
 <pre class="stata"><code>pwd
 *&gt; /Users/czx/Desktop</code></pre>
@@ -552,7 +552,7 @@ use ~/Desktop/datasets/grilic_small.dta, clear
 <h3><span class="header-section-number">3.3.5</span> 读入 xls、xlsx 数据</h3>
 <p>这两种格式的数据是 Excel 的数据，例如我想导入 <code>grilic_small.xls</code> 数据集：</p>
 <pre class="stata"><code>* 首先用copy下载：
-copy &quot;https://www.czxa.top/mr/grilic_small.xls&quot; grilic_small.xls, replace
+copy &quot;https://czxa.top/mr/grilic_small.xls&quot; grilic_small.xls, replace
 import excel using grilic_small.xls, clear firstrow</code></pre>
 <p><code>firstrow</code> 表示设定第一行为变量名。</p>
 <p>同样导入 Excel 文件也能通过界面鼠标点击操作。</p>

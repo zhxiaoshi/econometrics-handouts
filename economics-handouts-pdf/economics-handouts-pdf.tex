@@ -4,11 +4,11 @@
 \subtitle{2018年秋计量经济学课程助教讲义}
 
 \author{程振兴}
-\institute{https://www.czxa.top}
+\institute{https://czxa.top}
 \date{2019年6月20日}
 \version{张宁}
 
-\equote{https://www.czxa.top}
+\equote{https://czxa.top}
 
 \logo{JNU2.jpg}
 % 封面图片来源：Photo by Alexandru Acea on Unsplash
@@ -87,7 +87,7 @@
 
 \noindent\includegraphics[width=\linewidth]{license.png}
 
-如果你想支持作者的工作，欢迎前往\href{https://www.czxa.top}{作者的网站}对作者进行打赏。你的支持将会促使作者更加及时地改进这本书。
+如果你想支持作者的工作，欢迎前往\href{https://czxa.top}{作者的网站}对作者进行打赏。你的支持将会促使作者更加及时地改进这本书。
 
 \hypertarget{section-7}{%
 \section{读者反馈}\label{section-7}}
@@ -1178,8 +1178,8 @@ adopath
 还可以换个地址：
 
 \begin{lstlisting}
-  webuse set "https://www.czxa.top/cuse/c"
-  *> (prefix now "https://www.czxa.top/cuse/c")
+  webuse set "https://czxa.github.io/cuse/c"
+  *> (prefix now "https://czxa.github.io/cuse/c")
 \end{lstlisting}
 
 这个网址是我的数据仓库下的一个名称为 c 的子文件夹，里面放置着 c 开头的数据集。设定好网址指向之后就可以调用该指向下的数据集了：
@@ -1279,12 +1279,12 @@ adopath
 \end{lstlisting}
 
 \subsection{读入csv数据集}
-csv格式的数据集是逗号分隔的文本文件，可以直接用Excel打开。例如，我想读取 \texttt{pingan.csv} 文件，这个文件下载地址为：\url{https://www.czxa.top/mr/pingan.csv} 。
+csv格式的数据集是逗号分隔的文本文件，可以直接用Excel打开。例如，我想读取 \texttt{pingan.csv} 文件，这个文件下载地址为：\url{https://czxb.github.io/mr/pingan.csv} 。
 
 Stata的copy命令可以被用来下载文件：
 
 \begin{lstlisting}
-  copy "http://www.czxa.top/mr/pingan.csv" pingan.csv, replace
+  copy "https://czxb.github.io/mr/pingan.csv" pingan.csv, replace
 \end{lstlisting}
 
 然后你就能在你的工作目录里面发现这个文件了。如果你不清楚你的工作目录在哪里，可以运行下面的命令：
@@ -1329,7 +1329,7 @@ Stata的copy命令可以被用来下载文件：
 
 \begin{lstlisting}
   * 首先用copy下载：
-  copy "https://www.czxa.top/mr/grilic_small.xls" grilic_small.xls, replace
+  copy "https://czxb.github.io/mr/grilic_small.xls" grilic_small.xls, replace
   import excel using grilic_small.xls, clear firstrow
 \end{lstlisting}
 
@@ -1794,7 +1794,7 @@ corr 命令也能用于计算相关系数表：
 \begin{lstlisting}
 cuse grilic_small, clear web
 * 或者
-use http://www.czxa.top/cuse/g/grilic_small, clear
+use https://czxa.github.io/cuse/g/grilic_small, clear
 * 因为数据集里面已经对数工资变量，所以我们只对受教育年限变量取对数即可
 gen lns = ln(s)
 * 注意ln()函数和log()函数是等价的
@@ -3297,7 +3297,6 @@ end
 reshape long sd, i(var) j(m)
 encode var, gen(varlab) lab(var)
 * colorscheme是一个选择配色的命令，安装方法：net install colorscheme.pkg, from("https://github.com/matthieugomez/stata-colorscheme/raw/master/")
-* 详细介绍可以参考我的这篇博客：https://www.czxa.top/posts/16049/
 colorscheme 3, palette(Dark2)
 ret list
 tw ///
@@ -4071,7 +4070,7 @@ gr export "10_5散点图.png", replace
 \begin{lstlisting}[language = R]
   # install.packages("RStata")
   # 读取数据的方法一：使用RStata包，
-  # 该包的详细使用可以参考：https://www.czxa.top/posts/13184/
+  # 该包的详细使用可以参考：https://czxa.top/posts/13184/
   library(RStata)
   library(ggplot2)
   library(ggrepel)
@@ -4460,7 +4459,7 @@ xtreg lny lnk1 lnk2 lnlabor unemp, be
                  outlier.color = "white") +
     guides(fill = "none") +
     labs(y = "得分", title = "2018年秋计量经济学得分分布",
-         subtitle = "程振兴", caption = "数据来源：瞎编瞎造\nhttps://www.czxa.top") +
+         subtitle = "程振兴", caption = "数据来源：瞎编瞎造\nhttps://czxa.top") +
     theme(axis.title.y = element_blank()) +
     scale_fill_brewer(palette = 'Set2') +
     scale_colour_brewer(palette = 'Set2') +
