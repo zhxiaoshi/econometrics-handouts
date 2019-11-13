@@ -1,0 +1,57 @@
+This is BibTeX, Version 0.99d (TeX Live 2019)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: economics-handouts-pdf.aux
+The style file: gbt7714-plain.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: reference.bib
+Warning--empty key in cuse
+Warning--empty key in finance
+Warning--empty key in stata2docx
+Warning--empty key in chenqiang-2015
+Warning--empty key in choco
+You've used 12 entries,
+            4482 wiz_defined-function locations,
+            969 strings with 8154 characters,
+and the built_in function-call counts, 36114 in all, are:
+= -- 758
+> -- 3764
+< -- 5091
++ -- 1531
+- -- 118
+* -- 317
+:= -- 5108
+add.period$ -- 37
+call.type$ -- 12
+change.case$ -- 57
+chr.to.int$ -- 1306
+cite$ -- 29
+duplicate$ -- 252
+empty$ -- 705
+format.name$ -- 110
+if$ -- 9458
+int.to.chr$ -- 16
+int.to.str$ -- 1
+missing$ -- 0
+newline$ -- 70
+num.names$ -- 48
+pop$ -- 1638
+preamble$ -- 1
+purify$ -- 39
+quote$ -- 0
+skip$ -- 3562
+stack$ -- 0
+substring$ -- 1517
+swap$ -- 8
+text.length$ -- 90
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 174
+warning$ -- 5
+while$ -- 126
+width$ -- 0
+write$ -- 166
+(There were 5 warnings)

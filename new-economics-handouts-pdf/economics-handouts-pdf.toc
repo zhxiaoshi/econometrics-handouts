@@ -1,0 +1,96 @@
+\contentsline {chapter}{\numberline {1}前言}{1}{chapter.1}% 
+\contentsline {section}{\numberline {1.1}本书内容}{1}{section.1.1}% 
+\contentsline {section}{\numberline {1.2}阅读本书之前的准备工作}{1}{section.1.2}% 
+\contentsline {section}{\numberline {1.3}目标读者}{1}{section.1.3}% 
+\contentsline {section}{\numberline {1.4}排版约定}{1}{section.1.4}% 
+\contentsline {section}{\numberline {1.5}下载示例代码}{2}{section.1.5}% 
+\contentsline {section}{\numberline {1.6}许可证}{2}{section.1.6}% 
+\contentsline {section}{\numberline {1.7}读者反馈}{2}{section.1.7}% 
+\contentsline {chapter}{\numberline {2}Stata 安装与 Sublime Text3 配置教程}{3}{chapter.2}% 
+\contentsline {section}{\numberline {2.1}Stata 安装包获取}{3}{section.2.1}% 
+\contentsline {section}{\numberline {2.2}Stata14 的安装}{3}{section.2.2}% 
+\contentsline {subsection}{\numberline {2.2.1}Windows OS}{3}{subsection.2.2.1}% 
+\contentsline {subsection}{\numberline {2.2.2}Mac OS}{9}{subsection.2.2.2}% 
+\contentsline {section}{\numberline {2.3}Stata15 的安装}{9}{section.2.3}% 
+\contentsline {subsection}{\numberline {2.3.1}Windows OS}{9}{subsection.2.3.1}% 
+\contentsline {subsection}{\numberline {2.3.2}Mac OS}{20}{subsection.2.3.2}% 
+\contentsline {section}{\numberline {2.4}Stata 代码编辑器的配置}{22}{section.2.4}% 
+\contentsline {subsection}{\numberline {2.4.1}Windows OS}{22}{subsection.2.4.1}% 
+\contentsline {subsubsection}{\numberline {2.4.1.1}安装与配置}{22}{subsubsection.2.4.1.1}% 
+\contentsline {subsubsection}{\numberline {2.4.1.2}使用演示}{27}{subsubsection.2.4.1.2}% 
+\contentsline {subsubsection}{\numberline {2.4.1.3}太极八卦图的绘制代码}{27}{subsubsection.2.4.1.3}% 
+\contentsline {subsection}{\numberline {2.4.2}Mac OS}{34}{subsection.2.4.2}% 
+\contentsline {section}{\numberline {2.5}常用 shell/Dos 命令安装}{34}{section.2.5}% 
+\contentsline {subsection}{\numberline {2.5.1}Windows OS}{34}{subsection.2.5.1}% 
+\contentsline {subsection}{\numberline {2.5.2}Mac OS}{35}{subsection.2.5.2}% 
+\contentsline {section}{\numberline {2.6}Stata 更新}{35}{section.2.6}% 
+\contentsline {chapter}{\numberline {3}Stata 基础操作}{38}{chapter.3}% 
+\contentsline {section}{\numberline {3.1}Stata 是什么？}{38}{section.3.1}% 
+\contentsline {section}{\numberline {3.2}Stata 能做什么？}{39}{section.3.2}% 
+\contentsline {section}{\numberline {3.3}Stata 基本操作}{41}{section.3.3}% 
+\contentsline {subsection}{\numberline {3.3.1}Stata 系统文件夹}{41}{subsection.3.3.1}% 
+\contentsline {subsection}{\numberline {3.3.2}数据导入}{42}{subsection.3.3.2}% 
+\contentsline {subsubsection}{\numberline {3.3.2.1}导入系统数据集}{42}{subsubsection.3.3.2.1}% 
+\contentsline {subsubsection}{\numberline {3.3.2.2}导入网络数据集}{43}{subsubsection.3.3.2.2}% 
+\contentsline {subsubsection}{\numberline {3.3.2.3}调用我的个人仓库里面的数据集}{44}{subsubsection.3.3.2.3}% 
+\contentsline {subsection}{\numberline {3.3.3}读入dta数据集}{45}{subsection.3.3.3}% 
+\contentsline {subsection}{\numberline {3.3.4}读入csv数据集}{45}{subsection.3.3.4}% 
+\contentsline {subsection}{\numberline {3.3.5}读入xls、xlsx数据}{47}{subsection.3.3.5}% 
+\contentsline {subsection}{\numberline {3.3.6}导入自由格式的txt文件}{47}{subsection.3.3.6}% 
+\contentsline {section}{\numberline {3.4}数据处理}{48}{section.3.4}% 
+\contentsline {subsection}{\numberline {3.4.1}describe：审视数据}{48}{subsection.3.4.1}% 
+\contentsline {subsection}{\numberline {3.4.2}list：列示数据}{49}{subsection.3.4.2}% 
+\contentsline {subsection}{\numberline {3.4.3}gsort/order：排序}{49}{subsection.3.4.3}% 
+\contentsline {subsection}{\numberline {3.4.4}codebook：描述变量的基本信息}{49}{subsection.3.4.4}% 
+\contentsline {subsection}{\numberline {3.4.5}generate：生成新变量}{50}{subsection.3.4.5}% 
+\contentsline {subsection}{\numberline {3.4.6}replace: 替换}{50}{subsection.3.4.6}% 
+\contentsline {subsection}{\numberline {3.4.7}rename：重命名变量}{51}{subsection.3.4.7}% 
+\contentsline {subsection}{\numberline {3.4.8}drop：删除}{51}{subsection.3.4.8}% 
+\contentsline {subsection}{\numberline {3.4.9}summarize：查看描述性统计量}{51}{subsection.3.4.9}% 
+\contentsline {subsection}{\numberline {3.4.10}tabulate：查看频率频数表}{51}{subsection.3.4.10}% 
+\contentsline {subsection}{\numberline {3.4.11}pwcorr：计算相关系数表}{51}{subsection.3.4.11}% 
+\contentsline {subsection}{\numberline {3.4.12}display}{52}{subsection.3.4.12}% 
+\contentsline {section}{\numberline {3.5}数据导出}{52}{section.3.5}% 
+\contentsline {subsection}{\numberline {3.5.1}save: 导出为dta文件}{52}{subsection.3.5.1}% 
+\contentsline {subsection}{\numberline {3.5.2}export delimited：导出为csv文件}{52}{subsection.3.5.2}% 
+\contentsline {subsection}{\numberline {3.5.3}export excel：导出为excel文件}{53}{subsection.3.5.3}% 
+\contentsline {section}{\numberline {3.6}绘图}{53}{section.3.6}% 
+\contentsline {subsection}{\numberline {3.6.1}histogram：绘制直方图}{53}{subsection.3.6.1}% 
+\contentsline {subsection}{\numberline {3.6.2}scatter：绘制散点图}{53}{subsection.3.6.2}% 
+\contentsline {section}{\numberline {3.7}统计相关}{54}{section.3.7}% 
+\contentsline {subsection}{\numberline {3.7.1}grilic数据集示例}{54}{subsection.3.7.1}% 
+\contentsline {subsection}{\numberline {3.7.2}验证迭代期望定律}{54}{subsection.3.7.2}% 
+\contentsline {chapter}{\numberline {4}弹性与半弹性}{57}{chapter.4}% 
+\contentsline {section}{\numberline {4.1}弹性}{57}{section.4.1}% 
+\contentsline {section}{\numberline {4.2}半弹性}{62}{section.4.2}% 
+\contentsline {subsection}{\numberline {4.2.1}第一种半弹性}{63}{subsection.4.2.1}% 
+\contentsline {subsection}{\numberline {4.2.2}第二种半弹性}{64}{subsection.4.2.2}% 
+\contentsline {section}{\numberline {4.3}总结}{65}{section.4.3}% 
+\contentsline {chapter}{\numberline {5}Stata 网页表格爬取示例}{67}{chapter.5}% 
+\contentsline {section}{\numberline {5.1}准备工作}{67}{section.5.1}% 
+\contentsline {section}{\numberline {5.2}网页分析}{67}{section.5.2}% 
+\contentsline {section}{\numberline {5.3}开始爬取}{68}{section.5.3}% 
+\contentsline {subsection}{\numberline {5.3.1}请求}{69}{subsection.5.3.1}% 
+\contentsline {subsection}{\numberline {5.3.2}转码}{69}{subsection.5.3.2}% 
+\contentsline {subsection}{\numberline {5.3.3}读入}{71}{subsection.5.3.3}% 
+\contentsline {subsection}{\numberline {5.3.4}处理}{71}{subsection.5.3.4}% 
+\contentsline {section}{\numberline {5.4}多页面爬取}{75}{section.5.4}% 
+\contentsline {subsection}{\numberline {5.4.1}纵向拼接示例}{75}{subsection.5.4.1}% 
+\contentsline {subsection}{\numberline {5.4.2}循环拼接}{76}{subsection.5.4.2}% 
+\contentsline {section}{\numberline {5.5}数据呈现}{79}{section.5.5}% 
+\contentsline {chapter}{\numberline {6}Stata 修图与操作记录}{81}{chapter.6}% 
+\contentsline {chapter}{\numberline {7}Stata 与 docx 文档的协同}{91}{chapter.7}% 
+\contentsline {section}{\numberline {7.1}安装}{91}{section.7.1}% 
+\contentsline {section}{\numberline {7.2}使用}{91}{section.7.2}% 
+\contentsline {section}{\numberline {7.3}父母身高与子女身高}{91}{section.7.3}% 
+\contentsline {chapter}{\numberline {8}习题讲解}{103}{chapter.8}% 
+\contentsline {section}{\numberline {8.1}习题 6.5}{103}{section.8.1}% 
+\contentsline {section}{\numberline {8.2}习题 6.6}{107}{section.8.2}% 
+\contentsline {section}{\numberline {8.3}习题 7.2}{109}{section.8.3}% 
+\contentsline {section}{\numberline {8.4}习题 7.3}{110}{section.8.4}% 
+\contentsline {section}{\numberline {8.5}习题 9.4}{114}{section.8.5}% 
+\contentsline {section}{\numberline {8.6}习题 9.5}{119}{section.8.6}% 
+\contentsline {section}{\numberline {8.7}习题 10.5}{124}{section.8.7}% 
+\contentsline {section}{\numberline {8.8}习题 10.6}{128}{section.8.8}% 
+\contentsline {section}{\numberline {8.9}习题 12.3}{130}{section.8.9}% 
+\contentsline {chapter}{\numberline {A}计量经济学课程的得分分布！}{138}{appendix.A}% 

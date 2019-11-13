@@ -1,0 +1,76 @@
+\begin{thebibliography}{12}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{#1}
+\expandafter\ifx\csname urlstyle\endcsname\relax\relax\else
+  \urlstyle{same}\fi
+\providecommand{\href}[2]{\url{#2}}
+\providecommand{\doi}[1]{\href{https://doi.org/#1}{#1}}
+
+\bibitem[Butterandfly(2016)]{choco}
+BUTTERANDFLY, 2016.
+\newblock 在windows下使用choco作为包管理工具\allowbreak[EB/OL].
+\newblock \url{https://www.jianshu.com/p/be19a2bebc48}.
+
+\bibitem[程振兴(2019{\natexlab{a}})]{cuse}
+程振兴, 2019{\natexlab{a}}.
+\newblock CUSE：构建自己的 Stata 数据集仓库\allowbreak[EB/OL].
+\newblock \url{https://github.com/czxa/cuse}.
+
+\bibitem[程振兴(2019{\natexlab{b}})]{finance}
+程振兴, 2019{\natexlab{b}}.
+\newblock FINANCE：Stata 中的金融工具包\allowbreak[EB/OL].
+\newblock \url{https://github.com/czxa/finance}.
+
+\bibitem[程振兴(2019{\natexlab{c}})]{stata2docx}
+程振兴, 2019{\natexlab{c}}.
+\newblock stata2docx: 将Stata结果输出到docx文档中\allowbreak[M/OL].
+\newblock \url{https://github.com/czxa/stata2docx}.
+
+\bibitem[陈强(2015)]{chenqiang-2015}
+陈强, 2015.
+\newblock 计量经济学及Stata应用\allowbreak[M].
+\newblock [出版地不详]: 高等教育出版社.
+
+\bibitem[Bischof(2015)]{plotplain}
+BISCHOF~D, 2015.
+\newblock Figure schemes for decent stata figures: plotplain and
+  plottig\allowbreak[M/OL].
+\newblock \url{http://danbischof.wordpress.com/publications/}.
+
+\bibitem[Chuntao~LI et~al.(2019)Chuntao~LI and SI]{corr2docx}
+CHUNTAO~LI~Z~Z, Yuan~XUE, SI~H, 2019.
+\newblock corr2docx -- report pearson and spearman coefficient of correlation
+  to formatted table in docx file\allowbreak[Z].
+\newblock [S.l.: s.n.].
+
+\bibitem[Gomez(2019)]{stata-colorscheme}
+GOMEZ~M, 2019.
+\newblock stata-colorscheme: Stata command to generate color
+  schemes\allowbreak[M/OL].
+\newblock \url{https://github.com/matthieugomez/stata-colorscheme/}.
+
+\bibitem[Haghish(2019)]{github}
+HAGHISH~E~F, 2019.
+\newblock Github : a module for building, searching, installing, and managing
+  stata packages from github\allowbreak[M/OL].
+\newblock \url{https://github.com/haghish/github}.
+
+\bibitem[LI et~al.(2019{\natexlab{a}})LI and XUE]{reg2docx}
+LI~C, XUE~Y, 2019{\natexlab{a}}.
+\newblock reg2docx -- report regression results to formatted table in docx
+  file\allowbreak[Z].
+\newblock [S.l.: s.n.].
+
+\bibitem[LI et~al.(2019{\natexlab{b}})LI and XUE]{sum2docx}
+LI~C, XUE~Y, 2019{\natexlab{b}}.
+\newblock sum2docx -- report summary statistics to formatted table in docx
+  file\allowbreak[Z].
+\newblock [S.l.: s.n.].
+
+\bibitem[StataCorp(2017)]{stata}
+STATACORP, 2017.
+\newblock Stata statistical software: Release 15\allowbreak[M/OL].
+\newblock College Station, TX: StataCorp LLC.
+\newblock \url{https://www.stata.com}.
+
+\end{thebibliography}
